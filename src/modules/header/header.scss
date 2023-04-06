@@ -1,0 +1,46 @@
+.header-container {
+  .hamburge-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    .app-title {
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  }
+  .menu-container {
+    position: absolute;
+    top: -15px;
+    left: -8px;
+    z-index: 3;
+  }
+
+  .logo-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    .logo-text {
+      font-size: 28px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .profile-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+    .name {
+      font-weight: 600;
+      font-size: 1em;
+    }
+    .email {
+      font-weight: 400;
+      font-size: 14px;
+      color: #d0d5dd;
+    }
+  }
+}

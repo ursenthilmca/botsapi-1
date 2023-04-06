@@ -1,0 +1,210 @@
+.field-card-container {
+  margin-top: -5px;
+  .field-card-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 5px;
+    color: #667085;
+  }
+}
+
+.primary-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #101828;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: #d0d5dd;
+}
+.primary-btn {
+  font-family: "Poppins" !important;
+  background: #05987b;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px !important;
+  color: #ffffff;
+}
+.b-none {
+  border: none !important;
+}
+.b-1 {
+  border: 1px solid #667085;
+}
+
+.tabs-info {
+  .ant-tabs-tab {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #101828 !important;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .ant-tabs-ink-bar {
+    border-bottom: 4px solid #05987b;
+    border-radius: 8px 8px 0px 0px;
+  }
+}
+.ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+  margin: 0 0 0 28px;
+}
+
+.form-input-container {
+  .form-input {
+    background-color: transparent !important;
+  }
+
+  &:not(.single-line-mode) .ant-form-item-row {
+    display: block !important;
+  }
+  &.single-line-mode .ant-form-item-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    & .ant-form-item-label {
+      label {
+        margin: 2px 0px 0px 0px !important;
+      }
+    }
+  }
+
+  &.invert-mode {
+    &:not(.edit-mode-off) .form-input {
+      border: 1px solid #d0d5dd !important;
+    }
+    .ant-form-item-label label {
+      line-height: 12px;
+    }
+    .ant-form-item-label label,
+    input {
+      color: #ffffff !important;
+      &::placeholder {
+        color: #ffffff;
+        opacity: 0.8;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .ant-form-item-label label::after {
+    margin: 0px 3px !important;
+    line-height: 12px;
+    // display: none;
+  }
+
+  .ant-form-item-label label::before {
+    // margin: 0px 3px !important;
+    display: none !important;
+  }
+  align-items: center;
+  &:not(.edit-mode-off) .form-input:focus {
+    outline: 0 !important;
+    border: 1px solid #d0d5dd !important;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25) !important;
+  }
+  &.edit-mode-off .form-input:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+  &:not(.edit-mode-off) .form-input {
+    &:not(
+        &.ant-picker-status-error,
+        &.ant-input-status-error,
+        &.ant-input-status-error
+      ) {
+      &:not(:focus) {
+        border: 1px solid #d0d5dd !important;
+      }
+    }
+    &.ant-picker-status-error,
+    &.ant-input-status-error {
+      border: 1px solid red($color: #000000) !important;
+    }
+    border-radius: 4px !important;
+    // background-color: transparent !important;
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 200;
+      font-size: 14px;
+      color: #667085;
+    }
+  }
+
+  & .ant-form-item-label {
+    height: auto !important;
+    label {
+      font-size: 12px;
+      line-height: 18px;
+      height: 1.3rem !important;
+      color: #344054;
+      display: flex;
+      // flex-direction: row-reverse;
+      align-items: center;
+      margin-bottom: 2px;
+      .required {
+        margin-left: 2px;
+        line-height: 12px;
+        //color: $danger-1 !important;
+        font-size: 12px !important;
+        transform: translateY(-2px) !important;
+      }
+    }
+  }
+
+  .form-input:not(.ant-input-password, .ant-input-affix-wrapper),
+  .label-mode {
+    display: block;
+    width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: calculateFontSize(14px);
+    color: #344054;
+    &.form-input {
+      padding: 4px 5px;
+    }
+  }
+
+  input.ant-input-disabled {
+    // background-color: $muted-rgb-6 !important;
+  }
+
+  &.edit-mode-off {
+    .ant-form-item-control-input {
+      min-height: auto !important;
+      height: 12px;
+      pointer-events: none !important;
+    }
+    & {
+      flex-wrap: nowrap !important;
+    }
+    .form-input {
+      border: 0px solid #ffffff !important;
+    }
+    input {
+      padding: 0px !important;
+    }
+  }
+}
+
+//-------------------------------------------------------------------------
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.custom-scroll-bar {
+  //   scroll-behaviour: smooth;
+
+  white-space: nowrap;
+  overflow-y: scroll;
+}

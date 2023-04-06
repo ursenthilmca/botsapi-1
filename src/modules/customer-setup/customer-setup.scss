@@ -1,0 +1,128 @@
+.customer-setup {
+  overflow-y: auto;
+  scrollbar-color: #663399 #008000;
+  scrollbar-width: 20px;
+  height: calc(100vh - 75px);
+  white-space: nowrap;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .cards-container {
+    .ant-card-body {
+      padding: 1em !important;
+
+      .selected-card {
+        background: #f2f4f7;
+        border-radius: 8px;
+        border-left: #05a787;
+        border-left-style: solid;
+        border-width: 6px;
+        padding: 10px;
+        .inside-wrapper {
+          background: #ffffff;
+          padding: 10px;
+          border-radius: 8px;
+        }
+      }
+      .un-selected-card {
+        padding: 10px;
+        .inside-wrapper {
+          background: #f9fafb;
+          padding: 10px;
+          border-radius: 8px;
+        }
+      }
+
+      .title-override {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: #1a1a1a;
+      }
+    }
+  }
+  .bg-light {
+    background: #f9fafb;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 1em;
+  }
+  // .content {
+  //   // font-weight: 700;
+  //   font-size: 0.825em;
+  // }
+
+  .text-normal {
+    font-size: 0.875em;
+  }
+  .text-small {
+    font-size: 0.75em;
+  }
+
+  .font-bold {
+    font-weight: 600;
+  }
+  .font-normal {
+    font-weight: 500;
+  }
+  .font-light {
+    font-weight: 400;
+  }
+}
+
+.customer-setup::-webkit-scrollbar {
+  display: none;
+}
+
+.table {
+  border-radius: 8px;
+
+  .table-head {
+    background: #f2f4f7;
+  }
+}
+
+.ant-table-wrapper {
+  table {
+    border: 1px solid #eaecf0;
+  }
+  .ant-table-thead {
+    tr {
+      th:not(:last-child):not(.ant-table-selection-column):not(
+          .ant-table-row-expand-icon-cell
+        ):not([colspan])::before {
+        width: 0;
+        height: 0;
+      }
+
+      th {
+        font-size: 0.75em;
+        font-weight: 500;
+        color: #667085;
+        padding: 15px 10px;
+      }
+    }
+  }
+  .ant-table-tbody {
+    tr {
+      td {
+        padding: 10px 10px;
+        font-size: 0.875em;
+        color: #667085;
+      }
+      td:first-child {
+        color: #101828;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.ant-progress {
+  .ant-progress-bg {
+    background-color: #05a787;
+    height: 1em !important;
+  }
+}
