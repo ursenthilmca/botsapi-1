@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { ReactComponent as EditIcon } from "../../../../assets/svg/edit.svg";
 import { ReactComponent as DeleteIcon } from "../../../../assets/svg/delete.svg";
-import SimpleTable from "../../../../component/Tables/Simple-table";
+import SimpleTable from "../../../../component/tables/simple-table";
 
 /* table data */
 const columns = [
@@ -14,7 +14,7 @@ const columns = [
         title: 'CARRIER SCAC',
         dataIndex: 'carrierScac',
         key: 'carrierScac',
-        width: '20%'
+        width: '15%'
     },
     {
         title: 'CARRIER STATUS DESC',
@@ -41,13 +41,13 @@ const columns = [
         title: '',
         dataIndex: 'actions',
         key: 'actions',
-        width: '20%',
+        width: '15%',
         render: () => {
             return (
-                <div>
+                <div style={{marginLeft: "-10px"}}>
                     <a><EditIcon style={{ width: "35px", marginRight: "5px" }} /></a>
 
-                    <a><DeleteIcon style={{ width: "32px" }} /></a>
+                    <a><DeleteIcon style={{ width: "32px"}} /></a>
                 </div>
             )
         },

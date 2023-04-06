@@ -23,8 +23,8 @@ function Header() {
   return (
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
       <Col span={8}>
-        <div className="hamburge-menu" onClick={() => setShowMenu(true)}>
-          <HamburgerMenuIcon />
+        <div className="hamburge-menu">
+          <HamburgerMenuIcon onClick={() => setShowMenu(true)} />
           <div className="app-title">API Mapping</div>
         </div>
         {/* <CSSTransition

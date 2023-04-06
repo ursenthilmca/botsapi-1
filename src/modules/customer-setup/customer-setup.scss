@@ -1,6 +1,5 @@
 .customer-setup {
   overflow-y: auto;
-  scrollbar-color: #663399 #008000;
   scrollbar-width: 20px;
   height: calc(100vh - 75px);
   white-space: nowrap;
@@ -121,8 +120,24 @@
 }
 
 .ant-progress {
+  position: relative;
   .ant-progress-bg {
     background-color: #05a787;
-    height: 1em !important;
+    height: 2em !important;
+  }
+  .ant-progress-inner {
+    border-radius: 10px;
+  }
+  .ant-progress-bg {
+    border-radius: 10px 0 0 10px;
+  }
+  .ant-progress-text {
+    position: absolute;
+    color: #ffffff;
+    left: 10px;
+    top: 55%;
+    font-weight: 800;
+    font-size: 1.05em;
+    transform: translateY(-50%);
   }
 }

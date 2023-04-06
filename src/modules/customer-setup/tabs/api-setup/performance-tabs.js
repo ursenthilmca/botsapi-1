@@ -1,10 +1,8 @@
-import React, { Fragment, Component } from "react";
+import React, { Fragment } from "react";
 import { Row, Col, Progress } from 'antd';
-// import SemiCircleProgressBar from "react-progressbar-semicircle";
-
 import PrimaryLabel from "../../../../component/labels/primary-label";
 
-import ProgressBar from '../../../../component/progress/progress-bar';
+import ProgressBar from '../../../../component/progress/progress-bar'
 let PerformanceTabs = () => {
     return (
         <Fragment>
@@ -15,13 +13,9 @@ let PerformanceTabs = () => {
                         <Col sm={24}>
                             <PrimaryLabel>Global Performance (8)</PrimaryLabel>
 
-
                         </Col>
-                        <Col sm={24}>
-                            {/* <SemiCircleProgressBar percentage={33} showPercentValue /> */}
-
-                            {/* <Progress type="dashboard" percent={50} /> */}
-                            {/* <Progress percent={40} status="active" showInfo={true} /> */}
+                        <Col sm={24} className="mt-10">
+                            <Progress percent={40} status="active" showInfo={true} />
 
                         </Col>
                     </Row>
@@ -33,7 +27,7 @@ let PerformanceTabs = () => {
                             <PrimaryLabel>Carrier Performance by Customer (12)</PrimaryLabel>
 
                         </Col>
-                        <Col sm={24}>
+                        <Col sm={24} className="mt-10">
                             <Progress percent={20} status="active" showInfo={true} />
 
                         </Col>

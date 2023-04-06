@@ -1,5 +1,6 @@
 import { Table } from "antd";
 import React from "react";
+import  "./simple-table";
 
 const SimpleTable = ({
   columns = [],
@@ -19,5 +20,7 @@ const SimpleTable = ({
     />
   );
 };
+
+
 
 export default SimpleTable;

@@ -24,15 +24,21 @@ import ApiTestTabs from "./tabs/api-setup/api-test-tabs";
 import PerformanceTabs from "./tabs/api-setup/performance-tabs";
 import StatusCodeTabs from "./tabs/api-setup/status-code-tabs";
 import AddCustomer from "./add-customer";
-
+import AddCarrier from "./add-carrier";
 
 
 function CustomerSetup() {
+
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false);
-    
+  const [addcarrier, setAddCarrier] = useState(false);
+
   let addCustomerHandler = () => {
     setAddCustomer(!addCustomer)
+  }
+
+  let addcarrierHandler= () => {
+    setAddCarrier(!addcarrier)
   }
 
   const connectHandler = () => {
@@ -69,414 +75,415 @@ function CustomerSetup() {
 
 
   return (
-    
     <div className="add-customer">
-      {addCustomer && <AddCustomer drawerStatus={addCustomer} updateStatus={addCustomerHandler}/>}
-      <div className="custom-scroll-bar overflow-hidden mb-15 flex-1">
-        <Row gutter={12} className="customer-setup">
-          <Col sm={6}>
-            <Card
-              bordered={false}
-              style={{
-                width: "100%",
-              }}
-              className="p-0 cards-container"
-            >
-              <Row align={"middle"}>
-                <Col sm={12} >
-                  <span className="title">
-                    Customers
-                  </span>
-                </Col>
-                <Col sm={12} className="d-flex justify-content-end ">
-                  <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={addCustomerHandler}>
-                    Add Customer
-                  </Button>
-                </Col>
-              </Row>
-              <Row className="mt-15">
-                <Col sm={24}>
-                  <Input placeholder="Search Profile" prefix={<SearchOutlined />} />
-                </Col>
-              </Row>
-              <Row className="mt-15 selected-card">
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">
-                      3M Company
-                    </Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Created Date"}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Created By "}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Total Transation"}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Total Connection "}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <RightArrowIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
 
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Created Date"}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Created By "}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Total Transation"}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Total Connection "}>
-                        <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <RightArrowIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Created Date"}>
-                        <PrimaryLabel normal={true}>01/01/2023</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Created By "}>
-                        <PrimaryLabel normal={true}>Ilango</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper">
-                    <Col sm={11}>
-                      <FiledCard title={"Total Transation"}>
-                        <PrimaryLabel normal={true}>23,082</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <FiledCard title={"Total Connection "}>
-                        <PrimaryLabel normal={true}>30</PrimaryLabel>
-                      </FiledCard>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <RightArrowIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-          <Col sm={6}>
-            <Card
-              bordered={false}
-              style={{
-                width: "100%",
-              }}
-              className="p-0 cards-container"
-            >
-              <Row align={"middle"}>
-                <Col sm={12} >
-                  <span className="title">
-                    Connected Carrier (3)
-                  </span>
+      {addCustomer && <AddCustomer drawerStatus={addCustomer} updateStatus={addCustomerHandler} />}
+      {addcarrier && <AddCarrier drawerStatus={addcarrier} updateStatus={addcarrierHandler} />}
 
-                </Col>
-                <Col sm={12} className="d-flex justify-content-end ">
-                  <Button
-                    icon={<PlusOutlined />}
-                    size={"large"}
-                    className="primary-btn"
+      <Row gutter={12} className="customer-setup ">
+        <Col sm={6}>
+          <Card
+            bordered={false}
+            style={{
+              width: "100%",
+            }}
+            className="p-0 cards-container"
+          >
+            <Row align={"middle"}>
+              <Col sm={12} >
+                <span className="title">
+                  Customers
+                </span>
+              </Col>
+              <Col sm={12} className="d-flex justify-content-end ">
+                <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={addCustomerHandler}>
+                  Add Customer
+                </Button>
+              </Col>
+            </Row>
+            <Row className="mt-15">
+              <Col sm={24}>
+                <Input placeholder="Search Profile" prefix={<SearchOutlined />} />
+              </Col>
+            </Row>
+            <Row className="mt-15 selected-card">
+              <Col sm={24}>
+                <Row>
+                  <Col sm={12} className="text-normal font-normal">
+                    3M Company
+                  </Col>
+                  <Col sm={12} className="d-flex justify-content-end">
+                    <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Created Date"}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Created By "}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Total Transation"}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Total Connection "}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15">
+                  <Col
+                    sm={24}
+                    className="d-flex justify-content-center pr-15 align-items-center"
                   >
-                    Add Carrier
+                    <RightArrowIcon />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+
+            <Row className="mt-15 un-selected-card">
+              <Col sm={24}>
+                <Row>
+                  <Col sm={12} className="text-normal font-normal">3M Company</Col>
+                  <Col sm={12} className="d-flex justify-content-end">
+                    <FiledCard title={"Code:1102"}></FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Created Date"}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Created By "}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Total Transation"}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Total Connection "}>
+                      <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15">
+                  <Col
+                    sm={24}
+                    className="d-flex justify-content-center pr-15 align-items-center"
+                  >
+                    <RightArrowIcon />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <Row className="mt-15 un-selected-card">
+              <Col sm={24}>
+                <Row>
+                  <Col sm={12} className="text-normal font-normal">3M Company</Col>
+                  <Col sm={12} className="d-flex justify-content-end">
+                    <FiledCard title={"Code:1102"}></FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Created Date"}>
+                      <PrimaryLabel normal={true}>01/01/2023</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Created By "}>
+                      <PrimaryLabel normal={true}>Ilango</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper">
+                  <Col sm={11}>
+                    <FiledCard title={"Total Transation"}>
+                      <PrimaryLabel normal={true}>23,082</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                  <Col sm={2}>
+                    <VerticalLine />
+                  </Col>
+                  <Col sm={11}>
+                    <FiledCard title={"Total Connection "}>
+                      <PrimaryLabel normal={true}>30</PrimaryLabel>
+                    </FiledCard>
+                  </Col>
+                </Row>
+                <Row className="mt-15">
+                  <Col
+                    sm={24}
+                    className="d-flex justify-content-center pr-15 align-items-center"
+                  >
+                    <RightArrowIcon />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col sm={6}>
+          <Card
+            bordered={false}
+            style={{
+              width: "100%",
+            }}
+            className="p-0 cards-container"
+          >
+            <Row align={"middle"}>
+              <Col sm={12} >
+                <span className="title">
+                  Connected Carrier (3)
+                </span>
+
+              </Col>
+              <Col sm={12} className="d-flex justify-content-end ">
+                <Button
+                  icon={<PlusOutlined />}
+                  size={"large"}
+                  className="primary-btn"
+                  onClick={addcarrierHandler}
+                >
+                  Add Carrier
+                </Button>
+              </Col>
+            </Row>
+            <Row className="mt-15">
+              <Col sm={24}>
+                <Input placeholder="Search Carrier..." prefix={<SearchOutlined />} />
+              </Col>
+            </Row>
+            <Row className="mt-15 selected-card">
+              <Col sm={24}>
+                <Row gutter={12} align={"middle"}>
+                  <Col sm={4}>
+                    <PaintIcon width={40} height={40} />
+                  </Col>
+                  <Col sm={17}>
+                    <FiledCard
+                      title={"CENTRAL FREIGHT LINER (CENF)"}
+                      labelClass="title-override"
+                      className="text-normal"
+                    ></FiledCard>
+                    <FiledCard title={"Code: 1102"}></FiledCard>
+                  </Col>
+                  <Col sm={3}>
+                    <NoSignalIcon />
+                  </Col>
+                </Row>
+                <Row className="mt-15 inside-wrapper" align={"middle"}>
+                  <Col
+                    sm={24}
+                    className="d-flex align-items-center flex-gap-half mb-10"
+                  >
+                    <AppstoreOutlined />
+                    <FiledCard
+                      textClass="pt-5"
+                      title={"JkalanqN2nd 12"}
+                    ></FiledCard>
+                  </Col>
+                  <Col
+                    sm={24}
+                    className="d-flex align-items-center flex-gap-half mb-10"
+                  >
+                    <CalendarOutlined />
+                    <FiledCard textClass="pt-5" title={"12/12/2022"}></FiledCard>
+                  </Col>
+                  <Col
+                    sm={24}
+                    className="d-flex align-items-center flex-gap-half"
+                  >
+                    <UserOutlined />
+                    <FiledCard textClass="pt-5" title={"Ilango"}></FiledCard>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+
+            <Row className="mt-15 un-selected-card">
+              <Col sm={24}>
+                <Row gutter={12} align={"middle"}>
+                  <Col sm={4}>
+                    <PaintIcon width={40} height={40} />
+                  </Col>
+                  <Col sm={17}>
+                    <FiledCard
+                      title={"CENTRAL FREIGHT LINER (CENF)"}
+                      labelClass="title-override"
+                      className="text-normal"
+
+                    ></FiledCard>
+                    <FiledCard title={"Code: 1102"}></FiledCard>
+                  </Col>
+                  <Col sm={3}>
+                    <FullSignalIcon />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <Divider />
+            <Row className="mt-15 un-selected-card">
+              <Col sm={24}>
+                <Row gutter={12} align={"middle"}>
+                  <Col sm={4}>
+                    <PaintIcon width={40} height={40} />
+                  </Col>
+                  <Col sm={17}>
+                    <FiledCard
+                      title={"CENTRAL FREIGHT LINER (CENF)"}
+                      labelClass="title-override"
+                      className='text-bold font-bold'
+                    ></FiledCard>
+                    <FiledCard title={"Code: 1102"}></FiledCard>
+                  </Col>
+                  <Col sm={3}>
+                    <FullSignalIcon />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+
+          </Card>
+        </Col>
+        <Col sm={12}>
+          <Card
+            bordered={false}
+            style={{
+              width: "100%",
+            }}
+            className="cards-container"
+          >
+            <Row className=" selected-card b-none align-items-center">
+              <Col sm={15}>
+                {connect &&
+                  <Button
+                    icon={<DotSuccessIcon className="pr-10" />}
+                    size={"large"}
+                    style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, borderColor: "#039855", color: "#039855", background: "#ECFDF3" }}
+                  >
+                    Connected{connect}
+
                   </Button>
-                </Col>
-              </Row>
-              <Row className="mt-15">
-                <Col sm={24}>
-                  <Input placeholder="Search Carrier..." prefix={<SearchOutlined />} />
-                </Col>
-              </Row>
-              <Row className="mt-15 selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
-                    </Col>
-                    <Col sm={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className="text-normal"
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col sm={3}>
-                      <NoSignalIcon />
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper" align={"middle"}>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half mb-10"
-                    >
-                      <AppstoreOutlined />
-                      <FiledCard
-                        textClass="pt-5"
-                        title={"JkalanqN2nd 12"}
-                      ></FiledCard>
-                    </Col>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half mb-10"
-                    >
-                      <CalendarOutlined />
-                      <FiledCard textClass="pt-5" title={"12/12/2022"}></FiledCard>
-                    </Col>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half"
-                    >
-                      <UserOutlined />
-                      <FiledCard textClass="pt-5" title={"Ilango"}></FiledCard>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                }
+                {!connect &&
+                  <Button
+                    icon={<DotIcon className="pr-10" />}
+                    size={"large"}
+                    style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, color: "#667085" }}
+                  >
+                    Not Connected{connect}
 
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
-                    </Col>
-                    <Col sm={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className="text-normal"
+                  </Button>
+                }
+                <Row gutter={12} align={"middle"} className="mt-15">
 
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col sm={3}>
-                      <FullSignalIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Divider />
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
-                    </Col>
-                    <Col sm={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className='text-bold font-bold'
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col sm={3}>
-                      <FullSignalIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-
-            </Card>
-          </Col>
-          <Col sm={12}>
-            <Card
-              bordered={false}
-              style={{
-                width: "100%",
-              }}
-              className="cards-container"
-            >
-              <Row className=" selected-card b-none align-items-center">
-                <Col sm={15}>
-                  {connect &&
-                    <Button
-                      icon={<DotSuccessIcon className="pr-10" />}
-                      size={"large"}
-                      style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, borderColor: "#039855", color: "#039855", background: "#ECFDF3" }}
-                    >
-                      Connected{connect}
-
-                    </Button>
-                  }
-                  {!connect &&
-                    <Button
-                      icon={<DotIcon className="pr-10" />}
-                      size={"large"}
-                      style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, color: "#667085" }}
-                    >
-                      Not Connected{connect}
-
-                    </Button>
-                  }
-                  <Row gutter={12} align={"middle"} className="mt-15">
-
-                    <Col sm={24}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                      ></FiledCard>
-                    </Col>
-                    <Col sm={24} className="mt-5">
-                      <FiledCard title={"Customer: 3M Company - 1102"} ></FiledCard>
-                      <div className="d-flex flex-direction-row flex-gap-1 mt-5">
-                        <FiledCard title={"Carrier Instruction"} ></FiledCard>
-                        <QuestionIcon />
-                      </div>
-                    </Col>
-
-                  </Row>
-                </Col>
-                <Col sm={9} className="text-right ">
-                  {connect &&
-                    <div className="d-flex flex-gap-1 ">
-                      <Button
-                        type="primary"
-                        size={"large"}
-                        style={{ fontSize: 14, fontWeight: 500, background: '#D92D20' }}
-                        onClick={disoCnnectHandler}
-                      >
-                        Disconnect
-                      </Button>
-                      <Button
-                        type="primary"
-                        size={"large"}
-                        style={{ fontSize: 14, fontWeight: 500, background: '#fff', color: "#000" }}
-                      >
-                        Debug
-                      </Button>
+                  <Col sm={24}>
+                    <FiledCard
+                      title={"CENTRAL FREIGHT LINER (CENF)"}
+                      labelClass="title-override"
+                    ></FiledCard>
+                  </Col>
+                  <Col sm={24} className="mt-5">
+                    <FiledCard title={"Customer: 3M Company - 1102"} ></FiledCard>
+                    <div className="d-flex flex-direction-row flex-gap-1 mt-5">
+                      <FiledCard title={"Carrier Instruction"} ></FiledCard>
+                      <QuestionIcon />
                     </div>
-                  }
-                  {!connect &&
-                    <div style={{ textAlign: "right" }}>
-                      <Button
-                        type="primary"
-                        size={"large"}
-                        style={{ fontSize: 14, fontWeight: 500 }}
-                        onClick={connectHandler}
-                        className=" align-center"
-                      >
-                        Connected
-                      </Button>
-                    </div>
-                  }
+                  </Col>
 
-                </Col>
+                </Row>
+              </Col>
+              <Col sm={9} className="text-right ">
+                {connect &&
+                  <div className="d-flex flex-gap-1 ">
+                    <Button
+                      type="primary"
+                      size={"large"}
+                      style={{ fontSize: 14, fontWeight: 500, background: '#D92D20' }}
+                      onClick={disoCnnectHandler}
+                    >
+                      Disconnect
+                    </Button>
+                    <Button
+                      type="primary"
+                      size={"large"}
+                      style={{ fontSize: 14, fontWeight: 500, background: '#fff', color: "#000" }}
+                    >
+                      Debug
+                    </Button>
+                  </div>
+                }
+                {!connect &&
+                  <div style={{ textAlign: "right" }}>
+                    <Button
+                      type="primary"
+                      size={"large"}
+                      style={{ fontSize: 14, fontWeight: 500 }}
+                      onClick={connectHandler}
+                      className=" align-center"
+                    >
+                      Connected
+                    </Button>
+                  </div>
+                }
+
+              </Col>
 
 
-                {/* <Col sm={24} className="mb-15"> */}
-                {/* <div className="d-flex flex-gap-half align-items-center justify-content-around w-30 b-1" style={{borderRadius:20}}> 
+              {/* <Col sm={24} className="mb-15"> */}
+              {/* <div className="d-flex flex-gap-half align-items-center justify-content-around w-30 b-1" style={{borderRadius:20}}> 
                 <div> . </div>
                 <div> Not Connected</div>
               </div> */}
 
 
-                {/* </Col> */}
-                <Col sm={24}>
+              {/* </Col> */}
+              <Col sm={24}>
 
 
-                </Col>
-              </Row>
-              <Row className="mt-15">
-                <Col sm={24}>
-                  <Tabs defaultActiveKey="1" items={tabsItem} onChange={() => { }} className="tabs-info" />
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-        </Row >
-      </div >
+              </Col>
+            </Row>
+            <Row className="mt-15">
+              <Col sm={24}>
+                <Tabs defaultActiveKey="1" items={tabsItem} onChange={() => { }} className="tabs-info" />
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row >
     </div >
 
 

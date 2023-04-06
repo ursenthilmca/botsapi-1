@@ -1,0 +1,59 @@
+.api-mapping {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 105px);
+  .text-large {
+    font-size: 1em;
+  }
+  .text-normal {
+    font-size: 0.875em;
+  }
+  .text-small {
+    font-size: 0.75em;
+  }
+
+  .font-bold {
+    font-weight: 600;
+  }
+  .font-normal {
+    font-weight: 500;
+  }
+  .font-light {
+    font-weight: 400;
+  }
+
+  h6 {
+    font-size: 1.1em;
+  }
+
+  .selected-card {
+    background: #f2f4f7;
+    border-radius: 8px;
+
+    padding: 10px;
+    .inside-wrapper {
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  }
+
+  .selected-card {
+    .field-card-title {
+      font-size: 1em;
+    }
+  }
+  .text-underline {
+    text-decoration: underline;
+  }
+
+  .method-list {
+    .ant-card-body {
+      padding: 10px 20px;
+    }
+  }
+}
+
+.api-mapping::-webkit-scrollbar {
+  display: none !important;
+}
