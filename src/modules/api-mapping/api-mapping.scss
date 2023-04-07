@@ -11,6 +11,9 @@
   .text-small {
     font-size: 0.75em;
   }
+  .text-20 {
+    font-size: 1.125em;
+  }
 
   .font-bold {
     font-weight: 600;
@@ -52,8 +55,65 @@
       padding: 10px 20px;
     }
   }
+  .tabs-info {
+    .ant-tabs-tab {
+      .active {
+        display: none;
+      }
+      .non-active {
+        display: block;
+      }
+    }
+    .ant-tabs-tab.ant-tabs-tab-active {
+      .active {
+        display: block;
+      }
+      .non-active {
+        display: none;
+      }
+    }
+  }
+  .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+    border-color: #05987b;
+    background-color: #05987b;
+  }
+}
+.map-request-model .ant-modal-content .ant-modal-footer,
+.api-document-modal .ant-modal-content .ant-modal-footer {
+  display: none !important;
 }
 
 .api-mapping::-webkit-scrollbar {
   display: none !important;
+}
+
+.sub-tab {
+  .ant-tabs-top .ant-tabs-nav::before {
+    border: none;
+  }
+  .ant-tabs-ink-bar {
+    display: none;
+  }
+
+  .ant-tabs-nav::before {
+    bottom: none;
+    border-bottom: none;
+  }
+  .ant-tabs-tab.ant-tabs-tab-active {
+    background: #e6f6f3;
+    padding: 10px 24px 10px 24px;
+    border-radius: 8px;
+
+    .ant-tabs-tab-btn {
+      color: #035c4a !important;
+    }
+  }
+}
+
+.ant-drawer {
+  .new-api-carrier {
+    .ant-drawer-header-title {
+      flex-direction: row-reverse;
+    }
+  }
 }
