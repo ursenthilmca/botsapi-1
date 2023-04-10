@@ -10,8 +10,8 @@ import { CSSTransition } from 'react-transition-group';
 
 import "./header.scss";
 
-function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+function Header(props) {
+  const [showMenu, setShowMenu] = useState(true);
   const nodeRef = useRef(null);
 
   const items = [
@@ -24,7 +24,7 @@ function Header() {
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
       <Col span={8}>
         <div className="hamburge-menu">
-          <HamburgerMenuIcon onClick={() => setShowMenu(true)} />
+          <HamburgerMenuIcon onClick={() => props.updateMenu()} />
           <div className="app-title">API Mapping</div>
         </div>
         {/* <CSSTransition
@@ -36,11 +36,11 @@ function Header() {
           onEnter={() => setShowMenu(false)}
           onExited={() => setShowMenu(true)}
         > */}
-        {showMenu === true && (
+        {/* {showMenu === true && (
           <div className="menu-container">
             <MenuComponent closeMenuAction={() => setShowMenu(false)} />
           </div>
-        )}
+        )} */}
         {/* </CSSTransition> */}
       </Col>
       <Col span={8}>
