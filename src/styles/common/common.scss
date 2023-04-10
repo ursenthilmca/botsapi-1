@@ -270,3 +270,20 @@
 .border-rounded {
   border-radius: 50%;
 }
+
+.page-scroll{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100vh - 250px);
+  white-space: nowrap;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.ant-drawer {
+.ant-drawer-header-title {
+  flex-direction: row-reverse !important;
+}
+}

@@ -1,0 +1,35 @@
+.ant-drawer-title{
+    width: fit-content;
+    // background: aquamarine;
+    padding: 5px;
+    display: inline;
+}
+
+.b-1{
+    border-color: #D0D5DD;
+}
+
+.ant-menu-inline.ant-menu-root {
+    .ant-menu-submenu-title {
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    justify-content: space-between;
+
+    .ant-menu-title-content{
+        background-color: #E6F6F3;
+        display: inline;
+        width: fit-content !important;
+        padding: 0px 55px 0 15px;
+        margin: 5px;
+        border-radius: 50px;
+
+    }
+
+}
+}
+
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,
+.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
+    background-color:transparent !important;
+}
+

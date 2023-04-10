@@ -4,12 +4,14 @@ import PrimaryLabel from "../../../../component/labels/primary-label";
 import { ReactComponent as EditIcon } from "../../../../assets/svg/PencilSimpleLine.svg";
 import SimpleTable from "../../../../component/Tables/Simple-table";
 import { ReactComponent as DeleteIcon } from "../../../../assets/svg/Trash-withoutOutline-red.svg";
+import EditMapping from "./edit-mapping";
 
 let MappingRequestTab = () => {
 
     const [open, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
     const [modalText, setModalText] = useState('Content of the modal');
+    const [editMapping, setEditMapping] = useState(false);
     const showModal = () => {
         setOpen(true);
     };
@@ -79,13 +81,19 @@ let MappingRequestTab = () => {
         },
 
     ];
+
+    const editMappingHandler = (data) => {
+        setEditMapping(data)
+
+    }
     return (
         <Fragment>
+            {editMapping && <EditMapping drawerStatus={editMapping} updateStatus={editMappingHandler} />}
             <Row className="mt-20" gutter={15}>
                 <Col sm={8} className="h-100">
                     <Card style={{ background: "#EAECF0" }}>
                         <PrimaryLabel normal={true} className="text-large font-normal ">Actions</PrimaryLabel>
-                        <Button icon={<EditIcon />} size={"large"} className="primary-btn d-flex flex-gap-half align-items-center justifiy-content-center mt-12 w-100">Edit Mapping</Button>
+                        <Button icon={<EditIcon />} size={"large"} className="primary-btn d-flex flex-gap-half align-items-center justifiy-content-center mt-12 w-100" onClick={() => setEditMapping(true)}>Edit Mapping</Button>
                         <Button size={"large"} className="light-btn  mt-12 w-100">Delete All Mapped Nodes</Button>
 
 

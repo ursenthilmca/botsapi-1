@@ -190,12 +190,12 @@ let ApiMapping = () => {
     };
 
     return (
-        <div className="api-mapping w-100 pb-5">
+        <div className="api-mapping w-100 ">
             {newApiCarrier && <NewApiCarrier drawerStatus={newApiCarrier} updateStatus={newApiCarrierHandler} />}
 
-            <Row gutter={12} className="align-items-center">
+            <Row gutter={12} className="align-items-center mb-15">
                 <Col sm={12}>
-                    <h6>Available Carrier</h6>
+                    <h6 className="my-0">Available Carrier</h6>
                 </Col>
                 <Col sm={12} className="text-right">
                     <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={() => SetNewApiCarrier(true)}>New API Carrier</Button>
@@ -252,29 +252,34 @@ let ApiMapping = () => {
                                     Method Type
                                 </span>
                             </Col>
-                            <Row gutter={12} className="method-list ">
-                                {list.map((item) => (
-                                    <Col sm={12} className="mt-15" key={item.key}>
-                                        <Card style={{ background: item.btnCheck ? "#05A787" : "#FFFFFF", color: item.btnCheck ? "#FFF" : "#05A787" }}>
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <span style={{ color: item.btnCheck ? "#fff" : "#101828", }} className="text-normal font-normal">
-                                                    {item.type}
-                                                </span>
-                                                <span>
+                            <div className="method-list-container page-scroll">
 
-                                                    {item.btnCheck && item.check && <CloudCheck />}
-                                                    {!item.btnCheck && !item.check && <Cloud />}
-                                                    {!item.btnCheck && item.check && <CheckCloud />}
-                                                </span>
+                                <Row gutter={12} className="method-list ">
+
+                                    {list.map((item) => (
+                                        <Col sm={12} className="mt-15" key={item.key}>
+                                            <Card style={{ background: item.btnCheck ? "#05A787" : "#FFFFFF", color: item.btnCheck ? "#FFF" : "#05A787" }}>
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <span style={{ color: item.btnCheck ? "#fff" : "#101828", }} className="text-normal font-normal">
+                                                        {item.type}
+                                                    </span>
+                                                    <span>
+
+                                                        {item.btnCheck && item.check && <CloudCheck />}
+                                                        {!item.btnCheck && !item.check && <Cloud />}
+                                                        {!item.btnCheck && item.check && <CheckCloud />}
+                                                    </span>
 
 
-                                            </div>
-                                        </Card>
+                                                </div>
+                                            </Card>
 
-                                    </Col>
-                                ))}
+                                        </Col>
+                                    ))}
 
-                            </Row>
+                                </Row>
+                            </div>
+
                         </Row>
                     </Card>
                 </Col>
@@ -301,8 +306,6 @@ let ApiMapping = () => {
 
                         <Row className="mt-15">
                             <Col sm={24}>
-                                {/* <Tabs defaultActiveKey="1" items={tabsItem} onChange={() => { }} className="tabs-info" /> */}
-
 
                                 <Tabs
                                     defaultActiveKey="1"

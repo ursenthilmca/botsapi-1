@@ -16,7 +16,7 @@ let Authentication = () => {
 
     return (
         <Fragment>
-            <Row gutter={25}>
+            <Row gutter={25} className="page-scroll">
                 <Col sm={12}>
                     <Row>
                         <Col sm={24}>
