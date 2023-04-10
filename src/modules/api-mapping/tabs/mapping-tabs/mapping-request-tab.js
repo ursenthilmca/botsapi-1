@@ -2,7 +2,7 @@ import { Row, Col, Table, Card, Button, Modal } from "antd";
 import React, { Fragment, useState } from "react";
 import PrimaryLabel from "../../../../component/labels/primary-label";
 import { ReactComponent as EditIcon } from "../../../../assets/svg/PencilSimpleLine.svg";
-import SimpleTable from "../../../../component/Tables/Simple-table";
+import SimpleTable from "../../../../component/Tables/simple-table";
 import { ReactComponent as DeleteIcon } from "../../../../assets/svg/Trash-withoutOutline-red.svg";
 import EditMapping from "./edit-mapping";
 

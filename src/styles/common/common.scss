@@ -1,3 +1,6 @@
+// ::-webkit-scrollbar {
+//   display: none;
+// }
 .field-card-container {
   margin-top: -5px;
   .field-card-title {
@@ -238,11 +241,23 @@
 
   white-space: nowrap;
   overflow-y: scroll;
+  scrollbar-width: 15px !important;
+
+  ::-webkit-scrollbar {
+    display: block;
+  }
 }
 
 /* TEXT INFORMATION */
+.mx-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 .text-right {
   text-align: right;
+}
+.text-center{
+  text-align: center;
 }
 
 .float-right {
@@ -272,18 +287,51 @@
 }
 
 .page-scroll{
-  overflow-x: hidden;
   overflow-y: scroll;
   height: calc(100vh - 250px);
   white-space: nowrap;
-
+  scrollbar-width: thin;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
+
 .ant-drawer {
-.ant-drawer-header-title {
-  flex-direction: row-reverse !important;
+  &-header{
+    color:#fff;
+    background-color: #1D2939;
+  
+
+    &-title {
+      flex-direction: row-reverse !important;
+      color:#fff;
+
+      .ant-drawer-title{
+        color:#fff;
+
+
+      }
+      .ant-drawer-close{
+        color:#fff;
+
+        &:hover{
+          color:#b4b2b2
+        }
+      }
+    }
+  }
 }
+
+.progress-bar{
+  position: relative ;
+  margin: auto !important;
+
+  .percentage-value{
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #101828;
+
+  }
 }

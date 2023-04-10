@@ -23,7 +23,7 @@ let AddCustomer = (props) => {
         <Drawer
             title="Add Customer"
             placement={placement}
-            closable={false}
+            closable={true}
             onClose={onClose}
             open={open}
             key={placement}

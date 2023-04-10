@@ -32,8 +32,8 @@ function CustomerSetup() {
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false, {});
 
-  let addCustomerHandler = () => {
-    setAddCustomer(true)
+  let addCustomerHandler = (data) => {
+    setAddCustomer(data)
   }
 
   const connectHandler = () => {
@@ -91,7 +91,7 @@ function CustomerSetup() {
                 </span>
               </Col>
               <Col sm={12} className="d-flex justify-content-end ">
-                <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={addCustomerHandler}>
+                <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={() => setAddCustomer(true)}>
                   Add Customer
                 </Button>
               </Col>

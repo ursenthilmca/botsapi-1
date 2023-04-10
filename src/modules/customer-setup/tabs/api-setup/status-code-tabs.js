@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { ReactComponent as EditIcon } from "../../../../assets/svg/edit.svg";
 import { ReactComponent as DeleteIcon } from "../../../../assets/svg/delete.svg";
-import SimpleTable from "../../../../component/Tables/Simple-table";
+import SimpleTable from "../../../../component/Tables/simple-table";
 
 /* table data */
 const columns = [

@@ -46,6 +46,7 @@ let EditMapping = (props) => {
                 open={open}
                 style={{ width: "1000px" }}
                 key={placement}
+                className="edit-mapping"
 
             >
                 <div className='' >
