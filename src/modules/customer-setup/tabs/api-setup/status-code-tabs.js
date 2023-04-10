@@ -82,12 +82,12 @@ const data = [
 let StatusCodeTabs = () => {
     return (
         <Fragment>
-            <Row gutter={12} className="mb-20 align-items-center" >
-                <Col sm={18}>
-                    <Input placeholder="Search here..." prefix={<SearchOutlined />} />
+            <Row gutter={12} className="mb-20 align-items-center p-0   w-100 " >
+                <Col sm={16}>
+                    <Input placeholder="Search here..." prefix={<SearchOutlined />} className="w-100" />
                 </Col>
-                <Col sm={6}>
-                    <Button icon={<PlusOutlined />} size={"large"} className="primary-btn">
+                <Col sm={4}>
+                    <Button icon={<PlusOutlined />} size={"large"} className="primary-btn ">
                         Add Mapping
                     </Button>
                 </Col>

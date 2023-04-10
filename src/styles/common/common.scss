@@ -1,6 +1,6 @@
-// ::-webkit-scrollbar {
-//   display: none;
-// }
+::-webkit-scrollbar {
+  display: none;
+}
 .field-card-container {
   margin-top: -5px;
   .field-card-title {
@@ -72,8 +72,8 @@
 
 .tabs-info {
   .ant-tabs-tab {
-    padding-left: 15px;
-    padding-right: 15px;
+    // padding-left: 15px;
+    // padding-right: 15px;
   }
   .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #101828 !important;
@@ -244,7 +244,7 @@
   scrollbar-width: 15px !important;
 
   ::-webkit-scrollbar {
-    display: block;
+    display: none;
   }
 }
 
