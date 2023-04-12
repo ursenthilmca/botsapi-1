@@ -25,19 +25,25 @@ import ApiTestTabs from "./tabs/api-setup/api-test-tabs";
 import PerformanceTabs from "./tabs/api-setup/performance-tabs";
 import StatusCodeTabs from "./tabs/api-setup/status-code-tabs";
 import AddCustomer from "./add-customer";
+<<<<<<< Updated upstream
 import CustomerDetails from "./customer-details";
+=======
+import AddCarrier from "./add-carrier";
+>>>>>>> Stashed changes
 
 
 
 function CustomerSetup(props) {
 
   const [connect, setConnect] = useState(false);
-  const [addCustomer, setAddCustomer] = useState(false, {});
-
-  let addCustomerHandler = (data) => {
-    setAddCustomer(data)
+  const [addCustomer, setAddCustomer] = useState(false);
+  const [addcarrier,setAddCarrier]=useState(false)
+  let addCustomerHandler = () => {
+    setAddCustomer(!addCustomer)
   }
-
+  let addCarrierHandler = () => {
+    setAddCarrier(!addcarrier)
+  }
   const connectHandler = () => {
     setConnect(true);
   }
@@ -75,6 +81,7 @@ function CustomerSetup(props) {
     <div className="add-customer">
 
       {addCustomer && <AddCustomer drawerStatus={addCustomer} updateStatus={addCustomerHandler} />}
+      {addcarrier && <AddCarrier drawerStatus={addcarrier} updateStatus={addCarrierHandler} />}
 
 
       <Row gutter={{ lg: 12, xs: 4 }} className="customer-setup justify-content-center
@@ -166,6 +173,36 @@ function CustomerSetup(props) {
                 </Row>
               </Popover>
 
+<<<<<<< Updated upstream
+=======
+                    </Col>
+                    <Col sm={2}>
+                      
+                    </Col>
+                    <Col sm={11}>
+                      <div >
+                        <FiledCard title={"Created By "}>
+                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                        </FiledCard>
+                      </div>
+                      <div className="mt-15">
+                        <FiledCard title={"Total Connection "}>
+                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                        </FiledCard>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className="mt-15">
+                    <Col
+                      sm={24}
+                      className="d-flex justify-content-center pr-15 align-items-center"
+                    >
+                      <RightArrowIcon />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+>>>>>>> Stashed changes
 
               <Row className="mt-15 un-selected-card">
                 <Col sm={24}>
@@ -190,7 +227,7 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                     <Col sm={2}>
-                      <VerticalLine />
+                      
                     </Col>
                     <Col sm={11}>
                       <div>
@@ -239,7 +276,7 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                     <Col sm={2}>
-                      <VerticalLine />
+                      
                     </Col>
                     <Col sm={11}>
                       <div>
@@ -278,17 +315,26 @@ function CustomerSetup(props) {
             className="p-0 cards-container"
           >
             <Row align={"middle"}>
+<<<<<<< Updated upstream
               <Col sm={16} >
+=======
+              <Col sm={18} >
+>>>>>>> Stashed changes
                 <span className="title">
-                  Connected Carrier (3)
+                  Connected Carrier(3)
                 </span>
 
               </Col>
+<<<<<<< Updated upstream
               <Col sm={8} className="d-flex justify-content-end ">
+=======
+              <Col sm={6} className="d-flex justify-content-end ">
+>>>>>>> Stashed changes
                 <Button
                   icon={<PlusOutlined />}
                   size={"large"}
                   className="primary-btn"
+                  onClick={addCarrierHandler}
                 >
                   Add Carrier
                 </Button>

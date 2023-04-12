@@ -1,8 +1,10 @@
-import { Drawer, Row, Col, Input } from 'antd'
+import { Drawer, Row, Col, Input ,Button} from 'antd'
 import "./customer-setup.scss";
 import "./add-customer.scss";
-
+import {ReactComponent as RightArrowIcon } from "./../../assets/svg/right-arrow.svg";
 import React, { useState } from "react";
+import { Footer } from 'antd/es/layout/layout';
+
 
 let AddCustomer = (props) => {
     const [open, setOpen] = useState(props.drawerStatus);
@@ -20,7 +22,7 @@ let AddCustomer = (props) => {
     };
 
     return (
-        <Drawer
+        <Drawer className='widths'
             title="Add Customer"
             placement={placement}
             closable={true}
@@ -73,6 +75,21 @@ let AddCustomer = (props) => {
                         <Input placeholder='Enter Pickup Zipcode' />
                     </Col>
                 </Row>
+                <Footer style={{ 
+        borderTop: '1px solid #e8e8e8',
+        position: 'fixed',
+        left: 0,
+        bottom: 0,
+        width: '500px',
+        backgroundColor: 'white',
+       }} ><Row>
+       <Col sm={19}></Col>
+                  <Col sm={5}> <Button  size={"large"} className="primary-btn " >
+                         Add Customer&nbsp;<RightArrowIcon  width={12} height={12} />
+                   </Button>
+                   </Col> 
+                   </Row></Footer>
+            
             </div>
         </Drawer>
     )
