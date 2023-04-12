@@ -1,14 +1,17 @@
 .customer {
-  width: 500px !important;
+  width: 500px ;
   color: black;
   background-color: white;
   border-radius: 0 12px 12px 0;
 }
-.ant-drawer-content-wrapper {
-  width: 550px !important;
+.ant-drawer-content-wrapper .widths {
+  width: 500px ;
   border-radius: 0 12px 12px 0;
 }
 
 .ant-drawer .ant-drawer-header {
   border-bottom: 1px solid #d0d5dd;
+}
+.ant-input{
+  width: 91%;
 }

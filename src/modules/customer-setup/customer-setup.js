@@ -28,6 +28,7 @@ import AddCustomer from "./add-customer";
 import CustomerDetails from "./customer-details";
 import { MenuAction } from "../menu/menu-action";
 import { useSelector } from "react-redux";
+import AddCarrier from "./add-carrier";
 
 
 
@@ -35,12 +36,14 @@ function CustomerSetup(props) {
   const show = useSelector(state => state.menubar.menuVisible);
 
   const [connect, setConnect] = useState(false);
-  const [addCustomer, setAddCustomer] = useState(false, {});
-
-  let addCustomerHandler = (data) => {
-    setAddCustomer(data)
+  const [addCustomer, setAddCustomer] = useState(false);
+  const [addcarrier, setAddCarrier] = useState(false)
+  let addCustomerHandler = () => {
+    setAddCustomer(!addCustomer)
   }
-
+  let addCarrierHandler = () => {
+    setAddCarrier(!addcarrier)
+  }
   const connectHandler = () => {
     setConnect(true);
   }
@@ -78,6 +81,7 @@ function CustomerSetup(props) {
     <div className="add-customer">
 
       {addCustomer && <AddCustomer drawerStatus={addCustomer} updateStatus={addCustomerHandler} />}
+      {addcarrier && <AddCarrier drawerStatus={addcarrier} updateStatus={addCarrierHandler} />}
 
 
       <Row gutter={{ lg: 12, xs: 4 }} className="customer-setup justify-content-center
@@ -191,7 +195,7 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                     <Col sm={2}>
-                      <VerticalLine />
+
                     </Col>
                     <Col sm={11}>
                       <div>
@@ -240,7 +244,7 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                     <Col sm={2}>
-                      <VerticalLine />
+
                     </Col>
                     <Col sm={11}>
                       <div>
@@ -279,17 +283,18 @@ function CustomerSetup(props) {
             className="p-0 cards-container"
           >
             <Row align={"middle"}>
-              <Col sm={16} >
+              <Col sm={18} >
                 <span className="title">
-                  Connected Carrier (3)
+                  Connected Carrier(3)
                 </span>
 
               </Col>
-              <Col sm={8} className="d-flex justify-content-end ">
+              <Col sm={6} className="d-flex justify-content-end ">
                 <Button
                   icon={<PlusOutlined />}
                   size={"large"}
                   className="primary-btn"
+                  onClick={addCarrierHandler}
                 >
                   Add Carrier
                 </Button>
