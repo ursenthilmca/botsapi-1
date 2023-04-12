@@ -26,10 +26,13 @@ import PerformanceTabs from "./tabs/api-setup/performance-tabs";
 import StatusCodeTabs from "./tabs/api-setup/status-code-tabs";
 import AddCustomer from "./add-customer";
 import CustomerDetails from "./customer-details";
+import { MenuAction } from "../menu/menu-action";
+import { useSelector } from "react-redux";
 
 
 
 function CustomerSetup(props) {
+  const show = useSelector(state => state.menubar.menuVisible);
 
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false, {});
@@ -80,7 +83,7 @@ function CustomerSetup(props) {
       <Row gutter={{ lg: 12, xs: 4 }} className="customer-setup justify-content-center
 
 ">
-        <Col sm={24} lg={7} className="custmer-card">
+        <Col sm={24} lg={show === true ? 7 : 6} className="custmer-card">
           <Card
             bordered={false}
             style={{
@@ -113,7 +116,7 @@ function CustomerSetup(props) {
                 style={{ width: "800px" }}
               >
 
-                <Row className="mt-15 selected-card">
+                <Row className="mt-15 un-selected-card selected-card">
                   <Col sm={24}>
                     <Row>
                       <Col sm={12} className="text-normal font-normal">
@@ -125,7 +128,7 @@ function CustomerSetup(props) {
                     </Row>
 
                     <Row className=" inside-wrapper mt-5">
-                      <Col sm={11} >
+                      <Col sm={12} >
                         <div>
                           <FiledCard title={"Created Date"}>
                             <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
@@ -138,10 +141,8 @@ function CustomerSetup(props) {
                         </div>
 
                       </Col>
-                      <Col sm={2}>
-                        <VerticalLine />
-                      </Col>
-                      <Col sm={11}>
+
+                      <Col sm={12}>
                         <div >
                           <FiledCard title={"Created By "}>
                             <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
@@ -269,7 +270,7 @@ function CustomerSetup(props) {
 
           </Card>
         </Col>
-        <Col sm={24} lg={8} className="carrier-card">
+        <Col sm={24} lg={show === true ? 8 : 7} className="carrier-card">
           <Card
             bordered={false}
             style={{
@@ -394,7 +395,7 @@ function CustomerSetup(props) {
 
           </Card>
         </Col>
-        <Col sm={19} lg={9}>
+        <Col sm={19} lg={show === true ? 9 : 11}>
           <Card
             bordered={false}
             style={{

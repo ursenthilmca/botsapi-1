@@ -5,13 +5,22 @@ import MenuComponent from "../menu/menu";
 import { ReactComponent as LogoIcon } from "./../../assets/svg/logo.svg";
 import { UserOutlined, DownOutlined } from "@ant-design/icons";
 import { CSSTransition } from 'react-transition-group';
+import { MenuActions } from "../menu/menu-action";
+import { useSelector, useDispatch } from "react-redux";
 // import { Transition } from "react-transition-group";
 
 
 import "./header.scss";
 
 function Header(props) {
-  const [showMenu, setShowMenu] = useState(true);
+  const dispacth = useDispatch();
+  const show = useSelector(state => state.menubar.menuVisible);
+
+  const showMenuHandler = () => {
+    dispacth(MenuActions.showMenu());
+  }
+
+
   const nodeRef = useRef(null);
 
   const items = [
@@ -24,8 +33,11 @@ function Header(props) {
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
       <Col span={8}>
         <div className="hamburge-menu">
-          <HamburgerMenuIcon onClick={() => props.updateMenu()} style={{ cursor: "pointer" }} />
+          {
+            !show && <HamburgerMenuIcon onClick={showMenuHandler} style={{ cursor: "pointer" }} />
+          }
           <div className="app-title">API Mapping</div>
+
         </div>
         {/* <CSSTransition
           in={showMenu}
