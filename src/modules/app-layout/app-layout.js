@@ -6,22 +6,22 @@ import { Col, Row } from "antd";
 import MenuComponent from "../menu/menu";
 
 const AppLayout = () => {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <Fragment>
       <div className="main-container">
         <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }}>
-          {showMenu === true &&(
+          {showMenu === true && (
             <Col sm={5}>
-          <div className="menu-container">
-            <MenuComponent closeMenuAction={() => setShowMenu(false)} />
-          </div>
-          </Col>
+              <div className="menu-container">
+                <MenuComponent closeMenuAction={() => setShowMenu(false)} />
+              </div>
+            </Col>
           )}
-          
+
           <Col sm={showMenu === true ? 19 : 24}>
-            <Header updateMenu = {()=>setShowMenu(!showMenu)} />
+            <Header updateMenu={() => setShowMenu(!showMenu)} />
             <div className="pt-30">
               <Outlet />
             </div>

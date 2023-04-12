@@ -24,7 +24,7 @@ function Header(props) {
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
       <Col span={8}>
         <div className="hamburge-menu">
-          <HamburgerMenuIcon onClick={() => props.updateMenu()} />
+          <HamburgerMenuIcon onClick={() => props.updateMenu()} style={{ cursor: "pointer" }} />
           <div className="app-title">API Mapping</div>
         </div>
         {/* <CSSTransition
@@ -35,8 +35,7 @@ function Header(props) {
           unmountOnExit
           onEnter={() => setShowMenu(false)}
           onExited={() => setShowMenu(true)}
-        > */}
-        {/* {showMenu === true && (
+        > {showMenu === true && (
           <div className="menu-container">
             <MenuComponent closeMenuAction={() => setShowMenu(false)} />
           </div>

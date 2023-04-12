@@ -15,9 +15,10 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+
 const items = [
   getItem(
-    <div style={{ cursor: "pointer", width: 32 }}>
+    <div style={{ cursor: "pointer", width: 32, display: "inline-block" }}>
       <CloseIcon />
     </div>,
     "close"
@@ -48,6 +49,7 @@ const items = [
   ]),
 ];
 function MenuComponent(props) {
+
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -59,6 +61,7 @@ function MenuComponent(props) {
         className="menu-items"
         // defaultSelectedKeys={['1']}
         defaultOpenKeys={['api']}
+        closable={true}
         mode="inline"
         theme="light"
         inlineCollapsed={false}

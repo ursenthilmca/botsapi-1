@@ -270,7 +270,9 @@
 .text-danger {
   color: #d92d20;
 }
-
+.text-24{
+  font-size: 1.1rem;
+}
 .bg-danger {
   background-color: #fee4e2;
 }
@@ -333,5 +335,12 @@
     transform: translate(-50%, -50%);
     color: #101828;
 
+  }
+}
+.ant-popover-content{
+  .ant-popover-title{
+    padding: 8px 0;
+    border-bottom: 1px solid #d3d5db;
+  
   }
 }

@@ -1,4 +1,4 @@
-import { Button, Card, Col, Divider, Input, Row, Tabs } from "antd";
+import { Button, Card, Col, Divider, Input, Row, Tabs, Popover } from "antd";
 import React, { useState } from "react";
 import {
   PlusOutlined,
@@ -6,6 +6,7 @@ import {
   AppstoreOutlined,
   CalendarOutlined,
   UserOutlined,
+  CloseOutlined
 } from "@ant-design/icons";
 import "./customer-setup.scss";
 import FiledCard from "../../component/close-icon/cards/fields-card";
@@ -24,10 +25,11 @@ import ApiTestTabs from "./tabs/api-setup/api-test-tabs";
 import PerformanceTabs from "./tabs/api-setup/performance-tabs";
 import StatusCodeTabs from "./tabs/api-setup/status-code-tabs";
 import AddCustomer from "./add-customer";
+import CustomerDetails from "./customer-details";
 
 
 
-function CustomerSetup() {
+function CustomerSetup(props) {
 
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false, {});
@@ -75,8 +77,10 @@ function CustomerSetup() {
       {addCustomer && <AddCustomer drawerStatus={addCustomer} updateStatus={addCustomerHandler} />}
 
 
-      <Row gutter={12} className="customer-setup ">
-        <Col sm={6}>
+      <Row gutter={{ lg: 12, xs: 4 }} className="customer-setup justify-content-center
+
+">
+        <Col sm={24} lg={7} className="custmer-card">
           <Card
             bordered={false}
             style={{
@@ -84,13 +88,13 @@ function CustomerSetup() {
             }}
             className="p-0 cards-container"
           >
-            <Row align={"middle"}>
-              <Col sm={12} >
+            <Row align={"middle"} className="justify-content-between">
+              <Col sm={10} >
                 <span className="title">
                   Customers
                 </span>
               </Col>
-              <Col sm={12} className="d-flex justify-content-end ">
+              <Col sm={14} className="text-right">
                 <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={() => setAddCustomer(true)}>
                   Add Customer
                 </Button>
@@ -102,57 +106,66 @@ function CustomerSetup() {
               </Col>
             </Row>
             <div className="page-scroll mt-15 ">
-              <Row className="mt-15 selected-card">
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">
-                      3M Company
-                    </Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
-                    </Col>
-                  </Row>
+              <Popover closable={true}
+                content={CustomerDetails} placement="right"
+                title={<div className="d-flex justify-content-between">
+                  Customer Detail < CloseOutlined style={{ cursor: "pointer" }} /></div>}
+                style={{ width: "800px" }}
+              >
 
-                  <Row className=" inside-wrapper mt-5">
-                    <Col sm={11} >
-                      <div>
-                        <FiledCard title={"Created Date"}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Transation"} >
-                          <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                        </FiledCard>
-                      </div>
+                <Row className="mt-15 selected-card">
+                  <Col sm={24}>
+                    <Row>
+                      <Col sm={12} className="text-normal font-normal">
+                        3M Company
+                      </Col>
+                      <Col sm={12} className="d-flex justify-content-end">
+                        <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                      </Col>
+                    </Row>
 
-                    </Col>
-                    <Col sm={2}>
-                      <VerticalLine />
-                    </Col>
-                    <Col sm={11}>
-                      <div >
-                        <FiledCard title={"Created By "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Connection "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <RightArrowIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                    <Row className=" inside-wrapper mt-5">
+                      <Col sm={11} >
+                        <div>
+                          <FiledCard title={"Created Date"}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Transation"} >
+                            <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+
+                      </Col>
+                      <Col sm={2}>
+                        <VerticalLine />
+                      </Col>
+                      <Col sm={11}>
+                        <div >
+                          <FiledCard title={"Created By "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Connection "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="mt-15">
+                      <Col
+                        sm={24}
+                        className="d-flex justify-content-center pr-15 align-items-center"
+                      >
+                        <RightArrowIcon />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Popover>
+
 
               <Row className="mt-15 un-selected-card">
                 <Col sm={24}>
@@ -256,7 +269,7 @@ function CustomerSetup() {
 
           </Card>
         </Col>
-        <Col sm={6}>
+        <Col sm={24} lg={8} className="carrier-card">
           <Card
             bordered={false}
             style={{
@@ -265,13 +278,13 @@ function CustomerSetup() {
             className="p-0 cards-container"
           >
             <Row align={"middle"}>
-              <Col sm={12} >
+              <Col sm={16} >
                 <span className="title">
                   Connected Carrier (3)
                 </span>
 
               </Col>
-              <Col sm={12} className="d-flex justify-content-end ">
+              <Col sm={8} className="d-flex justify-content-end ">
                 <Button
                   icon={<PlusOutlined />}
                   size={"large"}
@@ -381,7 +394,7 @@ function CustomerSetup() {
 
           </Card>
         </Col>
-        <Col sm={12}>
+        <Col sm={19} lg={9}>
           <Card
             bordered={false}
             style={{

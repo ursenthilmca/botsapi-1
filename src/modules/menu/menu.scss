@@ -12,6 +12,10 @@
     li:first-child{
         padding-top: 5px;
         cursor: auto;
+        display: inline;
+    }
+    li:first-child:hover{
+      background-color: transparent !important;
     }
     // li:first-child.ant-menu-item-selected,
     // li:first-child:hover {

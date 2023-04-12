@@ -1,6 +1,12 @@
 
 .customer-setup {
  
+  // @media  (max-width:300px){
+    .custmer-card{
+      // min-width: 300px;
+    }
+    
+  // }
   
   .cards-container {
     .ant-card-body {
@@ -143,6 +149,10 @@
     font-size: 1.05em;
     transform: translateY(-50%);
   }
+}
+
+.ant-popover {
+  width: 700px;
 }
 
 
