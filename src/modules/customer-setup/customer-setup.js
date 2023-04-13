@@ -116,12 +116,6 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15 ">
-<<<<<<< HEAD
-             
-=======
->>>>>>> e63602a216da12a712559aa20dbb593466e29333
-
-
               <Row className={open ? "mt-10 un-selected-card selected-card" : "mt-10 un-selected-card "}>
                 <Col sm={24}>
                   <Row>
@@ -164,8 +158,7 @@ function CustomerSetup(props) {
                   <Row className="mt-15">
                     <Col
                       sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
+                      className="d-flex justify-content-center pr-15 align-items-center">
                       <Popover closable={true}
                         content={CustomerDetails} placement="right"
                         trigger="click"
@@ -175,21 +168,20 @@ function CustomerSetup(props) {
                         open={open}
                         className="popovers"
                         onOpenChange={handleOpenChange}
-                      >
-<<<<<<< HEAD
-                        
-  
-                        <Popover closable={true} placement="right" title={<div className="d-flex justify-content-between headers  ">
-                  Customer Detail </div> }  content={CustomerDetails} trigger="click" style={{ width: "800px" }}>
+                      />
+
+
+                      <Popover closable={true} placement="right" title={<div className="d-flex justify-content-between headers  ">
+                        Customer Detail </div>} content={CustomerDetails} trigger="click" style={{ width: "800px" }}>
                         <Button>
-                        <RightArrowIcon />
+                          <RightArrowIcon />
                         </Button>
-                        </Popover>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-            
+                      </Popover>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+
 
 
               <Row className="mt-15 un-selected-card">
@@ -198,22 +190,6 @@ function CustomerSetup(props) {
                     <Col sm={12} className="text-normal font-normal">3M Company</Col>
                     <Col sm={12} className="d-flex justify-content-end">
                       <FiledCard title={"Code:1102"}></FiledCard>
-=======
-                        <RightArrowIcon style={{ cursor: "pointer" }} />
-                      </Popover>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row className={open ? "mt-15 un-selected-card selected-card" : "mt-15 un-selected-card "}>
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">
-                      3M Company
-                    </Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
->>>>>>> e63602a216da12a712559aa20dbb593466e29333
                     </Col>
                   </Row>
 
@@ -462,7 +438,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
-              height:"100%"
+              height: "100%"
             }}
             className="cards-container"
           >
