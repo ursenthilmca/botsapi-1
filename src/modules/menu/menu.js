@@ -4,6 +4,8 @@ import { Button, Menu } from "antd";
 import { useState } from "react";
 import "./menu.scss";
 import CloseIcon from "../../component/close-icon/close-icon";
+import { MenuActions } from "../menu/menu-action";
+import { useDispatch } from "react-redux";
 
 
 function getItem(label, key, icon, children, type) {
@@ -41,7 +43,7 @@ const items = [
   getItem("EDI", "edi", "", [
 
   ]),
-  getItem("MAPPING", "mapping", "", [
+  getItem("MAPPING", "mapping1", "", [
 
   ]),
   getItem("EDI SOURCE", "edi-source", "", [
@@ -49,6 +51,11 @@ const items = [
   ]),
 ];
 function MenuComponent(props) {
+  const dispacth = useDispatch();
+
+  const hideMenuHandler = () => {
+    dispacth(MenuActions.hideMenu());
+  }
 
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
@@ -61,14 +68,13 @@ function MenuComponent(props) {
         className="menu-items"
         // defaultSelectedKeys={['1']}
         defaultOpenKeys={['api']}
-        closable={true}
         mode="inline"
         theme="light"
         inlineCollapsed={false}
         items={items}
         onClick={({ key, keyPath, domEvent }) => {
           if (key === "close") {
-            props.closeMenuAction();
+            hideMenuHandler();
           }
         }}
       />
