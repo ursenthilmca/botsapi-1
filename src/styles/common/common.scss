@@ -216,16 +216,12 @@ html{
     color: #344054;
     &.form-input {
       padding: 4px 5px;
-<<<<<<< HEAD
-      font-weight: 400px;
-=======
       &::placeholder{
         font-size: 1.35rem;
         font-weight: 400;
         color: #c4c4c4;
 
       }
->>>>>>> e63602a216da12a712559aa20dbb593466e29333
     }
   }
 
