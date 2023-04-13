@@ -1,19 +1,15 @@
 
 .customer-setup {
- 
-  // @media  (max-width:300px){
-    .custmer-card{
-      // min-width: 300px;
-    }
-    
-  // }
-  
   .cards-container {
     .ant-card-body {
-      padding: 1em !important;
-
-      
-
+      padding: 1em !important;      
+      .un-selected-card {
+        .inside-wrapper {
+          background: #f2f4f7;
+          border-radius: 8px;
+          padding: 10px;
+        }
+      }
       .selected-card {
         background: #f2f4f7;
         border-radius: 8px;
@@ -23,15 +19,7 @@
         padding: 10px;
         .inside-wrapper {
           background: #f2f4f7;
-          padding: 10px;
-          border-radius: 8px;
-        }
-      }
-      .un-selected-card {
-        padding: 10px;
-        .inside-wrapper {
-          background: #ffffff;
-          padding: 10px;
+          // padding: 10px;
           border-radius: 8px;
         }
       }
@@ -39,7 +27,7 @@
       .title-override {
         font-style: normal;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 1rem;
         color: #1a1a1a;
       }
     }
@@ -49,7 +37,7 @@
   }
   .title {
     font-weight: 600;
-    font-size: 0.88em;
+    font-size: 1.25rem;
   }
   // .content {
   //   // font-weight: 700;
@@ -57,10 +45,10 @@
   // }
 
   .text-normal {
-    font-size: 0.875em;
+    font-size: 1rem;
   }
   .text-small {
-    font-size: 0.75em;
+    font-size: 0.75rem;
   }
 
   .font-bold {
@@ -73,10 +61,19 @@
     font-weight: 400;
   }
   .tabs-info{
-    height: calc(100vh - 250px);
+    // height: calc(100vh - 250px);
     // @extend .page-scroll !optional;
     overflow-x: hidden;
     
+  }
+  .api-set-tab{
+    height: calc(100vh - 350px);
+    overflow-y: scroll;
+
+  }
+  .status-code-tab{
+    height: calc(100vh - 250px);
+    overflow-y: scroll;
   }
 }
 
@@ -106,7 +103,7 @@
       }
 
       th {
-        font-size: 0.75em;
+        font-size: 0.825rem;
         font-weight: 500;
         color: #667085;
         padding: 15px 10px;
@@ -117,7 +114,7 @@
     tr {
       td {
         padding: 10px 10px;
-        font-size: 0.875em;
+        font-size: 0.875rem;
         color: #667085;
       }
       td:first-child {
@@ -146,13 +143,13 @@
     left: 10px;
     top: 55%;
     font-weight: 800;
-    font-size: 1.05em;
+    font-size: 1.05rem;
     transform: translateY(-50%);
   }
 }
 
 .ant-popover {
-  width: 700px;
+  width: 600px;
 }
 
 

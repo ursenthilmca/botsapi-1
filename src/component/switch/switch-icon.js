@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch } from "antd"
 
-function SwitchIcon({ onClick = () => { }, checked = false }) {
+function SwitchIcon({ onChange = () => { }, checked = false }) {
     return (
         <Switch
             style={{ background: "#05987B" }}
             className=""
-            onClick={onClick}
+            onChange={onChange}
             checked={checked}
         />
     );

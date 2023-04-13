@@ -26,7 +26,6 @@ import PerformanceTabs from "./tabs/api-setup/performance-tabs";
 import StatusCodeTabs from "./tabs/api-setup/status-code-tabs";
 import AddCustomer from "./add-customer";
 import CustomerDetails from "./customer-details";
-import { MenuAction } from "../menu/menu-action";
 import { useSelector } from "react-redux";
 import AddCarrier from "./add-carrier";
 
@@ -37,7 +36,8 @@ function CustomerSetup(props) {
 
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false);
-  const [addcarrier, setAddCarrier] = useState(false)
+  const [addcarrier, setAddCarrier] = useState(false);
+  const [open, setOpen] = useState(false)
   let addCustomerHandler = () => {
     setAddCustomer(!addCustomer)
   }
@@ -46,6 +46,9 @@ function CustomerSetup(props) {
   }
   const connectHandler = () => {
     setConnect(true);
+  }
+  const handleOpenChange = () => {
+    setOpen(true);
   }
 
   const disoCnnectHandler = () => {
@@ -87,7 +90,7 @@ function CustomerSetup(props) {
       <Row gutter={{ lg: 12, xs: 4 }} className="customer-setup justify-content-center
 
 ">
-        <Col sm={24} lg={show === true ? 7 : 6} className="custmer-card">
+        <Col sm={24} lg={show === true ? 7 : 6} className="custmer-card ">
           <Card
             bordered={false}
             style={{
@@ -95,13 +98,13 @@ function CustomerSetup(props) {
             }}
             className="p-0 cards-container"
           >
-            <Row align={"middle"} className="justify-content-between">
-              <Col sm={10} >
+            <Row gutter={{ xl: 12, lg: 5 }} align={"middle"} className="justify-content-between">
+              <Col xl={10} >
                 <span className="title">
                   Customers
                 </span>
               </Col>
-              <Col sm={14} className="text-right">
+              <Col xl={14} className="text-right">
                 <Button icon={<PlusOutlined />} size={"large"} className="primary-btn" onClick={() => setAddCustomer(true)}>
                   Add Customer
                 </Button>
@@ -113,92 +116,96 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15 ">
-              <Popover closable={true}
-                content={CustomerDetails} placement="right"
-                title={<div className="d-flex justify-content-between">
-                  Customer Detail < CloseOutlined style={{ cursor: "pointer" }} /></div>}
-                style={{ width: "800px" }}
-              >
 
-                <Row className="mt-15 un-selected-card selected-card">
-                  <Col sm={24}>
-                    <Row>
-                      <Col sm={12} className="text-normal font-normal">
-                        3M Company
-                      </Col>
-                      <Col sm={12} className="d-flex justify-content-end">
-                        <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
-                      </Col>
-                    </Row>
 
-                    <Row className=" inside-wrapper mt-5">
-                      <Col sm={12} >
-                        <div>
-                          <FiledCard title={"Created Date"}>
-                            <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                          </FiledCard>
-                        </div>
-                        <div className="mt-15">
-                          <FiledCard title={"Total Transation"} >
-                            <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                          </FiledCard>
-                        </div>
+              <Row className={open ? "mt-10 un-selected-card selected-card" : "mt-10 un-selected-card "}>
+                <Col sm={24}>
+                  <Row>
+                    <Col sm={12} className="text-normal font-normal">
+                      3M Company
+                    </Col>
+                    <Col sm={12} className="d-flex justify-content-end">
+                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                    </Col>
+                  </Row>
 
-                      </Col>
+                  <Row className=" inside-wrapper mt-5" gutter={12}>
+                    <Col lg={12} >
+                      <div>
+                        <FiledCard title={"Created Date"}>
+                          <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                        </FiledCard>
+                      </div>
+                      <div className="mt-15">
+                        <FiledCard title={"Total Transation"} >
+                          <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                        </FiledCard>
+                      </div>
 
-                      <Col sm={12}>
-                        <div >
-                          <FiledCard title={"Created By "}>
-                            <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                          </FiledCard>
-                        </div>
-                        <div className="mt-15">
-                          <FiledCard title={"Total Connection "}>
-                            <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                          </FiledCard>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row className="mt-15">
-                      <Col
-                        sm={24}
-                        className="d-flex justify-content-center pr-15 align-items-center"
+                    </Col>
+
+                    <Col lg={12}>
+                      <div >
+                        <FiledCard title={"Created By "}>
+                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                        </FiledCard>
+                      </div>
+                      <div className="mt-15">
+                        <FiledCard title={"Total Connection "}>
+                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                        </FiledCard>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className="mt-15">
+                    <Col
+                      sm={24}
+                      className="d-flex justify-content-center pr-15 align-items-center"
+                    >
+                      <Popover closable={true}
+                        content={CustomerDetails} placement="right"
+                        trigger="click"
+                        title={<div className="d-flex justify-content-between">
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                        style={{ width: "580px !important" }}
+                        open={open}
+                        className="popovers"
+                        onOpenChange={handleOpenChange}
                       >
-                        <RightArrowIcon />
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </Popover>
-
-
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
+                        <RightArrowIcon style={{ cursor: "pointer" }} />
+                      </Popover>
                     </Col>
                   </Row>
-                  <Row className="mt-5 inside-wrapper">
+                </Col>
+              </Row>
+              <Row className={open ? "mt-15 un-selected-card selected-card" : "mt-15 un-selected-card "}>
+                <Col sm={24}>
+                  <Row>
+                    <Col sm={12} className="text-normal font-normal">
+                      3M Company
+                    </Col>
+                    <Col sm={12} className="d-flex justify-content-end">
+                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                    </Col>
+                  </Row>
 
-                    <Col sm={11}>
+                  <Row className=" inside-wrapper mt-5">
+                    <Col sm={12} >
                       <div>
                         <FiledCard title={"Created Date"}>
                           <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
                         </FiledCard>
                       </div>
                       <div className="mt-15">
-                        <FiledCard title={"Total Transation"}>
+                        <FiledCard title={"Total Transation"} >
                           <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
                         </FiledCard>
                       </div>
-                    </Col>
-                    <Col sm={2}>
 
                     </Col>
-                    <Col sm={11}>
-                      <div>
+
+                    <Col sm={12}>
+                      <div >
                         <FiledCard title={"Created By "}>
                           <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
                         </FiledCard>
@@ -210,44 +217,54 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                   </Row>
-
                   <Row className="mt-15">
                     <Col
                       sm={24}
                       className="d-flex justify-content-center pr-15 align-items-center"
                     >
-                      <RightArrowIcon />
+                      {/* <Popover closable={true}
+                        content={CustomerDetails} placement="right"
+                        trigger="click"
+                        title={<div className="d-flex justify-content-between">
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                        style={{ width: "800px" }}
+                        open={open}
+                        onOpenChange={handleOpenChange}
+                      > */}
+                      <RightArrowIcon style={{ cursor: "pointer" }} />
+                      {/* </Popover> */}
                     </Col>
                   </Row>
                 </Col>
               </Row>
-              <Row className="mt-15 un-selected-card">
+              <Row className={open ? "mt-15 un-selected-card selected-card" : "mt-15 un-selected-card "}>
                 <Col sm={24}>
                   <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
+                    <Col sm={12} className="text-normal font-normal">
+                      3M Company
+                    </Col>
                     <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
+                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
                     </Col>
                   </Row>
-                  <Row className="mt-5 inside-wrapper">
 
-                    <Col sm={11}>
+                  <Row className=" inside-wrapper mt-5">
+                    <Col sm={12} >
                       <div>
                         <FiledCard title={"Created Date"}>
                           <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
                         </FiledCard>
                       </div>
                       <div className="mt-15">
-                        <FiledCard title={"Total Transation"}>
+                        <FiledCard title={"Total Transation"} >
                           <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
                         </FiledCard>
                       </div>
-                    </Col>
-                    <Col sm={2}>
 
                     </Col>
-                    <Col sm={11}>
-                      <div>
+
+                    <Col sm={12}>
+                      <div >
                         <FiledCard title={"Created By "}>
                           <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
                         </FiledCard>
@@ -259,17 +276,29 @@ function CustomerSetup(props) {
                       </div>
                     </Col>
                   </Row>
-
                   <Row className="mt-15">
                     <Col
                       sm={24}
                       className="d-flex justify-content-center pr-15 align-items-center"
                     >
-                      <RightArrowIcon />
+                      {/* <Popover closable={true}
+                        content={CustomerDetails} placement="right"
+                        trigger="click"
+                        title={<div className="d-flex justify-content-between">
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                        style={{ width: "800px" }}
+                        open={open}
+                        onOpenChange={handleOpenChange}
+                      > */}
+                      <RightArrowIcon style={{ cursor: "pointer" }} />
+                      {/* </Popover> */}
                     </Col>
                   </Row>
                 </Col>
               </Row>
+
+
+
             </div>
 
           </Card>
@@ -283,13 +312,13 @@ function CustomerSetup(props) {
             className="p-0 cards-container"
           >
             <Row align={"middle"}>
-              <Col sm={18} >
+              <Col xl={18} >
                 <span className="title">
                   Connected Carrier(3)
                 </span>
 
               </Col>
-              <Col sm={6} className="d-flex justify-content-end ">
+              <Col xl={6} className="d-flex justify-content-end ">
                 <Button
                   icon={<PlusOutlined />}
                   size={"large"}
@@ -408,13 +437,13 @@ function CustomerSetup(props) {
             }}
             className="cards-container"
           >
-            <Row className=" selected-card b-none align-items-center">
-              <Col sm={15}>
+            <Row className=" selected-card b-none align-items-center" >
+              <Col lg={show ? 15 : 17}>
                 {connect &&
                   <Button
                     icon={<DotSuccessIcon className="pr-10" />}
                     size={"large"}
-                    style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, borderColor: "#039855", color: "#039855", background: "#ECFDF3" }}
+                    style={{ borderRadius: 20, fontSize: '1rem', fontWeight: 400, borderColor: "#039855", color: "#039855", background: "#ECFDF3" }}
                   >
                     Connected{connect}
 
@@ -424,7 +453,7 @@ function CustomerSetup(props) {
                   <Button
                     icon={<DotIcon className="pr-10" />}
                     size={"large"}
-                    style={{ borderRadius: 20, fontSize: 12, fontWeight: 400, color: "#667085" }}
+                    style={{ borderRadius: 20, fontSize: '1rem', fontWeight: 400, color: "#667085" }}
                   >
                     Not Connected{connect}
 
@@ -448,13 +477,13 @@ function CustomerSetup(props) {
 
                 </Row>
               </Col>
-              <Col sm={9} className="text-right ">
+              <Col lg={show ? 9 : 7} className="text-right mt-10">
                 {connect &&
-                  <div className="d-flex flex-gap-1 ">
+                  <div className="d-flex flex-direction-column ">
                     <Button
                       type="primary"
                       size={"large"}
-                      style={{ fontSize: 14, fontWeight: 500, background: '#D92D20' }}
+                      style={{ fontSize: '1.125rem', fontWeight: 500, background: '#D92D20' }}
                       onClick={disoCnnectHandler}
                     >
                       Disconnect
@@ -462,7 +491,8 @@ function CustomerSetup(props) {
                     <Button
                       type="primary"
                       size={"large"}
-                      style={{ fontSize: 14, fontWeight: 500, background: '#fff', color: "#000" }}
+                      className="mt-10"
+                      style={{ fontSize: '1.125rem', fontWeight: 500, background: '#fff', color: "#000" }}
                     >
                       Debug
                     </Button>
@@ -473,7 +503,7 @@ function CustomerSetup(props) {
                     <Button
                       type="primary"
                       size={"large"}
-                      style={{ fontSize: 14, fontWeight: 500 }}
+                      style={{ fontSize: '1.125rem', fontWeight: 500 }}
                       onClick={connectHandler}
                       className=" align-center"
                     >
@@ -481,20 +511,6 @@ function CustomerSetup(props) {
                     </Button>
                   </div>
                 }
-
-              </Col>
-
-
-              {/* <Col sm={24} className="mb-15"> */}
-              {/* <div className="d-flex flex-gap-half align-items-center justify-content-around w-30 b-1" style={{borderRadius:20}}> 
-                <div> . </div>
-                <div> Not Connected</div>
-              </div> */}
-
-
-              {/* </Col> */}
-              <Col sm={24}>
-
 
               </Col>
             </Row>

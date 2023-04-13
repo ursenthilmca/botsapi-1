@@ -7,6 +7,7 @@ import {
 import { ReactComponent as EditIcon } from "../../../../assets/svg/edit.svg";
 import { ReactComponent as DeleteIcon } from "../../../../assets/svg/delete.svg";
 import SimpleTable from "../../../../component/Tables/simple-table";
+import { useSelector } from "react-redux";
 
 /* table data */
 const columns = [
@@ -80,13 +81,15 @@ const data = [
 
 
 let StatusCodeTabs = () => {
+    const show = useSelector(state => state.menubar.menuVisible)
     return (
-        <Fragment>
-            <Row gutter={12} className="mb-20 align-items-center p-0   w-100 " >
-                <Col sm={16}>
+        <Fragment className="page-scroll status-code-tab">
+
+            <Row gutter={12} className="mb-20 align-items-center p-0 w-100 " >
+                <Col lg={show ? 14 : 16}>
                     <Input placeholder="Search here..." prefix={<SearchOutlined />} className="w-100" />
                 </Col>
-                <Col sm={4}>
+                <Col lg={show ? 10 : 8} className="text-right">
                     <Button icon={<PlusOutlined />} size={"large"} className="primary-btn ">
                         Add Mapping
                     </Button>
