@@ -4,7 +4,7 @@ import { Form, Input } from "antd";
 import { isRequiredField } from "../../utility/utility";
 
 const FormInput = ({
-  placeholder = false,
+  placeholder = true,
   label,
   editMode = false,
   forFilter = false,
@@ -29,11 +29,9 @@ const FormInput = ({
   return (
     <>
       <Form.Item
-        className={`${inverMode ? "invert-mode" : ""} ${margin} ${
-          singleLineMode ? "single-line-mode" : ""
-        } form-input-container ${
-          !editMode ? "edit-mode-off" : ""
-        } ${className}`}
+        className={`${inverMode ? "invert-mode" : ""} ${margin} ${singleLineMode ? "single-line-mode" : ""
+          } form-input-container ${!editMode ? "edit-mode-off" : ""
+          } ${className}`}
         name={name}
         rules={rules}
         label={
@@ -50,7 +48,7 @@ const FormInput = ({
         }
         labelCol={10}
         colon={colon}
-       // tooltip={tooltip ? formLabelToolTip(tooltip) : false}
+      // tooltip={tooltip ? formLabelToolTip(tooltip) : false}
       >
         {inputType === "password" ? (
           <Input.Password

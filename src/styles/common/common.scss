@@ -1,3 +1,6 @@
+html{
+  font-size: 62.5%;
+}
 ::-webkit-scrollbar {
   display: none;
 }
@@ -6,7 +9,7 @@
   .field-card-title {
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 5px;
     color: #667085;
   }
@@ -15,7 +18,7 @@
 .primary-text {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 1.125rem;
   color: #101828;
 }
 
@@ -29,7 +32,7 @@
   background: #05987b;
   font-style: normal;
   font-weight: 500;
-  font-size: 0.850em !important;
+  font-size: 1.05rem !important;
   color: #ffffff;
   border: none;
 }
@@ -43,7 +46,7 @@
   background: #fff;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
   color: #05987b;
   border: 1px solid #05987b;
 }
@@ -52,7 +55,7 @@
   background: #fff;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
   color: #000000;
   border: 1px solid #d0d5dd;
 }
@@ -61,7 +64,7 @@
   background: #d92d20;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
   color: #fff;
   border: 1px solid #d92d20;
 }
@@ -76,14 +79,15 @@
 }
 
 .tabs-info {
-  .ant-tabs-tab {
+  .ant-tabs-tab .ant-tabs-tab-btn  {
+    color: #667085;
     // padding-left: 15px;
     // padding-right: 15px;
   }
   .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #101828 !important;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1.125rem;
   }
   .ant-tabs-ink-bar {
     border-bottom: 4px solid #05987b !important;
@@ -97,6 +101,10 @@
 .form-input-container {
   .form-input {
     background-color: transparent !important;
+
+    &::placeholder{
+      font-size: 1rem;
+    }
   }
 
   &:not(.single-line-mode) .ant-form-item-row {
@@ -126,7 +134,9 @@
       &::placeholder {
         color: #ffffff;
         opacity: 0.8;
-        font-weight: 600;
+        font-size: 0.875rem;
+
+        font-weight: 400;
       }
     }
   }
@@ -171,7 +181,7 @@
     &::placeholder {
       font-style: normal;
       font-weight: 200;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #667085;
     }
   }
@@ -179,7 +189,7 @@
   & .ant-form-item-label {
     height: auto !important;
     label {
-      font-size: 12px;
+      font-size: 1rem;
       line-height: 18px;
       height: 1.3rem !important;
       color: #344054;
@@ -191,7 +201,7 @@
         margin-left: 2px;
         line-height: 12px;
         //color: $danger-1 !important;
-        font-size: 12px !important;
+        font-size: 0.75rem !important;
         transform: translateY(-2px) !important;
       }
     }
@@ -202,12 +212,20 @@
     display: block;
     width: 100%;
     font-style: normal;
-    font-weight: 600;
     font-size: calculateFontSize(14px);
     color: #344054;
     &.form-input {
       padding: 4px 5px;
+<<<<<<< HEAD
       font-weight: 400px;
+=======
+      &::placeholder{
+        font-size: 1.35rem;
+        font-weight: 400;
+        color: #c4c4c4;
+
+      }
+>>>>>>> e63602a216da12a712559aa20dbb593466e29333
     }
   }
 
@@ -226,6 +244,8 @@
     }
     .form-input {
       border: 0px solid #ffffff !important;
+      
+
     }
     input {
       padding: 0px !important;
@@ -333,7 +353,7 @@
   margin: auto !important;
 
   .percentage-value{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
     position: absolute; 
     top: 50%;
