@@ -113,12 +113,7 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15 ">
-              <Popover closable={true}
-                content={CustomerDetails} placement="right"
-                title={<div className="d-flex justify-content-between">
-                  Customer Detail < CloseOutlined style={{ cursor: "pointer" }} /></div>}
-                style={{ width: "800px" }}
-              >
+             
 
                 <Row className="mt-15 un-selected-card selected-card">
                   <Col sm={24}>
@@ -164,12 +159,19 @@ function CustomerSetup(props) {
                         sm={24}
                         className="d-flex justify-content-center pr-15 align-items-center"
                       >
+                        
+  
+                        <Popover closable={true} placement="right" title={<div className="d-flex justify-content-between headers  ">
+                  Customer Detail </div> }  content={CustomerDetails} trigger="click" style={{ width: "800px" }}>
+                        <Button>
                         <RightArrowIcon />
+                        </Button>
+                        </Popover>
                       </Col>
                     </Row>
                   </Col>
                 </Row>
-              </Popover>
+            
 
 
               <Row className="mt-15 un-selected-card">
@@ -405,6 +407,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
+              height:"100%"
             }}
             className="cards-container"
           >

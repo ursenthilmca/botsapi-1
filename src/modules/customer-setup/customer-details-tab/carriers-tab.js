@@ -1,38 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { Line } from '@ant-design/plots';
+import React from "react";
+import {Row,Col,Card} from 'antd'
+import { ReactComponent as PaintIcon } from "../../../assets/svg/paint.svg";
+import { ReactComponent as FullSignalIcon } from "../../../assets/svg/full-signal.svg";
+import FiledCard from "../../../component/close-icon/cards/fields-card";
+let ActivityTab = () => {
+    return (
+        <div>
+      <Row>
+        <Col className='mt-10'>Connected Carrier</Col>
+      </Row>
 
-let CarriersTab = () => {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        asyncFetch();
-    }, []);
-
-    const asyncFetch = () => {
-        fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => {
-                console.log('fetch data failed', error);
-            });
-    };
-    const config = {
-        data,
-        xField: 'year',
-        yField: 'value',
-        seriesField: 'category',
-        xAxis: {
-            type: 'time',
-        },
-        yAxis: {
-            label: {
-                // 数值格式化为千分位
-                formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
-            },
-        },
-    };
-
-    return (<Line {...config} />)
+      <Row className="un-selected-card mt-25">
+          <Col sm={24}>
+              <Row gutter={12} align={"middle"}>
+                   <Col sm={2}>
+                        <PaintIcon width={40} height={40} />
+                   </Col>
+                   <Col sm={17}>
+                       <FiledCard 
+                            title={"CENTRAL FREIGHT LINER (CENF)"}
+                             labelClass="title-override"
+                             className="colours"
+                         ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                    </Col>
+                    <Col sm={3}>
+                        <FullSignalIcon />
+                   </Col>
+                 </Row>
+            </Col>     
+         </Row>
+         <Row className="mt-25">
+         <Col sm={24}>
+              <Row gutter={12} align={"middle"}>
+                   <Col sm={2}>
+                        <PaintIcon width={40} height={40} />
+                   </Col>
+                   <Col sm={21}>
+                       <FiledCard
+                            title={"CENTRAL FREIGHT LINER (CENF)"}
+                             labelClass="title-override"
+                             className="text-normal"
+                         ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                    </Col>
+                    <Col sm={1}>
+                        <FullSignalIcon />
+                   </Col>
+                 </Row>
+            </Col>     
+            </Row>
+            <Row className="mt-25">
+         <Col sm={24}>
+              <Row gutter={12} align={"middle"}>
+                   <Col sm={2}>
+                        <PaintIcon width={40} height={40} />
+                   </Col>
+                   <Col sm={21}>
+                       <FiledCard
+                            title={"CENTRAL FREIGHT LINER (CENF)"}
+                             labelClass="title-override"
+                             className="text-normal"
+                         ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                    </Col>
+                    <Col sm={1}>
+                        <FullSignalIcon />
+                   </Col>
+                 </Row>
+            </Col>     
+            </Row>
+            <Row className="mt-25">
+         <Col sm={24}>
+              <Row gutter={12} align={"middle"}>
+                   <Col sm={2}>
+                        <PaintIcon width={40} height={40} />
+                   </Col>
+                   <Col sm={21}>
+                       <FiledCard
+                            title={"CENTRAL FREIGHT LINER (CENF)"}
+                             labelClass="title-override"
+                             className="text-normal"
+                         ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                    </Col>
+                    <Col sm={1}>
+                        <FullSignalIcon />
+                   </Col>
+                 </Row>
+            </Col>     
+            </Row>
+            
+        
+  </div>
+    )
 }
-export default CarriersTab;
+export default ActivityTab;

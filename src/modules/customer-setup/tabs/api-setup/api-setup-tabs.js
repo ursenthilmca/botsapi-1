@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "antd";
+import { Card, Col, Row ,Switch} from "antd";
 import React, { Fragment } from "react";
 import PrimaryLabel from "../../../../component/labels/primary-label";
 import FormInput from "../../../../component/form-input/form-input";
@@ -9,6 +9,11 @@ import { ReactComponent as PackageIcon } from "../../../../assets/svg/package.sv
 import { ReactComponent as ImageIcon } from "../../../../assets/svg/image.svg";
 
 function ApiSetupTabs() {
+
+  const onChangeChecked = (checked) => {
+    console.log(`switch to ${checked}`);
+};
+
   return (
     <Fragment>
       <Row>
@@ -56,11 +61,11 @@ function ApiSetupTabs() {
         <Col sm={2}>
           <PathIcon />
         </Col>
-        <Col sm={20} className="normal-text">
+        <Col sm={18} className="normal-text">
           <PrimaryLabel normal={true}>Activate for Tracking</PrimaryLabel>
         </Col>
-        <Col sm={2} className="text-right">
-          <SwitchIcon checked={true} />
+        <Col sm={4} className="text-right">
+        <Switch defaultChecked onChange={onChangeChecked} />
         </Col>
       </Row>
       <Row className="mt-15" gutter={12}>
@@ -77,33 +82,33 @@ function ApiSetupTabs() {
         <Col sm={2}>
           <ShieldIcon />
         </Col>
-        <Col sm={20} className="normal-text">
+        <Col sm={18} className="normal-text">
           <PrimaryLabel normal={true}>Activate for Rate</PrimaryLabel>
         </Col>
-        <Col sm={2} className="text-right">
-          <SwitchIcon checked={true} />
+        <Col sm={4} className="text-right">
+        <Switch defaultChecked onChange={onChangeChecked} />
         </Col>
       </Row>
       <Row className="mt-15 align-items-center " gutter={5}>
         <Col sm={2}>
           <PackageIcon />
         </Col>
-        <Col sm={20} className="normal-text">
+        <Col sm={18} className="normal-text">
           <PrimaryLabel normal={true}>Activate for Pickup Request</PrimaryLabel>
         </Col>
-        <Col sm={2} className="text-right">
-          <SwitchIcon checked={true} />
+        <Col sm={4} className="text-right">
+        <Switch defaultChecked onChange={onChangeChecked} />
         </Col>
       </Row>
       <Row className="mt-15 align-items-center " gutter={5}>
         <Col sm={2}>
           <ImageIcon />
         </Col>
-        <Col sm={20} className="normal-text">
+        <Col sm={18} className="normal-text">
           <PrimaryLabel normal={true}>Activate for Image</PrimaryLabel>
         </Col>
-        <Col sm={2} className="text-right">
-          <SwitchIcon checked={true} />
+        <Col sm={4} className="text-right">
+        <Switch defaultChecked onChange={onChangeChecked} />
         </Col>
       </Row>
     </Fragment>

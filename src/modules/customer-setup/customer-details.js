@@ -26,7 +26,7 @@ let CustomerDetails = () => {
         }
     ];
     return (
-        <Fragment>
+        <Fragment >
             <Row gutter={12}>
                 <Col sm={24} >
                     <span className="text-24 font-bold">
