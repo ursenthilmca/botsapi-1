@@ -56,15 +56,12 @@
       .ant-drawer-body{
         padding: 0 ;
       }
+    .ant-menu-item-selected{
+      background-color: #05987B;
+      color:#fff;
+    }
+
     
-
-    .carrier-menubar{
-      background-color: #F9FAFB;
-    }
-    .ant-menu{
-      background-color: #F9FAFB;
-
-    }
   }
   
   .ant-drawer .ant-drawer-header {
