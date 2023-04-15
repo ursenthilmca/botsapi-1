@@ -25,7 +25,7 @@ const AppLayout = () => {
       <div className="main-container">
         <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }}>
           {show === true && (
-            <Col sm={5}>
+            <Col sm={5} style={{ paddingRight: "4px" }}>
               <div className="menu-container">
                 <MenuComponent />
               </div>

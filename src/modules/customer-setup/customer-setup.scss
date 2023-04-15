@@ -2,7 +2,7 @@
 .customer-setup {
   .cards-container {
     .ant-card-body {
-      padding: 1em !important;      
+      padding: 0.85em !important;      
       .un-selected-card {
         .inside-wrapper {
           background: #f2f4f7;
@@ -27,7 +27,7 @@
       .title-override {
         font-style: normal;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1rem;
         color: #1A1A1A;
       }
     }
@@ -71,8 +71,12 @@
     overflow-y: scroll;
 
   }
+  .api-test-tab{
+    height: calc(100vh - 350px);
+
+  }
   .status-code-tab{
-    height: calc(100vh - 250px);
+    height: calc(100vh - 350px);
     overflow-y: scroll;
   }
 }
@@ -150,7 +154,16 @@
 
 .ant-popover {
   width: 600px;
+  &-placement-right{
+    left:310px !important;
+  }
+  &-arrow{
+    top:50% !important;
+
+  }
+
 }
+
 
 .headers{
   background-color: #1D2939 ;

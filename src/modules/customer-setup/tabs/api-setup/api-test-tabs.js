@@ -8,7 +8,7 @@ const { Option } = Select;
 let ApiTestTabs = () => {
     return (
         <Fragment>
-            <div className="page-scroll">
+            <div className="page-scroll api-test-tab">
                 <Row gutter={12}>
                     <Col sm={12}>
                         <div className="ml-5">

@@ -50,8 +50,8 @@ let PerformanceTabs = () => {
 
                             </Box>
                         </Col>
-                        <Col sm={24}>
-                            <PrimaryLabel>Carrier Performance by Customer (12)</PrimaryLabel>
+                        <Col sm={24} className="text-center">
+                            <PrimaryLabel >Carrier Performance by Customer (12)</PrimaryLabel>
 
                         </Col>
                     </Row>

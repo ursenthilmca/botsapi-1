@@ -1,5 +1,7 @@
+
+
 .ant-drawer-content-wrapper .addcarrier_block {
-    width: 850px  ;
+    width: 800px  ;
     border-radius: 0 12px 12px 0;}
 
 .grid-container {
@@ -28,7 +30,8 @@
   }
 
   .minismall{
-    font-size: 0.75rem;
+    font-size: 1rem;
+    color: #344054;
   }
   .ant-layout-footer .footer1{
     margin-top: 1px solid #D0D5DD;
@@ -48,11 +51,20 @@
 
   } 
   
-  .customer {
-    width: 805px !important;
-    color: black;
-    background-color: white;
+  .carrier {
     border-radius: 0 12px 12px 0;
+      .ant-drawer-body{
+        padding: 0 ;
+      }
+    
+
+    .carrier-menubar{
+      background-color: #F9FAFB;
+    }
+    .ant-menu{
+      background-color: #F9FAFB;
+
+    }
   }
   
   .ant-drawer .ant-drawer-header {

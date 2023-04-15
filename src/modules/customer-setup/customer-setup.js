@@ -168,21 +168,22 @@ function CustomerSetup(props) {
                         open={open}
                         className="popovers"
                         onOpenChange={handleOpenChange}
-                      />
+                      >
 
 
-                      <Popover closable={true} placement="right" title={<div className="d-flex justify-content-between headers  ">
-                        Customer Detail </div>} content={CustomerDetails} trigger="click" style={{ width: "800px" }}>
-                        <Button>
-                          <RightArrowIcon />
-                        </Button>
+                        {/* <Popover 
+                      closable={true} 
+                      placement="right" 
+                      title={<div className="d-flex justify-content-between headers  ">
+                        Customer Detail </div>} 
+                        
+                        content={CustomerDetails}  style={{ width: "800px" }}> */}
+                        <RightArrowIcon style={{ cursor: "pointer" }} />
                       </Popover>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-
-
 
               <Row className="mt-15 un-selected-card">
                 <Col sm={24}>
@@ -312,10 +313,11 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
+
             }}
             className="p-0 cards-container"
           >
-            <Row align={"middle"}>
+            <Row align={"middle"} className="justify-content-between">
               <Col xl={18} >
                 <span className="title">
                   Connected Carrier(3)
@@ -338,15 +340,15 @@ function CustomerSetup(props) {
                 <Input placeholder="Search Carrier..." prefix={<SearchOutlined />} />
               </Col>
             </Row>
-            <div className="page-scroll mt-15">
+            <div className="page-scroll mt-15" >
 
               <Row className="mt-15 selected-card">
                 <Col sm={24}>
                   <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
+                    <Col xl={4}>
+                      <PaintIcon width={"4rem"} height={"4rem"} />
                     </Col>
-                    <Col sm={17}>
+                    <Col xl={17}>
                       <FiledCard
                         title={"CENTRAL FREIGHT LINER (CENF)"}
                         labelClass="title-override"
@@ -354,7 +356,7 @@ function CustomerSetup(props) {
                       ></FiledCard>
                       <FiledCard title={"Code: 1102"}></FiledCard>
                     </Col>
-                    <Col sm={3}>
+                    <Col xl={3}>
                       <NoSignalIcon />
                     </Col>
                   </Row>

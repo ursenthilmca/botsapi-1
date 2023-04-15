@@ -1,9 +1,11 @@
-import { Drawer, Row, Col, Input ,Button} from 'antd'
+import { Drawer, Row, Col, Input, Button } from 'antd'
 import "./customer-setup.scss";
 import "./add-customer.scss";
-import {ReactComponent as RightArrowIcon } from "./../../assets/svg/right-arrow.svg";
 import React, { useState } from "react";
 import { Footer } from 'antd/es/layout/layout';
+import FormInput from "../../component/form-input/form-input";
+import { ReactComponent as RightArrowIcon } from "./../../assets/svg/ArrowRight.svg";
+
 
 
 let AddCustomer = (props) => {
@@ -27,8 +29,12 @@ let AddCustomer = (props) => {
             placement={placement}
             closable={true}
             onClose={onClose}
+            maskClosable={false}
             open={open}
             key={placement}
+            footer={<Button icon={<RightArrowIcon />} size={"large"} className="m-5  primary-btn d-flex align-items-center flex-direction-row-reverse flex-gap-1 float-right" >
+                Add Carrier
+            </Button>}
 
         >
             <div className='customer' >
@@ -36,60 +42,38 @@ let AddCustomer = (props) => {
                 <Row>
 
                     <Col sm={24} >
-                        Customer Name
+                        <FormInput
+                            editMode={true}
+                            label={"Customer Name"}
+                            placeholder={"Enter Customer Name"}
+                            name="customerName"
+                        />
+                    </Col>
+                    <Col sm={24} >
+                        <FormInput
+                            editMode={true}
+                            label={"Creator Name"}
+                            placeholder={"Enter Creator Name"}
+                            name="creatorName"
+                        />
+                    </Col>
+                    <Col sm={24} >
+                        <FormInput
+                            editMode={true}
+                            label={"PO No."}
+                            placeholder={"Enter PO No."}
+                            name="poNo"
+                        />
+                    </Col>
+                    <Col sm={24} >
+                        <FormInput
+                            editMode={true}
+                            label={"Pickup Zipcode"}
+                            placeholder={"Enter Pickup Zipcode"}
+                            name="zipcode"
+                        />
                     </Col>
                 </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        <Input placeholder='Enter Customer Name' />
-
-                    </Col>
-                </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        Creator Name
-                    </Col>
-                </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        <Input placeholder='Enter Creator Name' />
-                    </Col>
-                </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        PO No.
-                    </Col>
-                </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        <Input placeholder='Enter PO No.' />
-                    </Col>
-                </Row>
-                <Row className='mt-15'>
-                    <Col sm={24}>
-                        Pickup Zipcode
-                    </Col>
-                </Row>
-                <Row className='mt-15 fw-7'>
-                    <Col sm={24}>
-                        <Input placeholder='Enter Pickup Zipcode' />
-                    </Col>
-                </Row>
-                <Footer style={{ 
-        borderTop: '1px solid #e8e8e8',
-        position: 'fixed',
-        left: 0,
-        bottom: 0,
-        width: '500px',
-        backgroundColor: 'white',
-       }} ><Row>
-       <Col sm={19}></Col>
-                  <Col sm={5}> <Button  size={"large"} className="primary-btn " >
-                         Add Customer&nbsp;<RightArrowIcon  width={12} height={12} />
-                   </Button>
-                   </Col> 
-                   </Row></Footer>
-            
             </div>
         </Drawer>
     )

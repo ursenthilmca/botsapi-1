@@ -27,6 +27,12 @@ html{
   height: 100%;
   background-color: #d0d5dd;
 }
+.ant-btn{
+  &.ant-btn-lg{
+    padding:10px;
+  }
+}
+
 .primary-btn {
   font-family: "Poppins" !important;
   background: #05987b;
@@ -81,8 +87,8 @@ html{
 .tabs-info {
   .ant-tabs-tab .ant-tabs-tab-btn  {
     color: #667085;
-    // padding-left: 15px;
-    // padding-right: 15px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #101828 !important;
@@ -134,7 +140,7 @@ html{
       &::placeholder {
         color: #ffffff;
         opacity: 0.8;
-        font-size: 0.875rem;
+        font-size: 0.825rem;
 
         font-weight: 400;
       }
@@ -180,9 +186,11 @@ html{
 
     &::placeholder {
       font-style: normal;
-      font-weight: 200;
-      font-size: 0.875rem;
-      color: #667085;
+      font-weight:400;
+      font-size: 1.35rem;
+      color: #BFBFBF;
+      opacity: 0.8;
+
     }
   }
 
@@ -307,6 +315,7 @@ html{
 
 .page-scroll{
   overflow-y: scroll;
+  overflow-x:hidden ;
   height: calc(100vh - 250px);
   white-space: nowrap;
   scrollbar-width: thin;
