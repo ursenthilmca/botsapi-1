@@ -1,0 +1,52 @@
+.desination-container{
+    .primary-box{
+        border-radius: 100px;
+        padding: 1rem 2rem !important;
+        background: #05987B;
+        color: #fff;
+        text-align: center;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+    }
+
+    .secondary-box{
+        display: inline-block;
+        color: #101828;
+        font-size: 1.125rem;
+        padding: 1rem  !important;
+        border-radius: 100px;
+        border: 1px solid #D0D5DD;
+    }
+    .text-box-large{
+
+    }
+    .text-box-small{
+        
+    }
+
+    .fileUploader{ 
+        label{
+            background-color: #F9FAFB;
+            border: 1px dashed #D0D5DD;
+            max-width: 0;
+            min-width: 200px;
+            width: 70px !important;
+            height: 20px;
+
+            .sc-dmqHEX{
+                text-align: center;
+            }
+
+            svg{
+                display: none;
+            }
+
+        }
+    }
+    .ant-form-item-control-input{
+        input{
+            top:5px;
+            height: 37px;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Drawer, Tabs, Row } from "antd";
+import { Drawer, Tabs, Row, Button } from "antd";
 import React, { Fragment, useState } from "react";
 import "./edit-mapping.scss";
 import MappingItemTab from "./edit-mapping-tabs/mapping-item-tab";
@@ -47,6 +47,10 @@ let EditMapping = (props) => {
                 style={{ width: "1000px" }}
                 key={placement}
                 className="edit-mapping"
+                footer={<div className="d-flex justify-content-between ">
+                    <Button size={"large"} className="light-btn px-30" >Back</Button>
+                    <Button size={"large"} className="primary-btn px-30" >Save</Button>
+                </div>}
 
             >
                 <div className='' >

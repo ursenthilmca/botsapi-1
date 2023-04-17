@@ -2,17 +2,20 @@
   // overflow-x: hidden;
   // overflow-y: auto;
   // height: calc(100vh - 105px);
+    .ant-card-body{
+      padding: 1.5rem 1.5rem;
+    }
   .text-large {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   .text-normal {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   .text-small {
-    font-size: 0.75rem;
+    font-size: 0.825rem;
   }
   .text-20 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .font-bold {
@@ -53,13 +56,15 @@
   .method-list {
     height: calc(100vh - 250px);
     .ant-card-body {
-      padding: 10px 20px;
+      padding: 1rem 1.5rem;
     }
   }
   
   .tabs-info {
     .ant-tabs-tab {
-      margin-left: 15px;
+      // margin-left: 15px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
       .active {
         display: none;
       }
@@ -116,6 +121,11 @@
 
 .ant-drawer {
   .new-api-carrier {
+    .ant-steps{
+       .ant-steps-item-title{
+        font-size: 1.125rem;
+       }
+    }
     .ant-drawer-header-title {
       flex-direction: row-reverse;
     }

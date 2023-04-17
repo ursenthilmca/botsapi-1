@@ -451,6 +451,7 @@ function CustomerSetup(props) {
                     icon={<DotSuccessIcon className="pr-10" />}
                     size={"large"}
                     style={{ borderRadius: 20, fontSize: '1rem', fontWeight: 400, borderColor: "#039855", color: "#039855", background: "#ECFDF3" }}
+                    className="px-20"
                   >
                     Connected{connect}
 
@@ -461,6 +462,7 @@ function CustomerSetup(props) {
                     icon={<DotIcon className="pr-10" />}
                     size={"large"}
                     style={{ borderRadius: 20, fontSize: '1rem', fontWeight: 400, color: "#667085" }}
+                    className="px-20"
                   >
                     Not Connected{connect}
 

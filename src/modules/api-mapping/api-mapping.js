@@ -228,12 +228,12 @@ let ApiMapping = () => {
 
                         </Row>
                         <Row className="mt-15 selected-card">
-                            <Col sm={5}>
+                            <Col lg={5}>
                                 <PaintIcon />
                             </Col>
-                            <Col sm={18}>
+                            <Col lg={18}>
                                 <h6 className="font-bold m-0 mb-5 ">A DYLE PYLE</h6>
-                                <div className="d-flex align-content-center flex-gap-1 align-content-center mt-3">
+                                <div className="d-flex align-content-center flex-gap-half align-content-center mt-3">
                                     <span className="mt-5">
 
                                         <FiledCard title={"Code: PYLE"} className="text-large font-light " style={{ marginTop: "15px" }}></FiledCard>

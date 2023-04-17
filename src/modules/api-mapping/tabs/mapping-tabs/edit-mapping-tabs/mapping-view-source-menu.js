@@ -20,7 +20,7 @@ const items = [
         getItem('soap:Body', 'soap-body', '', [
 
             getItem('ns1RateEstimateResponseVO', 'ns1RateEstimateResponseVO', '', [
-                getItem('Account', 'account', <SixDotIcon />),
+                getItem('account', 'account', <SixDotIcon />),
                 getItem('MyPlID', 'myplid', <SixDotIcon />),
                 getItem('InboundOutbound', 'inboundOutbound', <SixDotIcon />),
                 getItem('eZip', 'eZip', <SixDotIcon />),

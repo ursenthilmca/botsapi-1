@@ -33,7 +33,7 @@ let GeneralInformation = () => {
                 <Row className="mt-15 float-right">
                     <Col sm={24} className="">
 
-                        <Button icon={<EditIcon />} size={"large"} className="secondary-btn d-flex flex-gap-half align-items-center justifiy-content-center">Edit</Button>
+                        <Button icon={<EditIcon />} size={"large"} className="secondary-btn d-flex flex-gap-1 align-items-center justifiy-content-center">Edit</Button>
                     </Col>
 
                 </Row>

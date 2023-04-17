@@ -28,7 +28,7 @@ let CarriersTab = () => {
         },
         yAxis: {
             label: {
-              
+
                 formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
             },
         },
