@@ -1,6 +1,5 @@
 import React from "react";
-import { CloseSquareOutlined } from "@ant-design/icons";
-import { Button, Menu } from "antd";
+import { Menu } from "antd";
 import { useState } from "react";
 import "./menu.scss";
 import CloseIcon from "../../component/close-icon/close-icon";

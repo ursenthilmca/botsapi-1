@@ -25,7 +25,20 @@
         border-radius: 50px;
 
     }
+    
 
+    }
+    .ant-menu-submenu{
+        .ant-menu-sub{
+            .ant-menu-item{
+                width: 240px;
+                border-radius: 8px;
+                padding-left:  5px !important;
+                margin-left: 92px;
+                background-color: #F2F4F7;
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 

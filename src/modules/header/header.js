@@ -1,10 +1,8 @@
 import { Avatar, Col, Dropdown, Row, Space } from "antd";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { ReactComponent as HamburgerMenuIcon } from "./../../assets/svg/hamburger-menu.svg";
-import MenuComponent from "../menu/menu";
 import { ReactComponent as LogoIcon } from "./../../assets/svg/logo.svg";
 import { UserOutlined, DownOutlined } from "@ant-design/icons";
-import { CSSTransition } from 'react-transition-group';
 import { MenuActions } from "../menu/menu-action";
 import { useSelector, useDispatch } from "react-redux";
 // import { Transition } from "react-transition-group";
