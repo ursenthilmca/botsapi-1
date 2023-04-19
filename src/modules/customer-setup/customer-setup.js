@@ -1,5 +1,5 @@
 import { Button, Card, Col, Divider, Input, Row, Tabs, Popover } from "antd";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   PlusOutlined,
   SearchOutlined,
@@ -37,7 +37,13 @@ function CustomerSetup(props) {
   const [connect, setConnect] = useState(false);
   const [addCustomer, setAddCustomer] = useState(false);
   const [addcarrier, setAddCarrier] = useState(false);
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const selectedCard = useRef(null);
+  const selectedCard1 = useRef(null);
+  const selectedCard2 = useRef(null);
+
   let addCustomerHandler = () => {
     setAddCustomer(!addCustomer)
   }
@@ -50,10 +56,30 @@ function CustomerSetup(props) {
   const handleOpenChange = () => {
     setOpen(true);
   }
+  const handleOpenChange1 = () => {
+    setOpen1(true);
+  }
+  const handleOpenChange2 = () => {
+    setOpen2(true);
+  }
 
-  const disoCnnectHandler = () => {
+  const disConnectHandler = () => {
     setConnect(false);
 
+  }
+
+  const addClassHandler = () => {
+    selectedCard.current.classList.add('selected-card');
+  }
+  const addClassHandler1 = () => {
+    selectedCard1.current.classList.add('selected-card');
+  }
+  const addClassHandler2 = () => {
+    selectedCard1.current.classList.add('selected-card');
+  }
+
+  const removeClassHandler = () => {
+    selectedCard.current.classList.remove('selected-card');
   }
 
   const tabsItem = [
@@ -116,7 +142,7 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15 ">
-              <Row className={open ? "mt-10 un-selected-card selected-card" : "mt-10 un-selected-card "}>
+              <Row className="mt-10 un-selected-card " ref={selectedCard}>
                 <Col sm={24}>
                   <Row>
                     <Col sm={12} className="text-normal font-normal">
@@ -163,7 +189,7 @@ function CustomerSetup(props) {
                         content={CustomerDetails} placement="right"
                         trigger="click"
                         title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen(false); selectedCard.current.classList.remove('selected-card') }} /></div>}
                         style={{ width: "580px !important" }}
                         open={open}
                         className="popovers"
@@ -171,21 +197,14 @@ function CustomerSetup(props) {
                       >
 
 
-                        {/* <Popover 
-                      closable={true} 
-                      placement="right" 
-                      title={<div className="d-flex justify-content-between headers  ">
-                        Customer Detail </div>} 
-                        
-                        content={CustomerDetails}  style={{ width: "800px" }}> */}
-                        <RightArrowIcon style={{ cursor: "pointer" }} />
+                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler} />
                       </Popover>
                     </Col>
                   </Row>
                 </Col>
               </Row>
 
-              <Row className="mt-15 un-selected-card">
+              <Row className="mt-15 un-selected-card" ref={selectedCard1}>
                 <Col sm={24}>
                   <Row>
                     <Col sm={12} className="text-normal font-normal">3M Company</Col>
@@ -227,29 +246,27 @@ function CustomerSetup(props) {
                       sm={24}
                       className="d-flex justify-content-center pr-15 align-items-center"
                     >
-                      {/* <Popover closable={true}
+                      <Popover closable={true}
                         content={CustomerDetails} placement="right"
                         trigger="click"
                         title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen1(false); selectedCard1.current.classList.remove('selected-card') }} /></div>}
                         style={{ width: "800px" }}
-                        open={open}
-                        onOpenChange={handleOpenChange}
-                      > */}
-                      <RightArrowIcon style={{ cursor: "pointer" }} />
-                      {/* </Popover> */}
+                        open={open1}
+                        onOpenChange={handleOpenChange1}
+                      >
+                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler1} />
+                      </Popover>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-              <Row className={open ? "mt-15 un-selected-card selected-card" : "mt-15 un-selected-card "}>
+              <Row className="mt-15 un-selected-card" ref={selectedCard2}>
                 <Col sm={24}>
                   <Row>
-                    <Col sm={12} className="text-normal font-normal">
-                      3M Company
-                    </Col>
+                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
                     <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                      <FiledCard title={"Code:1102"}></FiledCard>
                     </Col>
                   </Row>
 
@@ -286,21 +303,22 @@ function CustomerSetup(props) {
                       sm={24}
                       className="d-flex justify-content-center pr-15 align-items-center"
                     >
-                      {/* <Popover closable={true}
+                      <Popover closable={true}
                         content={CustomerDetails} placement="right"
                         trigger="click"
                         title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => setOpen(false)} /></div>}
+                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen2(false); selectedCard2.current.classList.remove('selected-card') }} /></div>}
                         style={{ width: "800px" }}
-                        open={open}
-                        onOpenChange={handleOpenChange}
-                      > */}
-                      <RightArrowIcon style={{ cursor: "pointer" }} />
-                      {/* </Popover> */}
+                        open={open2}
+                        onOpenChange={handleOpenChange2}
+                      >
+                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler2} />
+                      </Popover>
                     </Col>
                   </Row>
                 </Col>
               </Row>
+
 
 
 
@@ -440,7 +458,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
-              height: "100%"
+              height: "97%"
             }}
             className="cards-container"
           >
@@ -493,7 +511,7 @@ function CustomerSetup(props) {
                       type="primary"
                       size={"large"}
                       style={{ fontSize: '1.125rem', fontWeight: 500, background: '#D92D20' }}
-                      onClick={disoCnnectHandler}
+                      onClick={disConnectHandler}
                     >
                       Disconnect
                     </Button>
