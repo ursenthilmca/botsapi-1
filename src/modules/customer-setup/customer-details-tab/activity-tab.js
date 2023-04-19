@@ -34,6 +34,6 @@ let CarriersTab = () => {
         },
     };
 
-    return (<Line {...config} />)
+    return (<Line {...config} style={{ height: "300px" }} />)
 }
 export default CarriersTab;

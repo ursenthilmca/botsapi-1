@@ -23,7 +23,7 @@ const menuSlice = createSlice({
     initialState,
     reducers: {
         showMenu(state) {
-            state.menuVisible = true;
+            state.menuVisible = !state.menuVisible;
         },
         hideMenu(state) {
             state.menuVisible = false;

@@ -31,9 +31,8 @@ function Header(props) {
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
       <Col span={8}>
         <div className="hamburge-menu">
-          {
-            !show && <HamburgerMenuIcon onClick={showMenuHandler} style={{ cursor: "pointer" }} />
-          }
+          <HamburgerMenuIcon onClick={showMenuHandler} style={{ cursor: "pointer" }} />
+
           <div className="app-title">API Mapping</div>
 
         </div>
