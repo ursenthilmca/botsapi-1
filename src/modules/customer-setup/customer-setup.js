@@ -1,5 +1,5 @@
 import { Button, Card, Col, Divider, Input, Row, Tabs, Popover } from "antd";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   PlusOutlined,
   SearchOutlined,
@@ -28,6 +28,9 @@ import AddCustomer from "./add-customer";
 import CustomerDetails from "./customer-details";
 import { useSelector } from "react-redux";
 import AddCarrier from "./add-carrier";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 
 
 
@@ -43,6 +46,8 @@ function CustomerSetup(props) {
   const selectedCard = useRef(null);
   const selectedCard1 = useRef(null);
   const selectedCard2 = useRef(null);
+  const myRef = useRef();
+
 
   let addCustomerHandler = () => {
     setAddCustomer(!addCustomer)
@@ -104,7 +109,20 @@ function CustomerSetup(props) {
       children: <PerformanceTabs />,
     },
   ]
+  useEffect(() => {
+    const x = myRef.current.offsetTop;
+    console.log(x);
+    if (open) {
+      setOpen(false);
+    } else if (open1) {
+      setOpen1(false);
+    } else if (open2) {
+      setOpen2(false);
 
+    }
+
+
+  }, [show])
 
   return (
     <div className="add-customer">
@@ -141,188 +159,194 @@ function CustomerSetup(props) {
                 <Input placeholder="Search Profile" prefix={<SearchOutlined />} />
               </Col>
             </Row>
-            <div className="page-scroll mt-15 ">
-              <Row className="mt-10 un-selected-card " ref={selectedCard}>
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">
-                      3M Company
-                    </Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
-                    </Col>
-                  </Row>
+            {/* <div className="page-scroll mt-15 "> */}
+            <div >
+              <PerfectScrollbar style={{ maxHeight: '335px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                {/* <div className="mr-25"> */}
 
-                  <Row className=" inside-wrapper mt-5" gutter={12}>
-                    <Col lg={12} >
-                      <div>
-                        <FiledCard title={"Created Date"}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Transation"} >
-                          <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                        </FiledCard>
-                      </div>
+                <Row className="mt-10 un-selected-card " ref={selectedCard}>
+                  <Col sm={24}>
+                    <Row>
+                      <Col sm={12} className="text-normal font-normal">
+                        3M Company
+                      </Col>
+                      <Col sm={12} className="d-flex justify-content-end">
+                        <FiledCard title={"Code:1102"} className="text-normal font-light"></FiledCard>
+                      </Col>
+                    </Row>
 
-                    </Col>
+                    <Row className=" inside-wrapper mt-5" gutter={12}>
+                      <Col lg={12} >
+                        <div>
+                          <FiledCard title={"Created Date"}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Transation"} >
+                            <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                          </FiledCard>
+                        </div>
 
-                    <Col lg={12}>
-                      <div >
-                        <FiledCard title={"Created By "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Connection "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center">
-                      <Popover closable={true}
-                        content={CustomerDetails} placement="right"
-                        trigger="click"
-                        title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen(false); selectedCard.current.classList.remove('selected-card') }} /></div>}
-                        style={{ width: "580px !important" }}
-                        open={open}
-                        className="popovers"
-                        onOpenChange={handleOpenChange}
+                      </Col>
+
+                      <Col lg={12}>
+                        <div >
+                          <FiledCard title={"Created By "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Connection "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="mt-15">
+                      <Col
+                        sm={24}
+                        className="d-flex justify-content-center pr-15 align-items-center" ref={myRef}>
+                        <Popover closable={true}
+                          content={CustomerDetails} placement="right"
+                          trigger="click"
+                          title={<div className="d-flex justify-content-between">
+                            Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen(false); selectedCard.current.classList.remove('selected-card') }} /></div>}
+                          style={{ width: "580px !important" }}
+                          open={open}
+                          className="popovers"
+                          onOpenChange={handleOpenChange}
+                        >
+
+
+                          <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler} className="arrow-right" />
+                        </Popover>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+
+                <Row className="mt-15 un-selected-card" ref={selectedCard1}>
+                  <Col sm={24}>
+                    <Row>
+                      <Col sm={12} className="text-normal font-normal">3M Company</Col>
+                      <Col sm={12} className="d-flex justify-content-end">
+                        <FiledCard title={"Code:1102"}></FiledCard>
+                      </Col>
+                    </Row>
+
+                    <Row className=" inside-wrapper mt-5">
+                      <Col sm={12} >
+                        <div>
+                          <FiledCard title={"Created Date"}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Transation"} >
+                            <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+
+                      </Col>
+
+                      <Col sm={12}>
+                        <div >
+                          <FiledCard title={"Created By "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Connection "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="mt-15">
+                      <Col
+                        sm={24}
+                        className="d-flex justify-content-center pr-15 align-items-center"
                       >
+                        <Popover closable={true}
+                          content={CustomerDetails} placement="right"
+                          trigger="click"
+                          title={<div className="d-flex justify-content-between">
+                            Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen1(false); selectedCard1.current.classList.remove('selected-card') }} /></div>}
+                          style={{ width: "800px" }}
+                          open={open1}
+                          onOpenChange={handleOpenChange1}
+                        >
+                          <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler1} />
+                        </Popover>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row className="mt-15 un-selected-card" ref={selectedCard2}>
+                  <Col sm={24}>
+                    <Row>
+                      <Col sm={12} className="text-normal font-normal">3M Company</Col>
+                      <Col sm={12} className="d-flex justify-content-end">
+                        <FiledCard title={"Code:1102"}></FiledCard>
+                      </Col>
+                    </Row>
 
+                    <Row className=" inside-wrapper mt-5">
+                      <Col sm={12} >
+                        <div>
+                          <FiledCard title={"Created Date"}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Transation"} >
+                            <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
+                          </FiledCard>
+                        </div>
 
-                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler} />
-                      </Popover>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                      </Col>
 
-              <Row className="mt-15 un-selected-card" ref={selectedCard1}>
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
-                    </Col>
-                  </Row>
-
-                  <Row className=" inside-wrapper mt-5">
-                    <Col sm={12} >
-                      <div>
-                        <FiledCard title={"Created Date"}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Transation"} >
-                          <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-
-                    </Col>
-
-                    <Col sm={12}>
-                      <div >
-                        <FiledCard title={"Created By "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Connection "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <Popover closable={true}
-                        content={CustomerDetails} placement="right"
-                        trigger="click"
-                        title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen1(false); selectedCard1.current.classList.remove('selected-card') }} /></div>}
-                        style={{ width: "800px" }}
-                        open={open1}
-                        onOpenChange={handleOpenChange1}
+                      <Col sm={12}>
+                        <div >
+                          <FiledCard title={"Created By "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                        <div className="mt-15">
+                          <FiledCard title={"Total Connection "}>
+                            <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
+                          </FiledCard>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="mt-15">
+                      <Col
+                        sm={24}
+                        className="d-flex justify-content-center pr-15 align-items-center"
                       >
-                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler1} />
-                      </Popover>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row className="mt-15 un-selected-card" ref={selectedCard2}>
-                <Col sm={24}>
-                  <Row>
-                    <Col sm={12} className="text-normal font-normal">3M Company</Col>
-                    <Col sm={12} className="d-flex justify-content-end">
-                      <FiledCard title={"Code:1102"}></FiledCard>
-                    </Col>
-                  </Row>
-
-                  <Row className=" inside-wrapper mt-5">
-                    <Col sm={12} >
-                      <div>
-                        <FiledCard title={"Created Date"}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">01/01/2023</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Transation"} >
-                          <PrimaryLabel normal={true} className="text-normal font-normal">23,082</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-
-                    </Col>
-
-                    <Col sm={12}>
-                      <div >
-                        <FiledCard title={"Created By "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">Ilango</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                      <div className="mt-15">
-                        <FiledCard title={"Total Connection "}>
-                          <PrimaryLabel normal={true} className="text-normal font-normal">30</PrimaryLabel>
-                        </FiledCard>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="mt-15">
-                    <Col
-                      sm={24}
-                      className="d-flex justify-content-center pr-15 align-items-center"
-                    >
-                      <Popover closable={true}
-                        content={CustomerDetails} placement="right"
-                        trigger="click"
-                        title={<div className="d-flex justify-content-between">
-                          Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen2(false); selectedCard2.current.classList.remove('selected-card') }} /></div>}
-                        style={{ width: "800px" }}
-                        open={open2}
-                        onOpenChange={handleOpenChange2}
-                      >
-                        <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler2} />
-                      </Popover>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                        <Popover closable={true}
+                          content={CustomerDetails} placement="right"
+                          trigger="click"
+                          title={<div className="d-flex justify-content-between">
+                            Customer Detail < CloseOutlined style={{ cursor: "pointer" }} onClick={() => { setOpen2(false); selectedCard2.current.classList.remove('selected-card') }} /></div>}
+                          style={{ width: "800px" }}
+                          open={open2}
+                          onOpenChange={handleOpenChange2}
+                        >
+                          <RightArrowIcon style={{ cursor: "pointer" }} onClick={addClassHandler2} />
+                        </Popover>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                {/* </div > */}
 
 
-
-
+              </PerfectScrollbar>
             </div>
+
+            {/* </div> */}
 
           </Card>
         </Col>
@@ -359,96 +383,99 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15" >
+              <PerfectScrollbar style={{ maxHeight: '335px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
-              <Row className="mt-15 selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col xl={4}>
-                      <PaintIcon width={"4rem"} height={"4rem"} />
-                    </Col>
-                    <Col xl={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className="text-normal"
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col xl={3}>
-                      <NoSignalIcon />
-                    </Col>
-                  </Row>
-                  <Row className="mt-15 inside-wrapper" align={"middle"}>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half mb-10"
-                    >
-                      <AppstoreOutlined />
-                      <FiledCard
-                        textClass="pt-5"
-                        title={"JkalanqN2nd 12"}
-                      ></FiledCard>
-                    </Col>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half mb-10"
-                    >
-                      <CalendarOutlined />
-                      <FiledCard textClass="pt-5" title={"12/12/2022"}></FiledCard>
-                    </Col>
-                    <Col
-                      sm={24}
-                      className="d-flex align-items-center flex-gap-half"
-                    >
-                      <UserOutlined />
-                      <FiledCard textClass="pt-5" title={"Ilango"}></FiledCard>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
 
-              <Row className="mt-15 un-selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
-                    </Col>
-                    <Col sm={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className="text-normal"
+                <Row className="mt-15 selected-card">
+                  <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                      <Col xl={4}>
+                        <PaintIcon width={"4rem"} height={"4rem"} />
+                      </Col>
+                      <Col xl={17}>
+                        <FiledCard
+                          title={"CENTRAL FREIGHT LINER (CENF)"}
+                          labelClass="title-override"
+                          className="text-normal"
+                        ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                      </Col>
+                      <Col xl={3}>
+                        <NoSignalIcon />
+                      </Col>
+                    </Row>
+                    <Row className="mt-15 inside-wrapper" align={"middle"}>
+                      <Col
+                        sm={24}
+                        className="d-flex align-items-center flex-gap-half mb-10"
+                      >
+                        <AppstoreOutlined />
+                        <FiledCard
+                          textClass="pt-5"
+                          title={"JkalanqN2nd 12"}
+                        ></FiledCard>
+                      </Col>
+                      <Col
+                        sm={24}
+                        className="d-flex align-items-center flex-gap-half mb-10"
+                      >
+                        <CalendarOutlined />
+                        <FiledCard textClass="pt-5" title={"12/12/2022"}></FiledCard>
+                      </Col>
+                      <Col
+                        sm={24}
+                        className="d-flex align-items-center flex-gap-half"
+                      >
+                        <UserOutlined />
+                        <FiledCard textClass="pt-5" title={"Ilango"}></FiledCard>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
 
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col sm={3}>
-                      <FullSignalIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Divider />
-              <Row className=" un-selected-card">
-                <Col sm={24}>
-                  <Row gutter={12} align={"middle"}>
-                    <Col sm={4}>
-                      <PaintIcon width={40} height={40} />
-                    </Col>
-                    <Col sm={17}>
-                      <FiledCard
-                        title={"CENTRAL FREIGHT LINER (CENF)"}
-                        labelClass="title-override"
-                        className='text-bold font-bold'
-                      ></FiledCard>
-                      <FiledCard title={"Code: 1102"}></FiledCard>
-                    </Col>
-                    <Col sm={3}>
-                      <FullSignalIcon />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                <Row className="mt-15 un-selected-card">
+                  <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                      <Col sm={4}>
+                        <PaintIcon width={40} height={40} />
+                      </Col>
+                      <Col sm={17}>
+                        <FiledCard
+                          title={"CENTRAL FREIGHT LINER (CENF)"}
+                          labelClass="title-override"
+                          className="text-normal"
+
+                        ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                      </Col>
+                      <Col sm={3}>
+                        <FullSignalIcon />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Divider />
+                <Row className=" un-selected-card">
+                  <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                      <Col sm={4}>
+                        <PaintIcon width={40} height={40} />
+                      </Col>
+                      <Col sm={17}>
+                        <FiledCard
+                          title={"CENTRAL FREIGHT LINER (CENF)"}
+                          labelClass="title-override"
+                          className='text-bold font-bold'
+                        ></FiledCard>
+                        <FiledCard title={"Code: 1102"}></FiledCard>
+                      </Col>
+                      <Col sm={3}>
+                        <FullSignalIcon />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </PerfectScrollbar>
             </div>
 
           </Card>

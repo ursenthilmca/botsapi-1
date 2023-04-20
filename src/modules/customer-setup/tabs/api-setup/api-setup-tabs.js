@@ -8,6 +8,9 @@ import { ReactComponent as ShieldIcon } from "../../../../assets/svg/shieldStar.
 import { ReactComponent as PackageIcon } from "../../../../assets/svg/package.svg";
 import { ReactComponent as ImageIcon } from "../../../../assets/svg/image.svg";
 import { useSelector } from "react-redux";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 
 const { TextArea } = Input;
 
@@ -24,114 +27,117 @@ function ApiSetupTabs() {
 
   return (
     <Fragment>
-      <div className="page-scroll api-set-tab" style={{ overflowX: "hidden" }}>
-        <Row>
-          <Col sm={24}>
-            <PrimaryLabel>Account Information</PrimaryLabel>
-          </Col>
-        </Row>
-        <Row gutter={12}>
-          <Col sm={12}>
-            <FormInput
-              editMode={true}
-              label={"Username"}
-              placeholder={"Enter User Name"}
-              name="username"
-            />
-          </Col>
-          <Col sm={12}>
-            <FormInput
-              inputType="password"
-              editMode={true}
-              label={"Password"}
-              placeholder={"Enter Password"}
-              name="username"
-            />
-          </Col>
-        </Row>
-        <Row gutter={12}>
-          <Col sm={24}>
-            <FormInput
-              editMode={true}
-              label={"Account Number"}
-              placeholder={"Enter Account Number"}
-              name="accountNumber"
-            />
-          </Col>
 
-        </Row>
-        <Row gutter={12}>
-          <Col sm={24}>
-            <PrimaryLabel>What is the purpose of account?</PrimaryLabel>
+      <div className="api-set-tab" style={{ overflowX: "hidden" }}>
+        <PerfectScrollbar style={{ maxHeight: '345px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+          <Row>
+            <Col sm={24}>
+              <PrimaryLabel>Account Information</PrimaryLabel>
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col sm={12}>
+              <FormInput
+                editMode={true}
+                label={"Username"}
+                placeholder={"Enter User Name"}
+                name="username"
+              />
+            </Col>
+            <Col sm={12}>
+              <FormInput
+                inputType="password"
+                editMode={true}
+                label={"Password"}
+                placeholder={"Enter Password"}
+                name="username"
+              />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col sm={24}>
+              <FormInput
+                editMode={true}
+                label={"Account Number"}
+                placeholder={"Enter Account Number"}
+                name="accountNumber"
+              />
+            </Col>
 
-          </Col>
-        </Row>
-        <Row className="mt-15 align-items-center " gutter={5}>
-          <Col sm={2}>
-            <PathIcon />
-          </Col>
-          <Col sm={18} className="normal-text">
-            <PrimaryLabel className="normal-text">Activate for Tracking</PrimaryLabel>
-          </Col>
-          <Col sm={4} className="text-right">
-            <Switch defaultChecked onChange={onChangeChecked} />
-          </Col>
-        </Row>
-        <Row className="mt-15" gutter={12}>
-          <Col sm={24}>
-            <FormInput
-              editMode={true}
-              placeholder={"Tracking or Pro Number"}
-              name="trackingNumber"
-            />
-          </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col sm={24}>
+              <PrimaryLabel>What is the purpose of account?</PrimaryLabel>
 
-        </Row>
-        <Row className="mt-15 align-items-center " gutter={5}>
-          <Col sm={2}>
-            <ShieldIcon />
-          </Col>
-          <Col sm={18} className="normal-text">
-            <PrimaryLabel >Activate for Rate</PrimaryLabel>
-          </Col>
-          <Col sm={4} className="text-right">
-            <Switch defaultChecked onChange={onChangeChecked} />
-          </Col>
-        </Row>
-        <Row className="mt-15 align-items-center " gutter={5}>
-          <Col sm={2}>
-            <PackageIcon />
-          </Col>
-          <Col sm={18} className="normal-text">
-            <PrimaryLabel >Activate for Pickup Request</PrimaryLabel>
-          </Col>
-          <Col sm={4} className="text-right">
-            <Switch defaultChecked onChange={onChangeChecked} />
-          </Col>
-        </Row>
-        <Row className="mt-15 align-items-center " gutter={5}>
-          <Col sm={2}>
-            <ImageIcon />
-          </Col>
-          <Col sm={18} className="normal-text">
-            <PrimaryLabel >Activate for Image</PrimaryLabel>
-          </Col>
-          <Col sm={4} className="text-right">
-            <Switch defaultChecked onChange={onChangeChecked} />
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={24} className="mt-10">
-            <PrimaryLabel>Note</PrimaryLabel>
+            </Col>
+          </Row>
+          <Row className="mt-15 align-items-center " gutter={5}>
+            <Col sm={2}>
+              <PathIcon />
+            </Col>
+            <Col sm={18} className="normal-text">
+              <PrimaryLabel className="normal-text">Activate for Tracking</PrimaryLabel>
+            </Col>
+            <Col sm={4} className="text-right">
+              <Switch defaultChecked onChange={onChangeChecked} />
+            </Col>
+          </Row>
+          <Row className="mt-15" gutter={12}>
+            <Col sm={24}>
+              <FormInput
+                editMode={true}
+                placeholder={"Tracking or Pro Number"}
+                name="trackingNumber"
+              />
+            </Col>
 
-          </Col>
-          <Col sm={24}>
-            <TextArea onChange={onChange} style={{ width: "100%" }} />
+          </Row>
+          <Row className="mt-15 align-items-center " gutter={5}>
+            <Col sm={2}>
+              <ShieldIcon />
+            </Col>
+            <Col sm={18} className="normal-text">
+              <PrimaryLabel >Activate for Rate</PrimaryLabel>
+            </Col>
+            <Col sm={4} className="text-right">
+              <Switch defaultChecked onChange={onChangeChecked} />
+            </Col>
+          </Row>
+          <Row className="mt-15 align-items-center " gutter={5}>
+            <Col sm={2}>
+              <PackageIcon />
+            </Col>
+            <Col sm={18} className="normal-text">
+              <PrimaryLabel >Activate for Pickup Request</PrimaryLabel>
+            </Col>
+            <Col sm={4} className="text-right">
+              <Switch defaultChecked onChange={onChangeChecked} />
+            </Col>
+          </Row>
+          <Row className="mt-15 align-items-center " gutter={5}>
+            <Col sm={2}>
+              <ImageIcon />
+            </Col>
+            <Col sm={18} className="normal-text">
+              <PrimaryLabel >Activate for Image</PrimaryLabel>
+            </Col>
+            <Col sm={4} className="text-right">
+              <Switch defaultChecked onChange={onChangeChecked} />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={24} className="mt-10">
+              <PrimaryLabel>Note</PrimaryLabel>
 
-          </Col>
-        </Row>
+            </Col>
+            <Col sm={24}>
+              <TextArea onChange={onChange} style={{ width: "100%" }} />
+
+            </Col>
+          </Row>
+        </PerfectScrollbar>
       </div>
-    </Fragment>
+    </Fragment >
   );
 }
 export default ApiSetupTabs;

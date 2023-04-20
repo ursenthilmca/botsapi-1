@@ -8,13 +8,13 @@ import "react-circular-progressbar/dist/styles.css";
 
 
 
+
 import ProgressBar from '../../../../component/progress/progress-bar'
 let PerformanceTabs = () => {
     const percentage = 50;
 
     return (
         <Fragment>
-
             <Row gutter={12} className="justify-content-center">
 
                 <Col sm={12}>

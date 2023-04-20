@@ -1,5 +1,8 @@
 
 .customer-setup {
+  .ps__rail-x{
+    display: none !important;
+  }
   
   .cards-container {
     .ant-card-body {
@@ -69,7 +72,6 @@
   }
   .api-set-tab{
     height: calc(100vh - 350px);
-    overflow-y: scroll;
 
   }
   .api-test-tab{
@@ -77,8 +79,7 @@
 
   }
   .status-code-tab{
-    height: calc(100vh - 380px);
-    overflow-y: scroll;
+    height: calc(100vh - 300px);
   }
 }
 

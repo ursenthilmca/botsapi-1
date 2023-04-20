@@ -29,6 +29,8 @@ import APITab from "./tabs/api-tab";
 import MappingTab from "./tabs/mapping-tab";
 import OthersTab from "./tabs/others-tab";
 import NewApiCarrier from "./new-api-carrier";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 
 import "./api-mapping.scss";
@@ -253,31 +255,34 @@ let ApiMapping = () => {
                                 </span>
                             </Col>
                             <div className="method-list-container page-scroll">
-
-                                <Row gutter={12} className="method-list ">
-
-                                    {list.map((item) => (
-                                        <Col sm={12} className="mt-15" key={item.key}>
-                                            <Card style={{ background: item.btnCheck ? "#05A787" : "#FFFFFF", color: item.btnCheck ? "#FFF" : "#05A787" }}>
-                                                <div className="d-flex justify-content-between align-items-center">
-                                                    <span style={{ color: item.btnCheck ? "#fff" : "#101828", }} className="text-normal font-normal">
-                                                        {item.type}
-                                                    </span>
-                                                    <span>
-
-                                                        {item.btnCheck && item.check && <CloudCheck />}
-                                                        {!item.btnCheck && !item.check && <Cloud />}
-                                                        {!item.btnCheck && item.check && <CheckCloud />}
-                                                    </span>
+                                <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
-                                                </div>
-                                            </Card>
+                                    <Row gutter={12} className="method-list ">
 
-                                        </Col>
-                                    ))}
+                                        {list.map((item) => (
+                                            <Col sm={12} className="mt-15" key={item.key}>
+                                                <Card style={{ background: item.btnCheck ? "#05A787" : "#FFFFFF", color: item.btnCheck ? "#FFF" : "#05A787" }}>
+                                                    <div className="d-flex justify-content-between align-items-center">
+                                                        <span style={{ color: item.btnCheck ? "#fff" : "#101828", }} className="text-normal font-normal">
+                                                            {item.type}
+                                                        </span>
+                                                        <span>
 
-                                </Row>
+                                                            {item.btnCheck && item.check && <CloudCheck />}
+                                                            {!item.btnCheck && !item.check && <Cloud />}
+                                                            {!item.btnCheck && item.check && <CheckCloud />}
+                                                        </span>
+
+
+                                                    </div>
+                                                </Card>
+
+                                            </Col>
+                                        ))}
+
+                                    </Row>
+                                </PerfectScrollbar>
                             </div>
 
                         </Row>

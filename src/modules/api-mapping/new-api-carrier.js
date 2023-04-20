@@ -33,6 +33,10 @@ let NewApiCarrier = (props) => {
                 open={open}
                 key={placement}
                 className='new-api-carrier'
+                footer={<div className='d-flex justify-content-between'>
+                    <Button size={"large"} className="secondary-btn text-center w-20"  >Cancel</Button>
+                    <Button size={"large"} className="primary-btn w-20" >Next</Button>
+                </div>}
 
             >
                 <Row>
@@ -136,11 +140,8 @@ let NewApiCarrier = (props) => {
 
                 </Row>
 
-                <Divider />
-                <div className='d-flex justify-content-between'>
-                    <Button size={"large"} className="secondary-btn text-center w-20"  >Cancel</Button>
-                    <Button size={"large"} className="primary-btn w-20" >Next</Button>
-                </div>
+                {/* <Divider /> */}
+
 
 
             </Drawer>
