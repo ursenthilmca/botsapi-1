@@ -5,7 +5,7 @@ import "./menu.scss";
 import CloseIcon from "../../component/close-icon/close-icon";
 import { MenuActions } from "../menu/menu-action";
 import { useDispatch } from "react-redux";
-
+import { PlusOutlined, MinusOutlined } from "@ant-design/icons"
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -14,6 +14,8 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
+    expandIcon: <PlusOutlined />,
+    collapseIcon: <MinusOutlined />
   };
 }
 
@@ -71,6 +73,7 @@ function MenuComponent(props) {
         theme="light"
         inlineCollapsed={false}
         items={items}
+
         onClick={({ key, keyPath, domEvent }) => {
           if (key === "close") {
             hideMenuHandler();
