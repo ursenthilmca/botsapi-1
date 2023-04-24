@@ -89,9 +89,9 @@ let MappingRequestTab = () => {
     return (
         <Fragment>
             {editMapping && <EditMapping drawerStatus={editMapping} updateStatus={editMappingHandler} />}
-            <Row className="mt-20" gutter={15}>
+            <Row className="mt-20 px-10" gutter={15}>
                 <Col sm={8} className="h-100">
-                    <Card style={{ background: "#EAECF0" }}>
+                    <Card style={{ background: "#EAECF0" }} className="px-10">
                         <PrimaryLabel normal={true} className="text-large font-normal ">Actions</PrimaryLabel>
                         <Button icon={<EditIcon />} size={"large"} className="primary-btn d-flex flex-gap-1 align-items-center justify-content-center mt-12 w-100" onClick={() => setEditMapping(true)}>Edit Mapping</Button>
                         <Button size={"large"} className="light-btn  mt-12 w-100">Delete All Mapped Nodes</Button>

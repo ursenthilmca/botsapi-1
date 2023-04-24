@@ -30,7 +30,7 @@ let Mapping = () => {
         <Fragment>
             <div >
 
-                <Tabs defaultActiveKey="1" items={items} onChange={tabonChangeHandler} className="sub-tab" />
+                <Tabs defaultActiveKey="1" items={items} onChange={tabonChangeHandler} className="sub-tab pl-10" />
             </div>
 
         </Fragment>

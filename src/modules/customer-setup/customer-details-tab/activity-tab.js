@@ -1,39 +1,101 @@
+import React from "react";
+import { Row, Col, Card } from 'antd'
+import { ReactComponent as PaintIcon } from "../../../assets/svg/paint.svg";
+import { ReactComponent as FullSignalIcon } from "../../../assets/svg/full-signal.svg";
+import FiledCard from "../../../component/close-icon/cards/fields-card";
 
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { Line } from '@ant-design/plots';
+const CarriersTab = () => {
+    return (
+        <div>
+            <Row>
+                <Col className='mt-10'>Connected Carrier</Col>
+            </Row>
 
-let CarriersTab = () => {
-    const [data, setData] = useState([]);
+            <Row className=" mt-20">
+                <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                        <Col md={3}>
+                            <PaintIcon width={40} height={40} />
+                        </Col>
+                        <Col md={17}>
+                            <FiledCard
+                                title={"CENTRAL FREIGHT LINER (CENF)"}
+                                labelClass="title-override"
+                                className="colours"
+                            ></FiledCard>
+                            <FiledCard title={"Code: 1102"}></FiledCard>
+                        </Col>
+                        <Col md={4} className="text-right">
+                            <FullSignalIcon />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row className=" mt-20">
+                <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                        <Col md={3}>
+                            <PaintIcon width={40} height={40} />
+                        </Col>
+                        <Col md={17}>
+                            <FiledCard
+                                title={"CENTRAL FREIGHT LINER (CENF)"}
+                                labelClass="title-override"
+                                className="colours"
+                            ></FiledCard>
+                            <FiledCard title={"Code: 1102"}></FiledCard>
+                        </Col>
+                        <Col md={4} className="text-right">
+                            <FullSignalIcon />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row className=" mt-20">
+                <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                        <Col md={3}>
+                            <PaintIcon width={40} height={40} />
+                        </Col>
+                        <Col md={17}>
+                            <FiledCard
+                                title={"CENTRAL FREIGHT LINER (CENF)"}
+                                labelClass="title-override"
+                                className="colours"
+                            ></FiledCard>
+                            <FiledCard title={"Code: 1102"}></FiledCard>
+                        </Col>
+                        <Col md={4} className="text-right">
+                            <FullSignalIcon />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row className=" mt-20">
+                <Col sm={24}>
+                    <Row gutter={12} align={"middle"}>
+                        <Col md={3}>
+                            <PaintIcon width={40} height={40} />
+                        </Col>
+                        <Col md={17}>
+                            <FiledCard
+                                title={"CENTRAL FREIGHT LINER (CENF)"}
+                                labelClass="title-override"
+                                className="colours"
+                            ></FiledCard>
+                            <FiledCard title={"Code: 1102"}></FiledCard>
+                        </Col>
+                        <Col md={4} className="text-right">
+                            <FullSignalIcon />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
 
-    useEffect(() => {
-        asyncFetch();
-    }, []);
 
-    const asyncFetch = () => {
-        fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => {
-                console.log('fetch data failed', error);
-            });
-    };
-    const config = {
-        data,
-        xField: 'year',
-        yField: 'value',
-        seriesField: 'category',
-        xAxis: {
-            type: 'time',
-        },
-        yAxis: {
-            label: {
 
-                formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
-            },
-        },
-    };
+        </div>
+    );
+};
 
-    return (<Line {...config} style={{ height: "300px" }} />)
-}
 export default CarriersTab;

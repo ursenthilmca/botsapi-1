@@ -213,7 +213,7 @@ let ApiMapping = () => {
                         }}
                         className="p-0 cards-container"
                     >
-                        <Row>
+                        <Row className="px-10">
                             <Col sm={24} className="text-normal font-normal mb-4">
                                 Available Carrier
                             </Col>
@@ -229,7 +229,7 @@ let ApiMapping = () => {
                             </Col>
 
                         </Row>
-                        <Row className="mt-15 selected-card">
+                        <Row className="mt-15 selected-card mx-10">
                             <Col lg={5}>
                                 <PaintIcon />
                             </Col>
@@ -248,8 +248,8 @@ let ApiMapping = () => {
                                 </div>
                             </Col>
                         </Row>
-                        <Row className="mt-20">
-                            <Col sm={24} >
+                        <Row className="mt-20 ">
+                            <Col sm={24} className="px-10">
                                 <span className="text-normal font-light">
                                     Method Type
                                 </span>
@@ -294,9 +294,9 @@ let ApiMapping = () => {
                         style={{
                             width: "100%",
                         }}
-                        className="p-0 cards-container"
+                        className="p-0 cards-container method-tabs"
                     >
-                        <div className="d-flex flex-gap-1 align-items-center">
+                        <div className="d-flex flex-gap-1 align-items-center px-10">
 
                             <FiledCard title={"Method Type:"} ></FiledCard>
                             <Button

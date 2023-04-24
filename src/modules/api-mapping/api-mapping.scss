@@ -3,7 +3,7 @@
   // overflow-y: auto;
   // height: calc(100vh - 105px);
     .ant-card-body{
-      padding: 1.5rem 1.5rem;
+      padding: 1.5rem 0rem;
     }
   .text-large {
     font-size: 1.125rem;
@@ -54,7 +54,7 @@
   }
 
   .method-list {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 290px);
     .ant-card-body {
       padding: 1rem 1.5rem;
     }
@@ -137,6 +137,10 @@
 }
 
 .method-list-container{
-  height: 180px;
+  height: 170px;
+}
+
+.method-tabs{
+  height: 385px;
 }
 

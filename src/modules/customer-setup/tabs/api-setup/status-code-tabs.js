@@ -85,7 +85,7 @@ let StatusCodeTabs = () => {
     const show = useSelector(state => state.menubar.menuVisible)
     return (
         <Fragment className="status-code-tab">
-            <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+            <PerfectScrollbar style={{ maxHeight: '180px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
                 <Row gutter={12} className="mb-20 align-items-center p-0 w-100 " >
                     <Col lg={show ? 14 : 16}>

@@ -4,6 +4,9 @@ import "./edit-mapping.scss";
 import MappingItemTab from "./edit-mapping-tabs/mapping-item-tab";
 import MappingViewTab from "./edit-mapping-tabs/mapping-view-tab";
 import { ReactComponent as FileIcon } from "../../../../assets/svg/File.svg";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 
 let EditMapping = (props) => {
     const [open, setOpen] = useState(props.drawerStatus);
@@ -82,7 +85,7 @@ let EditMapping = (props) => {
             >
                 <div className='' >
 
-                    <Tabs defaultActiveKey="1" items={items} onChange={tabonChangeHandler} className="sub-tab w-100" />
+                    <Tabs defaultActiveKey="1" items={items} onChange={tabonChangeHandler} className="sub-tab w-100 " style={{ overflowY: "hidden" }} />
                 </div>
             </Drawer >
         </Fragment >

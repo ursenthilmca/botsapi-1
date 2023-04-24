@@ -2,7 +2,14 @@
 
 .ant-drawer-content-wrapper .addcarrier_block {
     width: 800px  ;
-    border-radius: 0 12px 12px 0;}
+    border-radius: 0 12px 12px 0;
+    overflow: hidden !important;
+    scroll-behavior:unset;
+  }
+  .carrier-menubar{
+    overflow-y: hidden;
+    scroll-behavior: unset;
+  }
 
 .grid-container {
         display: grid;

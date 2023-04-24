@@ -29,7 +29,7 @@ function ApiSetupTabs() {
     <Fragment>
 
       <div className="api-set-tab" style={{ overflowX: "hidden" }}>
-        <PerfectScrollbar style={{ maxHeight: '345px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+        <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
           <Row>
             <Col sm={24}>
               <PrimaryLabel>Account Information</PrimaryLabel>

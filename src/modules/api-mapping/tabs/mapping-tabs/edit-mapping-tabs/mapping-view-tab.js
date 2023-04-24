@@ -1,7 +1,6 @@
 import { Row, Col, Input, Button, Affix, Divider } from "antd";
 import React, { Fragment, useState } from "react";
 import PrimaryLabel from "../../../../../component/labels/primary-label";
-import PerfectScrollbar from 'react-perfect-scrollbar';
 import "./mapping-view-tab.scss";
 import FormInput from "../../../../../component/form-input/form-input"
 
@@ -11,6 +10,9 @@ import {
     PlusOutlined
 } from "@ant-design/icons";
 import MappingViewSourceMenu from "./mapping-view-source-menu";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 
 const fileTypes = ["JPG", "PNG", "GIF"];
 
@@ -23,7 +25,7 @@ let MappingViewTab = () => {
 
     return (
         <Fragment>
-            <Row gutter={35} className=" flex-gap-half">
+            <Row gutter={35} className=" flex-gap-half" style={{ overflowY: "hidden" }}>
                 <Col sm={9} className="b-1 p-15 " style={{ borderRadius: "12px" }}>
                     <Row >
                         <Col sm={24} >
@@ -66,140 +68,145 @@ let MappingViewTab = () => {
 
 
                     </Row>
+                    <PerfectScrollbar style={{ maxHeight: '325px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                        <div>
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 "
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 "
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
-                    <Row className="mt-25 align-items-center">
-                        <Col lg={5} className="text-center">
-                            <div className="secondary-box">BOST API Node</div>
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
-                        <Col lg={10} className="fileUploader">
-                            <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
 
-                        </Col>
-                        <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
-                        <Col lg={7}>
-                            <FormInput editMode={true}
-                                placeholder={"Enter value"}
-                                name="value"
-                                style={{ margin: "0 !important" }}
-                                className="m-0 h-100"
-                            />
-                        </Col>
-                    </Row>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className="mt-25 align-items-center">
+                                <Col lg={5} className="text-center">
+                                    <div className="secondary-box">BOST API Node</div>
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "-5px" }}><Divider plain /></Col>
+                                <Col lg={10} className="fileUploader">
+                                    <FileUploader handleChange={handleChange} label='Drag & drop method here ...' />
+
+                                </Col>
+                                <Col lg={1} style={{ marginLeft: "0px" }}><Divider plain /></Col>
+                                <Col lg={7}>
+                                    <FormInput editMode={true}
+                                        placeholder={"Enter value"}
+                                        name="value"
+                                        style={{ margin: "0 !important" }}
+                                        className="m-0 h-100"
+                                    />
+                                </Col>
+                            </Row>
+                        </div>
+                    </PerfectScrollbar>
 
 
                 </Col>

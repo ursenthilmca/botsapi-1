@@ -6,7 +6,7 @@
   
   .cards-container {
     .ant-card-body {
-      padding: 0.85em !important;      
+      padding:0.85rem 0 !important;      
       .un-selected-card {
         .inside-wrapper {
           background: #f2f4f7;
@@ -71,15 +71,15 @@
     
   }
   .api-set-tab{
-    height: calc(100vh - 350px);
+    height: calc(100vh - 365px);
 
   }
   .api-test-tab{
-    height: calc(100vh - 350px);
+    height: calc(100vh - 365px);
 
   }
   .status-code-tab{
-    height: calc(100vh - 300px);
+    height: calc(100vh - 365px);
   }
 }
 
@@ -169,4 +169,27 @@
 
 .headers{
   background-color: #1D2939 ;
+}
+
+.ps__rail-y{
+  width: 5px;
+
+}
+.ps__thumb-y{
+  right:0 !important;
+  width: 5px ;
+}
+.ps {
+
+  // .ps__rail-y{
+    .ps__rail-y:hover, .ps__rail-y:focus{
+    background-color: transparent !important; 
+    .ps__thumb-y{
+      
+      width: 5px ;
+    }
+    
+    }
+  // }
+  
 }

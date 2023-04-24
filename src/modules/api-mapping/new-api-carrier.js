@@ -6,6 +6,8 @@ import { ReactComponent as CloudCheckIcon } from '../../assets/svg/cloud-check-o
 import { ReactComponent as ListDahesIcon } from '../../assets/svg/ListDashes.svg';
 import FormInput from '../../component/form-input/form-input';
 import FiledCard from '../../component/close-icon/cards/fields-card';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 
 
@@ -76,66 +78,74 @@ let NewApiCarrier = (props) => {
                         <Divider type="vertical" style={{ height: "500px" }} />
                     </Col>
                     <Col sm={15}>
-                        <Space direction="vertical" size="large" style={{ display: 'flex' }}>
+                        <PerfectScrollbar style={{ maxHeight: '415px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+
+                            <div>
+                                <Space direction="vertical" size="large" style={{ display: 'flex' }}>
 
 
-                            <FiledCard title={"Carrier"} >
-                                <Select
-                                    defaultValue="Select Carrier"
-                                    style={{
-                                        width: "100%",
-                                    }}
-                                    onChange={{}}
-                                    options={[
+                                    <FiledCard title={"Carrier"} >
+                                        <Select
+                                            defaultValue="Select Carrier"
+                                            style={{
+                                                width: "100%",
+                                            }}
+                                            onChange={{}}
+                                            options={[
 
-                                    ]}
+                                            ]}
+                                        />
+                                    </FiledCard>
+                                    <FiledCard title={"Logistichub API"} >
+                                        <Select
+                                            defaultValue="Select "
+                                            style={{
+                                                width: "100%",
+                                            }}
+                                            onChange={{}}
+                                            options={[
+
+                                            ]}
+                                        />
+                                    </FiledCard>
+                                    <FiledCard title={"Request Type"}  >
+                                        <Select
+                                            defaultValue="Select Request Type"
+                                            style={{
+                                                width: "100%",
+                                            }}
+                                            onChange={{}}
+                                            options={[
+
+                                            ]}
+                                        />
+                                    </FiledCard>
+
+                                    <FormInput
+                                        editMode={true}
+                                        label={"Username"}
+                                        placeholder={"Enter Username"}
+                                        name="userName"
+                                    />
+                                </Space>
+                                <div>
+
+                                </div>
+                                <FormInput
+                                    editMode={true}
+                                    label={"Password"}
+                                    placeholder={"Enter Password"}
+                                    name="password"
                                 />
-                            </FiledCard>
-                            <FiledCard title={"Logistichub API"} >
-                                <Select
-                                    defaultValue="Select "
-                                    style={{
-                                        width: "100%",
-                                    }}
-                                    onChange={{}}
-                                    options={[
-
-                                    ]}
+                                <FormInput
+                                    editMode={true}
+                                    label={"Account Number"}
+                                    placeholder={"Enter Account Number"}
+                                    name="accountNumber"
                                 />
-                            </FiledCard>
-                            <FiledCard title={"Request Type"}  >
-                                <Select
-                                    defaultValue="Select Request Type"
-                                    style={{
-                                        width: "100%",
-                                    }}
-                                    onChange={{}}
-                                    options={[
+                            </div>
+                        </PerfectScrollbar>
 
-                                    ]}
-                                />
-                            </FiledCard>
-
-                            <FormInput
-                                editMode={true}
-                                label={"Username"}
-                                placeholder={"Enter Username"}
-                                name="userName"
-                            />
-                        </Space>
-
-                        <FormInput
-                            editMode={true}
-                            label={"Password"}
-                            placeholder={"Enter Password"}
-                            name="password"
-                        />
-                        <FormInput
-                            editMode={true}
-                            label={"Account Number"}
-                            placeholder={"Enter Account Number"}
-                            name="accountNumber"
-                        />
                     </Col>
 
                 </Row>

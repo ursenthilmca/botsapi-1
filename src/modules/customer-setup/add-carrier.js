@@ -19,7 +19,8 @@ import React, { useState } from "react";
 import { Footer } from 'antd/es/layout/layout';
 import { ReactComponent as Minusicon } from '../../assets/svg/minus.svg';
 import { ReactComponent as SixDotIcon } from '../../assets/svg/DotsSixVertical.svg';
-
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 
 function getItem(label, key, icon, children) {
@@ -81,7 +82,7 @@ let AddCarrier = (props) => {
 
             <div className=''>
                 <Row >
-                    <Col lg={8} className='carrier-menubar p-20'>
+                    <Col lg={8} className='carrier-menubar p-20' style={{ overflowX: "hidden" }}>
                         <Row>
                             <Col lg={24}>
                                 <div className=' minismall'>
@@ -104,111 +105,116 @@ let AddCarrier = (props) => {
 
 
                     </Col>
+
                     <Col lg={16} className='p-20'>
-                        < Row align={'middle'} >
+                        < Row align={'middle'} style={{ overflowX: "hidden" }}>
                             <Col sm={24} >
                                 <Input placeholder='Search carrier ... ' />
                             </Col>
                         </Row>
-                        <Row className='mt-20 ' gutter={[15, 15]} >
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={canon} alt="canon " width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={timeicon} alt="time " width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={paint} alt="Paint " width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={moicon} alt="M" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={loveclipicon} alt="Love Clip" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={susiicon} alt="Susi" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={c2icon} alt="c2" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={boicon} alt="bo" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={salesforceicon} alt="sales force" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={timeicon} alt="time" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={paint} alt="pain" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col lg={8}>
-                                <Card>
-                                    <div className='mx-auto text-center'>
-                                        <img src={moicon} alt="mo" width={60} height={60} />
-                                        <span>SalesForce</span>
-                                    </div>
-                                </Card>
-                            </Col>
 
-                        </Row>
+                        <PerfectScrollbar style={{ maxHeight: '395px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                            <Row className='mt-20 ' gutter={[15, 15]} >
+
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={canon} alt="canon " width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={timeicon} alt="time " width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={paint} alt="Paint " width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={moicon} alt="M" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={loveclipicon} alt="Love Clip" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={susiicon} alt="Susi" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={c2icon} alt="c2" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={boicon} alt="bo" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={salesforceicon} alt="sales force" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={timeicon} alt="time" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={paint} alt="pain" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+                                <Col lg={8}>
+                                    <Card>
+                                        <div className='mx-auto text-center'>
+                                            <img src={moicon} alt="mo" width={60} height={60} />
+                                            <span>SalesForce</span>
+                                        </div>
+                                    </Card>
+                                </Col>
+
+                            </Row>
+                        </PerfectScrollbar>
 
                     </Col>
                 </Row>
