@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import AppLayout from "../modules/app-layout/app-layout";
 import CustomerSetup from "../modules/customer-setup/customer-setup";
 import ApiMapping from "../modules/api-mapping/api-mapping";
+import CustomerSetupmodule from "../modules/customer-setup/customer_setup";
 
 const AppRoutes = () => {
   return (
@@ -10,7 +11,7 @@ const AppRoutes = () => {
       <Route path="/" element={<AppLayout />}>
         <Route path="/" element={<CustomerSetup />} />
         <Route path="/apiMapping" element={<ApiMapping />} />
-
+        <Route path="/customerSetup" element={<CustomerSetupmodule />} />
         {/* <Route path={"*"} element={<PageNotFound />} /> */}
       </Route>
     </Routes>

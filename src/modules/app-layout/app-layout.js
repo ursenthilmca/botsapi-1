@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./app-layout.scss";
 import Header from "../header/header";
-import { Col, Row } from "antd";
+import { Col, Row, Card } from "antd";
 import MenuComponent from "../menu/menu";
 import menuAction from "../menu/menu-action";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 const AppLayout = () => {
   const dispacth = useDispatch();
   const show = useSelector(state => state.menubar.menuVisible);
+  const customerSetup= useSelector(state => state.customerSetup)
   console.log(show);
 
   const showMenuHandler = () => {
@@ -38,6 +39,13 @@ const AppLayout = () => {
               <Outlet />
             </div>
           </Col>
+          {
+            customerSetup.customerSetupclicked &&  <div>
+            <Col sm={24} lg={24} className="card-body">
+              <Card bordered={false} style={{ width: "100%" }}></Card>
+            </Col>
+          </div>
+          }
         </Row>
       </div>
       <div className="container-background"></div>

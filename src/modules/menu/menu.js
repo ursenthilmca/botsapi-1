@@ -6,6 +6,9 @@ import CloseIcon from "../../component/close-icon/close-icon";
 import { MenuActions } from "../menu/menu-action";
 import { useDispatch } from "react-redux";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons"
+import { useNavigate } from 'react-router-dom';
+import { customerSetupcomponent } from '../action/CustomerDetail'
+
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -59,6 +62,8 @@ function MenuComponent(props) {
   }
 
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -75,6 +80,13 @@ function MenuComponent(props) {
         items={items}
 
         onClick={({ key, keyPath, domEvent }) => {
+
+          if(key === 'customer-setup'){
+            navigate('/customerSetup');
+          } else if (key ==='api-mapping') { 
+            navigate('/apiMapping');
+            dispacth(customerSetupcomponent(false))
+          }
           if (key === "close") {
             hideMenuHandler();
           }
