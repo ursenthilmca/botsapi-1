@@ -210,6 +210,7 @@ let ApiMapping = () => {
                         bordered={false}
                         style={{
                             width: "100%",
+                            height: "100%"
                         }}
                         className="p-0 cards-container"
                     >
@@ -255,7 +256,7 @@ let ApiMapping = () => {
                                 </span>
                             </Col>
                             <div className="method-list-container page-scroll">
-                                <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                                <PerfectScrollbar style={{ maxHeight: 'calc(100vh - 400px)', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
                                     <Row gutter={12} className="method-list ">
@@ -293,6 +294,7 @@ let ApiMapping = () => {
                         bordered={false}
                         style={{
                             width: "100%",
+                            height: "100%"
                         }}
                         className="p-0 cards-container method-tabs"
                     >

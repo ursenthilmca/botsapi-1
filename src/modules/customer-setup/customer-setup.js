@@ -139,6 +139,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
+              height: "100vh"
             }}
             className="p-0 cards-container"
           >
@@ -161,7 +162,7 @@ function CustomerSetup(props) {
             </Row>
             {/* <div className="page-scroll mt-15 "> */}
             <div >
-              <PerfectScrollbar style={{ maxHeight: '335px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: 'auto', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
                 {/* <div className="mr-25"> */}
 
                 <Row className="mt-10 un-selected-card " ref={selectedCard}>
@@ -355,7 +356,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
-              height: "450px"
+              height: "100vh"
             }}
             className="p-0 cards-container"
 
@@ -384,7 +385,7 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15" >
-              <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: 'auto', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
                 <Row className="mt-15 selected-card">
@@ -486,7 +487,7 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
-              height: "450px"
+              height: "100vh"
 
             }}
             className="cards-container"

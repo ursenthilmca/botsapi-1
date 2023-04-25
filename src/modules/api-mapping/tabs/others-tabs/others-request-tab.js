@@ -6,7 +6,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 let OthersRequestTab = () => {
     return (
         <Fragment>
-            <PerfectScrollbar style={{ maxHeight: '190px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+            <PerfectScrollbar style={{ maxHeight: 'auto', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
                 <div className="other-request-tabs page-scroll ">
 

@@ -54,7 +54,7 @@
   }
 
   .method-list {
-    height: calc(100vh - 290px);
+    height: 100vh;
     .ant-card-body {
       padding: 1rem 1.5rem;
     }
@@ -133,11 +133,11 @@
 }
 
 .other-request-tabs{
-  height: 200px;
+  height: 100vh;
 }
 
 .method-list-container{
-  height: 170px;
+  height: 100vh;
 }
 
 .method-tabs{

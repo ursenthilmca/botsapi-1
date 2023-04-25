@@ -8,7 +8,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 let ApiRequestTab = () => {
     return (
         <Fragment>
-            <PerfectScrollbar style={{ maxHeight: '190px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+            <PerfectScrollbar style={{ maxHeight: '200px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
                 <div className="api-request-tab h-100 page-scroll px-10">
 
