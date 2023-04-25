@@ -12,7 +12,7 @@ let ApiTestTabs = () => {
     return (
         <Fragment>
             <div className=" api-test-tab">
-                <PerfectScrollbar style={{ maxHeight: '345px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                <PerfectScrollbar style={{ maxHeight: '205px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
                     <Row gutter={12}>
                         <Col sm={12}>

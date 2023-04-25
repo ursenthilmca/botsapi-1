@@ -161,7 +161,7 @@ function CustomerSetup(props) {
             </Row>
             {/* <div className="page-scroll mt-15 "> */}
             <div >
-              <PerfectScrollbar style={{ maxHeight: '325px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: '335px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
                 {/* <div className="mr-25"> */}
 
                 <Row className="mt-10 un-selected-card " ref={selectedCard}>
@@ -350,14 +350,15 @@ function CustomerSetup(props) {
 
           </Card>
         </Col>
-        <Col sm={24} lg={show === true ? 8 : 7} className="carrier-card">
+        <Col sm={24} lg={show === true ? 8 : 7} className="carrier-card" >
           <Card
             bordered={false}
             style={{
               width: "100%",
-
+              height: "450px"
             }}
             className="p-0 cards-container"
+
           >
             <Row align={"middle"} className="justify-content-between px-10">
               <Col xl={18} >
@@ -383,7 +384,7 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15" >
-              <PerfectScrollbar style={{ maxHeight: '335px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: '305px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
                 <Row className="mt-15 selected-card">
@@ -485,7 +486,8 @@ function CustomerSetup(props) {
             bordered={false}
             style={{
               width: "100%",
-              height: "100%"
+              height: "450px"
+
             }}
             className="cards-container"
           >

@@ -44,20 +44,20 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 import { Card } from 'antd';
 
 const data = [
-     { name: 'Jan', apple: '40k', banana: '24k', citrus: '24k' },
-     { name: 'Feb', apple: '30k', banana: '13k', citrus: '22k' },
-     { name: 'Mar', apple: '20k', banana: '98k', citrus: '22k' },
-     { name: 'Apr', apple: '27k', banana: '39k', citrus: '20k' },
-     { name: 'May', apple: '18k', banana: '48k', citrus: '21k' },
-     { name: 'Jun', apple: '23k', banana: '38k', citrus: '25k' },
-     { name: 'Jul', apple: '34k', banana: '43k', citrus: '21k' },
-     { name: 'Aug', apple: '40k', banana: '24k', citrus: '24k' },
-     { name: 'Sep', apple: '30k', banana: '13k', citrus: '22k' },
-     { name: 'Oct', apple: '20k', banana: '98k', citrus: '22k' },
-     { name: 'Nov', apple: '27k', banana: '39k', citrus: '20k' },
-     { name: 'Dec', apple: '18k', banana: '48k', citrus: '21k' },
+     { name: 'Jan', apple: '40', banana: '24', citrus: '24' },
+     { name: 'Feb', apple: '30', banana: '13', citrus: '22' },
+     { name: 'Mar', apple: '20', banana: '98', citrus: '22' },
+     { name: 'Apr', apple: '27', banana: '39', citrus: '20' },
+     { name: 'May', apple: '18', banana: '48', citrus: '21' },
+     { name: 'Jun', apple: '23', banana: '38', citrus: '25' },
+     { name: 'Jul', apple: '34', banana: '43', citrus: '21' },
+     { name: 'Aug', apple: '40', banana: '24', citrus: '24' },
+     { name: 'Sep', apple: '30', banana: '13', citrus: '22' },
+     { name: 'Oct', apple: '20', banana: '98', citrus: '22' },
+     { name: 'Nov', apple: '27', banana: '39', citrus: '20' },
+     { name: 'Dec', apple: '18', banana: '48', citrus: '21' },
 ];
-let count = ['0', '10k', '20k', '40k', '100k']
+console.log(typeof ('3k'))
 
 let ActivityTab = () => {
      return (
@@ -69,8 +69,8 @@ let ActivityTab = () => {
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                >
                     <XAxis dataKey="name" />
-                    <YAxis label={{ value: 'Quantity', angle: -90, position: 'insideLeft' }} dataKey={count} />
-                    <CartesianGrid strokeDasharray="3 5" />
+                    <YAxis />
+                    <CartesianGrid strokeDasharray="3 6" />
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="apple" stroke="#8884d8" />
