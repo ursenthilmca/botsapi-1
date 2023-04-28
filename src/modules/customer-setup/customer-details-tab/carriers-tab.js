@@ -57,7 +57,10 @@ const data = [
      { name: 'Nov', apple: '27', banana: '39', citrus: '20' },
      { name: 'Dec', apple: '18', banana: '48', citrus: '21' },
 ];
-console.log(typeof ('3k'))
+
+const yAxisformatter = (number) => {
+     return `${number.toString()}k`;
+   }
 
 let ActivityTab = () => {
      return (
@@ -69,7 +72,7 @@ let ActivityTab = () => {
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                >
                     <XAxis dataKey="name" />
-                    <YAxis />
+                    <YAxis  tickFormatter={yAxisformatter}/>
                     <CartesianGrid strokeDasharray="3 6" />
                     <Tooltip />
                     <Legend />
