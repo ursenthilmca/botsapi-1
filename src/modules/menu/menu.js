@@ -24,8 +24,8 @@ function getItem(label, key, icon, children, type) {
 
 const items = [
   getItem(
-    <div style={{ cursor: "pointer", width: 32, display: "inline-block" }}>
-      <CloseIcon />
+    <div className="close-icon">
+      <CloseIcon style={{ cursor: "pointer", width: '32px', display: "inline" }} />
     </div>,
     "close"
   ),
@@ -73,6 +73,7 @@ function MenuComponent(props) {
       <Menu
         className="menu-items"
         // defaultSelectedKeys={['1']}
+        title="abcd"
         defaultOpenKeys={['api']}
         mode="inline"
         theme="light"

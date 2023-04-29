@@ -1,4 +1,4 @@
-import { Drawer, Row, Col, Input, Card, Grid, Divider, Button, Menu } from 'antd'
+import { Drawer, Row, Col, Input, Card, Grid, Divider, Button, Menu, Checkbox } from 'antd'
 import "./customer-setup.scss";
 import "./add-carrier.scss";
 import { PlusOutlined } from "@ant-design/icons";
@@ -45,9 +45,24 @@ const items = [
 
 ];
 
+const carrierList = [
+    { id: 1, name: 'Canon', productName: "SalesForce", imges: canon },
+    { id: 2, name: 'Time', productName: "SalesForce", imges: timeicon },
+    { id: 3, name: 'Mo', productName: "SalesForce", imges: moicon },
+    { id: 4, name: 'Love clip', productName: "SalesForce", imges: loveclipicon },
+    { id: 5, name: 'c2', productName: "SalesForce", imges: c2icon },
+    { id: 6, name: 'Sales Force', productName: "SalesForce", imges: salesforceicon },
+    { id: 7, name: 'Time', productName: "SalesForce", imges: timeicon },
+    { id: 8, name: 'paint', productName: "SalesForce", imges: paint },
+    { id: 9, name: 'Mo', productName: "SalesForce", imges: moicon },
+
+]
+
 let AddCarrier = (props) => {
     const [open, setOpen] = useState(props.drawerStatus);
     const [placement, setPlacement] = useState('left');
+    const [filterData, setFilterData] = useState(carrierList);
+    const [checked, setChecked] = useState(false);
 
     const [mode, setMode] = useState('inline');
     const [theme, setTheme] = useState('light');
@@ -58,12 +73,32 @@ let AddCarrier = (props) => {
         setTheme(value ? 'dark' : 'light');
     };
 
-
+    const onChange = (e) => {
+        console.log(`checked = ${e.target.checked}`);
+        setChecked(true);
+    };
 
     const onClose = () => {
         props.updateStatus(false);
         setOpen(false);
     };
+
+    const filterHandler = (e) => {
+        let value = e.target.value.toLowerCase();
+        console.log(value);
+        let result = [];
+
+        result = carrierList.filter((data) => {
+            return data.name.search(value) != -1;
+        });
+
+        setFilterData(result)
+
+    }
+
+
+
+
 
 
     return (
@@ -107,111 +142,29 @@ let AddCarrier = (props) => {
                     </Col>
 
                     <Col lg={16} className='p-20'>
-                        < Row align={'middle'} style={{ overflowX: "hidden" }}>
+                        < Row align={'middle'} style={{ overflowX: "hidden" }} className='pb-10'>
                             <Col sm={24} >
-                                <Input placeholder='Search carrier ... ' />
+                                <Input placeholder='Search carrier ... ' type='text' onChange={filterHandler} />
                             </Col>
                         </Row>
 
-                        <PerfectScrollbar style={{ maxHeight: '395px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                        <PerfectScrollbar style={{ maxHeight: '345px', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
                             <Row className='mt-20 ' gutter={[15, 15]} >
+                                {filterData.map((list) => (
+                                    <Col lg={8} key={list.id} >
+                                        <Card key={list.id} style={{ backgroundColor: checked ? "#E6F6F3" : '', borderColor: checked ? "#05987B" : '' }}>
+                                            <Checkbox onChange={onChange}>
+                                                <div className='mx-auto text-center'>
+                                                    <img src={list.imges} alt={list.name} width={60} height={60} />
+                                                    <span>{list.productName}</span>
+                                                </div>
+                                            </Checkbox>
+                                        </Card>
+                                    </Col>
+                                ))}
 
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={canon} alt="canon " width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={timeicon} alt="time " width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={paint} alt="Paint " width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={moicon} alt="M" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={loveclipicon} alt="Love Clip" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={susiicon} alt="Susi" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={c2icon} alt="c2" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={boicon} alt="bo" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={salesforceicon} alt="sales force" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={timeicon} alt="time" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={paint} alt="pain" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
-                                <Col lg={8}>
-                                    <Card>
-                                        <div className='mx-auto text-center'>
-                                            <img src={moicon} alt="mo" width={60} height={60} />
-                                            <span>SalesForce</span>
-                                        </div>
-                                    </Card>
-                                </Col>
+
+
 
                             </Row>
                         </PerfectScrollbar>
@@ -221,7 +174,7 @@ let AddCarrier = (props) => {
 
 
             </div>
-        </Drawer>
+        </Drawer >
     )
 }
 export default AddCarrier;

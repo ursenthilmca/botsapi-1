@@ -162,7 +162,7 @@ function CustomerSetup(props) {
             </Row>
             {/* <div className="page-scroll mt-15 "> */}
             <div >
-              <PerfectScrollbar style={{ maxHeight: 'auto', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: '35rem', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
                 {/* <div className="mr-25"> */}
 
                 <Row className="mt-10 un-selected-card " ref={selectedCard}>
