@@ -7,3 +7,22 @@
         font-weight: 500;
         font-size: 1rem;
 }
+
+.actions{
+    
+    div{
+        border: 1px solid #D0D5DD;
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+    .first{
+        border-radius: 5px 0 0 5px;
+    }
+    .last{
+        border-radius: 0 5px 5px 0;
+
+    }
+    .bg-light{
+        background-color: #EAECF0;
+    }
+}

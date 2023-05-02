@@ -60,12 +60,20 @@ function CustomerSetup(props) {
   }
   const handleOpenChange = () => {
     setOpen(true);
+    setOpen1(false);
+    setOpen2(false);
   }
   const handleOpenChange1 = () => {
+    setOpen(false);
     setOpen1(true);
+    setOpen2(false);
+
   }
   const handleOpenChange2 = () => {
+    setOpen(false);
+    setOpen1(false);
     setOpen2(true);
+
   }
 
   const disConnectHandler = () => {

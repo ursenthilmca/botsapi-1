@@ -1,86 +1,62 @@
 
-
-
-// import React, { useState, useEffect } from 'react';
-// import ReactDOM from 'react-dom';
-// import { Line } from '@ant-design/plots';
-
-// let CarriersTab = () => {
-//     const [data, setData] = useState([]);
-
-//     useEffect(() => {
-//         asyncFetch();
-//     }, []);
-
-//     const asyncFetch = () => {
-//         fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-//             .then((response) => response.json())
-//             .then((json) => setData(json))
-//             .catch((error) => {
-//                 console.log('fetch data failed', error);
-//             });
-//     };
-//     const config = {
-//         data,
-//         xField: 'year',
-//         yField: 'value',
-//         seriesField: 'category',
-//         xAxis: {
-//             type: 'time',
-//         },
-//         yAxis: {
-//             label: {
-
-//                 formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
-//             },
-//         },
-//     };
-
-//     return (<Line {...config} style={{ height: "3 px" }} />)
-// }
-// export default CarriersTab;
-
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Card } from 'antd';
+import { Row, Col, Card } from 'antd';
+import PrimaryLabel from '../../../component/labels/primary-label';
+import './carriers-tab.scss';
+
 
 const data = [
-     { name: 'Jan', apple: '40', banana: '24', citrus: '24' },
-     { name: 'Feb', apple: '30', banana: '13', citrus: '22' },
-     { name: 'Mar', apple: '20', banana: '98', citrus: '22' },
-     { name: 'Apr', apple: '27', banana: '39', citrus: '20' },
-     { name: 'May', apple: '18', banana: '48', citrus: '21' },
-     { name: 'Jun', apple: '23', banana: '38', citrus: '25' },
-     { name: 'Jul', apple: '34', banana: '43', citrus: '21' },
-     { name: 'Aug', apple: '40', banana: '24', citrus: '24' },
-     { name: 'Sep', apple: '30', banana: '13', citrus: '22' },
-     { name: 'Oct', apple: '20', banana: '98', citrus: '22' },
-     { name: 'Nov', apple: '27', banana: '39', citrus: '20' },
-     { name: 'Dec', apple: '18', banana: '48', citrus: '21' },
+     { name: 'Jan', "Carrier A": '40', "Carrier B": '24', "Carrier C": '24', "Carrier D": '38' },
+     { name: 'Feb', "Carrier A": '30', "Carrier B": '13', "Carrier C": '22', "Carrier D": '98' },
+     { name: 'Mar', "Carrier A": '20', "Carrier B": '98', "Carrier C": '22', "Carrier D": '28' },
+     { name: 'Apr', "Carrier A": '27', "Carrier B": '39', "Carrier C": '20', "Carrier D": '13' },
+     { name: 'May', "Carrier A": '18', "Carrier B": '48', "Carrier C": '21', "Carrier D": '24' },
+     { name: 'Jun', "Carrier A": '23', "Carrier B": '38', "Carrier C": '25', "Carrier D": '58' },
+     { name: 'Jul', "Carrier A": '34', "Carrier B": '43', "Carrier C": '21', "Carrier D": '88' },
+     { name: 'Aug', "Carrier A": '40', "Carrier B": '24', "Carrier C": '24', "Carrier D": '54' },
+     { name: 'Sep', "Carrier A": '30', "Carrier B": '13', "Carrier C": '22', "Carrier D": '43' },
+     { name: 'Oct', "Carrier A": '20', "Carrier B": '98', "Carrier C": '22', "Carrier D": '38' },
+     { name: 'Nov', "Carrier A": '27', "Carrier B": '39', "Carrier C": '20', "Carrier D": '99' },
+     { name: 'Dec', "Carrier A": '18', "Carrier B": '48', "Carrier C": '21', "Carrier D": '77' },
 ];
 
 const yAxisformatter = (number) => {
      return `${number.toString()}k`;
-   }
+}
 
 let ActivityTab = () => {
      return (
           <Card>
+               <div className='d-flex justify-content-between my-5'>
+
+                    <PrimaryLabel normal={true} className="text-large font-bold">01/01/2023</PrimaryLabel>
+
+                    <div className='d-flex actions'>
+                         <div className='first'>Daily</div>
+                         <div>Weekly</div>
+                         <div className='bg-light'>Monthly</div>
+                         <div className='last'>Yearly</div>
+                    </div>
+
+               </div>
+
                <LineChart
                     width={550}
                     height={250}
                     data={data}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
                >
                     <XAxis dataKey="name" />
-                    <YAxis  tickFormatter={yAxisformatter}/>
+                    <YAxis tickFormatter={yAxisformatter} />
                     <CartesianGrid strokeDasharray="3 6" />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="apple" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="banana" stroke="#82ca9d" />
-                    <Line type="monotone" dataKey="citrus" stroke="#ffc658" />
+                    <Line type="linear" dataKey="Carrier A" stroke="#2E90FA" />
+                    <Line type="linear" dataKey="Carrier B" stroke="#FDB022" />
+                    <Line type="linear" dataKey="Carrier C" stroke="#12B76A" />
+                    <Line type="linear" dataKey="Carrier D" stroke="#F97066" />
                </LineChart>
-          </Card>
+          </Card >
      )
 }
 export default ActivityTab;

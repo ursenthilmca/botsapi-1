@@ -46,15 +46,15 @@ const items = [
 ];
 
 const carrierList = [
-    { id: 1, name: 'Canon', productName: "SalesForce", imges: canon },
-    { id: 2, name: 'Time', productName: "SalesForce", imges: timeicon },
-    { id: 3, name: 'Mo', productName: "SalesForce", imges: moicon },
-    { id: 4, name: 'Love clip', productName: "SalesForce", imges: loveclipicon },
-    { id: 5, name: 'c2', productName: "SalesForce", imges: c2icon },
-    { id: 6, name: 'Sales Force', productName: "SalesForce", imges: salesforceicon },
-    { id: 7, name: 'Time', productName: "SalesForce", imges: timeicon },
-    { id: 8, name: 'paint', productName: "SalesForce", imges: paint },
-    { id: 9, name: 'Mo', productName: "SalesForce", imges: moicon },
+    { id: 1, name: 'Canon', productName: "SalesForce", imges: canon, selected: false },
+    { id: 2, name: 'Time', productName: "SalesForce", imges: timeicon, selected: false },
+    { id: 3, name: 'Mo', productName: "SalesForce", imges: moicon, selected: false },
+    { id: 4, name: 'Love clip', productName: "SalesForce", imges: loveclipicon, selected: false },
+    { id: 5, name: 'c2', productName: "SalesForce", imges: c2icon, selected: false },
+    { id: 6, name: 'Sales Force', productName: "SalesForce", imges: salesforceicon, selected: false },
+    { id: 7, name: 'Time', productName: "SalesForce", imges: timeicon, selected: false },
+    { id: 8, name: 'paint', productName: "SalesForce", imges: paint, selected: false },
+    { id: 9, name: 'Mo', productName: "SalesForce", imges: moicon, selected: false },
 
 ]
 

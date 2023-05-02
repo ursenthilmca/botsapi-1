@@ -72,8 +72,6 @@ function MenuComponent(props) {
     <div className="menu-wrapper">
       <Menu
         className="menu-items"
-        // defaultSelectedKeys={['1']}
-        title="abcd"
         defaultOpenKeys={['api']}
         mode="inline"
         theme="light"
@@ -82,9 +80,9 @@ function MenuComponent(props) {
 
         onClick={({ key, keyPath, domEvent }) => {
 
-          if(key === 'customer-setup'){
+          if (key === 'customer-setup') {
             navigate('/customerSetup');
-          } else if (key ==='api-mapping') { 
+          } else if (key === 'api-mapping') {
             navigate('/apiMapping');
             dispacth(customerSetupcomponent(false))
           }
