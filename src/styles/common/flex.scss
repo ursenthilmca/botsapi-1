@@ -4,7 +4,12 @@
 .d-inline-flex {
   display: inline-flex !important;
 }
-
+.d-inline-block{
+  display: inline-block;
+}
+.d-block{
+  display: block;
+}
 .flex-direction-row {
   flex-direction: row !important;
 }

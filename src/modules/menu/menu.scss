@@ -1,12 +1,18 @@
 .menu-wrapper {
+  margin-top: -16px;
+  margin-left: -16px;
   // width: 256px;
   .menu-items {
     height: 96vh;
     border-radius: 12px;
     padding-left: 15px;
     padding-top: 15px;
-    color: #475467;
+    color: #475467 !important;
     
+    .ant-menu-title-content {
+      color: #475467 !important;
+
+    }
     li {
       padding-left: 0px !important;
     }
@@ -54,8 +60,13 @@
         }
     }
     .ant-menu-item-selected {
-        background: #05987B;
-        color: #ffffff;
+      background: #05987B;
+          color: #ffffff !important;
+          align-items: center;
+      .ant-menu-title-content{
+          background: #05987B;
+          color: #ffffff !important;
+      }
     }
   }
 }

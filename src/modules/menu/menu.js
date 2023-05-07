@@ -17,7 +17,7 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
-    expandIcon: <PlusOutlined />,
+    expandIcon: <PlusOutlined style={{ color: "#05987B" }} />,
     collapseIcon: <MinusOutlined />
   };
 }
@@ -69,7 +69,7 @@ function MenuComponent(props) {
   };
   return (
 
-    <div className="menu-wrapper">
+    <div className="menu-wrapper ">
       <Menu
         className="menu-items"
         defaultOpenKeys={['api']}

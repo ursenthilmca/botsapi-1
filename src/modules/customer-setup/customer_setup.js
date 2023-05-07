@@ -5,7 +5,7 @@ import "./customer-setup.scss";
 import AddCustomer from "./add-customer";
 import AddCarrier from "./add-carrier";
 import { CUSTOMER_DATA, CUSTOMER_TYPE, CUSTOMER_DETAILS } from '../../api/data'
-import { fetchCustomerHeaderdata, fetchCustomerDetails ,customerSetupcomponent} from '../action/CustomerDetail'
+import { fetchCustomerHeaderdata, fetchCustomerDetails, customerSetupcomponent } from '../action/CustomerDetail';
 import logo from '../image/Rectangle2.png'
 import vector from '../image/Vector.png'
 import vector1 from '../image/Vector1.png'
@@ -49,20 +49,16 @@ function CustomerSetupmodule(props) {
           <span className="wel-msg">Amet minim mollit non deserunt ullamco est sit aliqua dolor do</span>
         </Col>
         <Col lg={8}>
-          <span className="float-btn">
+          <div className="float-btn  d-flex flex-gap-half">
             <Button className="show-btn"  >
               <img src={downArrow} className="downArrow"></img>{'Show: Latest'}
             </Button>
-            <Button className="carrier-btn"  >
+            <Button className="primary-btn"  >
               <img src={vector1} className="vector1" ></img> <img src={vector2} className="vector2"></img> {'Add New Carrier'}</Button>
-          </span>
+          </div>
 
         </Col>
       </Row>
-
-
-
-
       <Row gutter={{ lg: 12, xs: 4 }}>
         {customerSetup && customerSetup.headerData.map(item => {
           return (
@@ -70,7 +66,12 @@ function CustomerSetupmodule(props) {
               <Card bordered={false} className=" card-style" style={{ width: "100%" }}>
                 <Row className="span-card">
                   <Col sm={24}>
-                    <span className="span-card-title">{item.title}</span>
+                    <div className="d-flex align-items-center">
+                      <span className="span-card-icon">{item.icon}</span>
+
+                      <span className="span-card-title">{item.title}</span>
+                    </div>
+                    <Divider className="my-4" />
                     <span className="span-card-count">{item.count}</span>
                     <span className="span-card-val">{item.value}</span>
                   </Col>
@@ -92,7 +93,8 @@ function CustomerSetupmodule(props) {
       </Row>
       <Fragment>
         <div className="container-maindiv">
-          <Row gutter={12} className="mt-15">
+          fdjh
+          {/* <Row gutter={12} className="mt-15">
             {
               // store it in redux
               CUSTOMER_TYPE.map(item => {
@@ -104,8 +106,9 @@ function CustomerSetupmodule(props) {
 
               })
             }
-          </Row>
-          <div className="tableFixHead">
+          </Row> */}
+          dfkd
+          {/* <div className="tableFixHead">
             <table>
 
               <thead>
@@ -158,7 +161,7 @@ function CustomerSetupmodule(props) {
               </tbody>
             </table>
 
-          </div>
+          </div> */}
         </div>
       </Fragment>
     </div>

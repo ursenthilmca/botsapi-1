@@ -10,7 +10,9 @@
     border-color: #D0D5DD;
 }
 
-.edit-mapping .ant-menu-inline.ant-menu-root {
+.edit-mapping {
+    border-radius: 8px;
+    .ant-menu-inline.ant-menu-root {
     .ant-menu-submenu-title {
     flex-direction: row-reverse;
     gap: 0.5rem;
@@ -41,6 +43,7 @@
             }
         }
     }
+ }
 }
 
 .ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,

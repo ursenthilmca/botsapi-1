@@ -10,16 +10,15 @@
       flex-direction: column;
       .ant-checkbox{
         align-self: flex-end;
-        left: 10px;
-        top: -9px;       
+        left: -20px;
+        top: 30px;  
+        z-index: 3;     
 
         input{
           border-radius: 50%;
         }
-
         .ant-checkbox-inner{
           border-radius: 50% !important;
-
         }
         
       }
@@ -132,3 +131,36 @@
     border-bottom: 1px solid #d0d5dd;
   }
   
+  .card-item .ant-card-body{
+    z-index: -1;    
+  }
+
+  .ant-checkbox+ span .ant-card{
+      background-color: #ffff;
+    }
+  .ant-checkbox.ant-checkbox-checked + span .ant-card{
+      background-color: #E6F6F3;
+      border-color: #05987B;
+    }
+
+  .bg-light{
+    background-color: #F2F4F7;
+  }
+  
+  .request-btn{
+    background: #E6F6F3;
+    border: none;
+    color:#05987B;    
+  }
+  .request-btn:hover{
+    color:#05987B !important;
+
+
+  }
+
+  .no-item-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
