@@ -1,13 +1,12 @@
 import { Button, Card, Col, Divider, Input, Row, Tabs, Popover } from "antd";
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import "./customer-setup.scss";
+import "./customer_setup.scss";
 import AddCustomer from "./add-customer";
 import AddCarrier from "./add-carrier";
 import { CUSTOMER_DATA, CUSTOMER_TYPE, CUSTOMER_DETAILS } from '../../api/data'
 import { fetchCustomerHeaderdata, fetchCustomerDetails, customerSetupcomponent } from '../action/CustomerDetail';
-import logo from '../image/Rectangle2.png'
-import vector from '../image/Vector.png'
+
 import vector1 from '../image/Vector1.png'
 import vector2 from '../image/Vector2.png'
 import downArrow from '../image/downarrow.png'
@@ -138,77 +137,7 @@ function CustomerSetupmodule(props) {
       </Row>
       <Fragment>
         <div className="container-maindiv">
-
-
           <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
-          {/* <Row gutter={12} className="mt-15">
-            {
-              // store it in redux
-              CUSTOMER_TYPE.map(item => {
-                return (
-                  <Col sm={2} lg={2}>
-                    <div className="card-header">{item.key}</div>
-                  </Col>
-                )
-
-              })
-            }
-          </Row> */}
-          dfkd
-          {/* <div className="tableFixHead">
-            <table>
-
-              <thead>
-                <tr>
-                  <th >CARRIER</th>
-                  <th >DATE</th>
-                  <th >CUSTOMER</th>
-                  <th >ACTION</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  customerSetup && customerSetup.customerSetupdetails.map(value => {
-                    return (
-                      <Fragment>
-                        <tr>
-                          <td className="border-left">
-                            <span className="carrier-span">
-                              <span>
-                                <img src={vector} className="td-vector"></img>
-                                <img src={logo} className="td-img"></img>
-                              </span>
-                              <div className="carrier-div">
-                                <span className="td-carrier">{value.carrier}</span>
-                                <span className="td-code">{value.code}</span>
-                              </div>
-
-                            </span>
-
-                          </td>
-                          <td>
-                            <span className="td-code ">{value.date}</span>
-                          </td>
-                          <td>
-                            <div className="carrier-div">
-                              <span className="td-carrier">{value.customer}</span>
-                              <span className="td-code">{value.customer_code}</span>
-                            </div>
-                          </td>
-                          <td>
-
-                            <Button className="debug-btn"  >Debug</Button>
-                            <Button className="disconnect-btn"  >Disconnect</Button>
-                          </td>
-                        </tr>
-                      </Fragment>
-                    )
-                  })
-                }
-              </tbody>
-            </table>
-
-          </div> */}
         </div>
       </Fragment>
     </div>

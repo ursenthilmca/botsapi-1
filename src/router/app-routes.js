@@ -10,8 +10,9 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route path="/" element={<CustomerSetup />} />
+        <Route path="/customerSetup" element={<CustomerSetup />} />
         <Route path="/apiMapping" element={<ApiMapping />} />
-        <Route path="/customerSetup" element={<CustomerSetupmodule />} />
+        <Route path="/overview" element={<CustomerSetupmodule />} />
         {/* <Route path={"*"} element={<PageNotFound />} /> */}
       </Route>
     </Routes>

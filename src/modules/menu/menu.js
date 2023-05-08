@@ -85,6 +85,9 @@ function MenuComponent(props) {
           } else if (key === 'api-mapping') {
             navigate('/apiMapping');
             dispacth(customerSetupcomponent(false))
+          } else if (key === 'api-overview') {
+            navigate('/overview');
+
           }
           if (key === "close") {
             hideMenuHandler();

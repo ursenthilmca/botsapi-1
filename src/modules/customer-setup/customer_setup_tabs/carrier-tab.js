@@ -10,165 +10,7 @@ import { ReactComponent as FullSignalIcon } from "../../../assets/svg/full-signa
 import SimpleTable from "../../../component/Tables/simple-table";
 
 
-// const columns = [
-//     {
-//         title: 'CARRIER',
-//         dataIndex: 'carrier',
-//     },
-//     {
-//         title: 'DATE',
-//         dataIndex: 'date',
-//     },
-//     {
-//         title: 'CUSTOMER',
-//         dataIndex: 'customer',
-//     },
-//     {
-//         title: 'ACTION',
-//         dataIndex: 'action',
-//     },
 
-// ];
-
-// const data = [
-//     {
-//         key: '1',
-//         carrier: <div className="carrier-column">
-//             <FullSignalIcon />
-//             <img src={PaintIcon} />
-//             <div>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal">CENTRAL FREIGHT LINER (CENF) </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"}></FiledCard>
-//                 </Space>
-//             </div>
-
-//         </div>,
-//         date: <FiledCard title={"2021 / 08 /29"}></FiledCard>,
-//         customer:
-//             <Fragment>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal ">3M Company </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"} className=""></FiledCard>
-//                 </Space>
-//             </Fragment>,
-//     },
-//     {
-//         key: '2',
-//         carrier: <div className="carrier-column">
-//             <FullSignalIcon />
-//             <img src={PaintIcon} />
-//             <div>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal">CENTRAL FREIGHT LINER (CENF) </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"}></FiledCard>
-//                 </Space>
-//             </div>
-
-//         </div>,
-//         date: <FiledCard title={"2021 / 08 /29"}></FiledCard>,
-//         customer:
-//             <Fragment>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal ">3M Company </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"} className=""></FiledCard>
-//                 </Space>
-//             </Fragment>,
-//     },
-//     {
-//         key: '3',
-//         carrier: <div className="carrier-column">
-//             <FullSignalIcon />
-//             <img src={PaintIcon} />
-//             <div>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal">CENTRAL FREIGHT LINER (CENF) </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"}></FiledCard>
-//                 </Space>
-//             </div>
-
-//         </div>,
-//         date: <FiledCard title={"2021 / 08 /29"}></FiledCard>,
-//         customer:
-//             <Fragment>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal ">3M Company </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"} className=""></FiledCard>
-//                 </Space>
-//             </Fragment>,
-//     },
-//     {
-//         key: '4',
-//         carrier: <div className="carrier-column">
-//             <FullSignalIcon />
-//             <img src={PaintIcon} />
-//             <div>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal">CENTRAL FREIGHT LINER (CENF) </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"}></FiledCard>
-//                 </Space>
-//             </div>
-
-//         </div>,
-//         date: <FiledCard title={"2021 / 08 /29"}></FiledCard>,
-//         customer:
-//             <Fragment>
-//                 <Space
-//                     direction="vertical"
-//                     size="small"
-//                     style={{
-//                         display: 'flex',
-//                     }}
-//                 >
-//                     <PrimaryLabel normal={true} className="text-normal font-normal ">3M Company </PrimaryLabel>
-//                     <FiledCard title={"Code: 1102"} className=""></FiledCard>
-//                 </Space>
-//             </Fragment>,
-//     },
-
-// ];
 
 
 
@@ -205,7 +47,7 @@ const columns = [
         title: 'Date',
         dataIndex: 'date',
         key: 'date',
-        width: '20%'
+        width: '15%'
 
     },
     {
@@ -224,7 +66,7 @@ const columns = [
                             display: 'flex',
                         }}
                     >
-                        <PrimaryLabel normal={true} className="text-normal font-normal">CENTRAL FREIGHT LINER (CENF) </PrimaryLabel>
+                        <PrimaryLabel normal={true} className="text-normal font-normal">3M Company</PrimaryLabel>
                         <FiledCard title={"Code: 1102"}></FiledCard>
                     </Space>
                 </div>
@@ -239,7 +81,7 @@ const columns = [
         title: 'Action',
         dataIndex: 'action',
         key: 'action',
-        width: '20%',
+        width: '25%',
         render: () => {
             return (
                 <div style={{ marginLeft: "-10px" }}>
