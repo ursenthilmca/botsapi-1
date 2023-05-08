@@ -11,6 +11,13 @@ import vector from '../image/Vector.png'
 import vector1 from '../image/Vector1.png'
 import vector2 from '../image/Vector2.png'
 import downArrow from '../image/downarrow.png'
+import CarrierTab from "./customer_setup_tabs/carrier-tab";
+import TmsTab from "./customer_setup_tabs/tms-tab";
+import ErpTab from "./customer_setup_tabs/erp-tab";
+import ShipperTab from "./customer_setup_tabs/shipper-tab";
+import PerfectScrollbar from 'react-perfect-scrollbar';
+
+
 
 
 
@@ -33,7 +40,45 @@ function CustomerSetupmodule(props) {
     dispatch(fetchCustomerHeaderdata(CUSTOMER_DATA))
     dispatch(fetchCustomerDetails(CUSTOMER_DETAILS))
     dispatch(customerSetupcomponent(true))
-  }, [])
+  }, []);
+
+  const onChange = (key) => {
+    console.log(key);
+  };
+
+  const items = [
+    {
+      key: '1',
+      label: `All`,
+      children:
+        <PerfectScrollbar style={{ maxHeight: 'calc(100vh - 400px)', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+          <CarrierTab />
+          {/* <TmsTab />
+          <ErpTab />
+          <ShipperTab /> */}
+        </PerfectScrollbar>
+    },
+    {
+      key: '2',
+      label: `Carrier`,
+      children: <CarrierTab />,
+    },
+    {
+      key: '3',
+      label: `TMS`,
+      children: <TmsTab />,
+    },
+    {
+      key: '4',
+      label: `ERP`,
+      children: <ErpTab />,
+    },
+    {
+      key: '5',
+      label: `Shipper`,
+      children: <ShipperTab />,
+    },
+  ];
 
 
   return (
@@ -93,7 +138,9 @@ function CustomerSetupmodule(props) {
       </Row>
       <Fragment>
         <div className="container-maindiv">
-          fdjh
+
+
+          <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
           {/* <Row gutter={12} className="mt-15">
             {
               // store it in redux

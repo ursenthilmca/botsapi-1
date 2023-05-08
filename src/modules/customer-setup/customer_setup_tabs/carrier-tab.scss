@@ -1,0 +1,22 @@
+.my-table .ant-table-thead > tr > th{
+    border: none !important;
+    font-size: 1rem;
+  }
+.my-table .ant-table-tbody > tr > td {
+  border: none ;
+}
+
+.my-table .ant-table-tbody > tr:last-child > td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.carrier-column{
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+
+  img{
+    width: 5rem;
+
+  }
+}
