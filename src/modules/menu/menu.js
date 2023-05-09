@@ -4,10 +4,11 @@ import { useState } from "react";
 import "./menu.scss";
 import CloseIcon from "../../component/close-icon/close-icon";
 import { MenuActions } from "../menu/menu-action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons"
 import { useNavigate } from 'react-router-dom';
-import { customerSetupcomponent } from '../action/CustomerDetail'
+import { customerSetupcomponent } from '../action/CustomerDetail';
+import { activePageAction } from "./active-page-action";
 
 
 function getItem(label, key, icon, children, type) {
@@ -63,7 +64,9 @@ function MenuComponent(props) {
 
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const pageActive = useSelector(state => state.visiblePage.activePage);
+  console.log(pageActive);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -79,14 +82,27 @@ function MenuComponent(props) {
         items={items}
 
         onClick={({ key, keyPath, domEvent }) => {
+          alert(key);
+          console.log(key)
 
           if (key === 'customer-setup') {
+            console.log(key);
+
+            dispacth(activePageAction.ChangeActivePage('customer-setup'));
             navigate('/customerSetup');
           } else if (key === 'api-mapping') {
+            console.log(key);
+
+            dispacth(activePageAction.ChangeActivePage('api-mapping'));
+
             navigate('/apiMapping');
-            dispacth(customerSetupcomponent(false))
+            dispacth(customerSetupcomponent(false));
           } else if (key === 'api-overview') {
+            console.log(key);
+
             navigate('/overview');
+            dispacth(activePageAction.ChangeActivePage({ activePage: 'api-overview' }));
+
 
           }
           if (key === "close") {

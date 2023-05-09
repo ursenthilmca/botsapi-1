@@ -1,20 +1,3 @@
-// import {
-//     SHOW_MENU,
-//     HIDE_MENU
-// } from "./menu-constants";
-
-// export function menuDisplay() {
-//     return {
-//         type: SHOW_MENU,
-//     }
-// }
-// export function menuHide() {
-//     return {
-//         type: HIDE_MENU,
-
-//     }
-// }
-
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = { menuVisible: false };
 
