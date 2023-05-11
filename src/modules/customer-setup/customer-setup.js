@@ -88,7 +88,7 @@ function CustomerSetup(props) {
     selectedCard1.current.classList.add('selected-card');
   }
   const addClassHandler2 = () => {
-    selectedCard1.current.classList.add('selected-card');
+    selectedCard2.current.classList.add('selected-card');
   }
 
   const removeClassHandler = () => {
@@ -393,7 +393,7 @@ function CustomerSetup(props) {
               </Col>
             </Row>
             <div className="page-scroll mt-15" >
-              <PerfectScrollbar style={{ maxHeight: 'auto', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+              <PerfectScrollbar style={{ maxHeight: '50rem', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
                 <Row className="mt-15 selected-card">

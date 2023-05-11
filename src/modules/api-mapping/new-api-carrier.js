@@ -9,6 +9,23 @@ import FiledCard from '../../component/close-icon/cards/fields-card';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
+const steps = [
+    {
+        title: 'Step 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <NoteBookActiveIcon />
+    },
+    {
+        title: 'Step 2',
+        description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: <GitDiffIcon />
+    },
+    {
+        title: 'Step 3',
+        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        icon: <CloudCheckIcon />
+    }
+];
 
 
 let NewApiCarrier = (props) => {
@@ -36,7 +53,7 @@ let NewApiCarrier = (props) => {
                 key={placement}
                 className='new-api-carrier'
                 footer={<div className='d-flex justify-content-between'>
-                    <Button size={"large"} className="secondary-btn text-center w-20"  >Cancel</Button>
+                    <Button size={"large"} className="secondary-btn text-center w-20"  >Back</Button>
                     <Button size={"large"} className="primary-btn w-20" >Next</Button>
                 </div>}
 
@@ -44,7 +61,20 @@ let NewApiCarrier = (props) => {
                 <Row>
 
                     <Col sm={8} >
-                        <Steps
+                        <div>
+                            <div className="vertical-icon-steps">
+                                {steps.map((step, index) => (
+                                    <div key={index} className="vertical-icon-step">
+                                        <div className="icon">{step.icon}</div>
+                                        <div className="content">
+                                            <h3 className="title">{step.title}</h3>
+                                            <p className="description">{step.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>                        </div>
+
+                        {/* <Steps
 
                             direction="vertical"
                             current={1}
@@ -71,7 +101,7 @@ let NewApiCarrier = (props) => {
                                 },
                             ]}
 
-                        />
+                        /> */}
 
                     </Col>
                     <Col sm={1}>

@@ -256,7 +256,7 @@ let ApiMapping = () => {
                                 </span>
                             </Col>
                             <div className="method-list-container page-scroll">
-                                <PerfectScrollbar style={{ maxHeight: 'calc(100vh - 400px)', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+                                <PerfectScrollbar style={{ maxHeight: 'calc(100vh - 370px)', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
 
 
                                     <Row gutter={12} className="method-list ">

@@ -122,11 +122,11 @@
 .ant-drawer {
   .new-api-carrier {
     border-radius: 8px;
-    .ant-steps{
-       .ant-steps-item-title{
-        font-size: 1.125rem;
-       }
-    }
+    // .ant-steps{
+    //    .ant-steps-item-title{
+    //     font-size: 1.125rem;
+    //    }
+    // }
     .ant-drawer-header-title {
       flex-direction: row-reverse;
     }
@@ -134,7 +134,7 @@
 }
 
 .other-request-tabs{
-  height: 100vh;
+  height: 30vh;
 }
 
 .method-list-container{

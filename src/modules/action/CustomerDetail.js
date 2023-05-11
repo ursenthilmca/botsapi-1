@@ -19,7 +19,6 @@ export const fetchCustomerDetails = (value) => (dispatch, getState) => {
 }
 
 export const customerSetupcomponent = (value) => (dispatch, getState) => {
-    console.log('value', value)
     dispatch({
         type: GET_CUSTOMER_SETUP_COMPONENT,
         data: value

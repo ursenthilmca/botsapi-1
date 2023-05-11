@@ -10,6 +10,13 @@ import { useNavigate } from 'react-router-dom';
 import { customerSetupcomponent } from '../action/CustomerDetail';
 import { activePageAction } from "./active-page-action";
 
+const pageAction = (keys) => {
+  console.log(keys);
+  return {
+    type: keys,
+    active: true
+  }
+}
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -18,8 +25,7 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
-    expandIcon: <PlusOutlined style={{ color: "#05987B" }} />,
-    collapseIcon: <MinusOutlined />
+    expandIcon: <PlusOutlined style={{ color: "#05987B" }} className="plus" />,
   };
 }
 
@@ -82,29 +88,42 @@ function MenuComponent(props) {
         items={items}
 
         onClick={({ key, keyPath, domEvent }) => {
-          alert(key);
-          console.log(key)
+          switch (key) {
+            case 'customer-setup':
+              navigate('/customerSetup');
+              console.log(key);
+              dispacth(pageAction(key))
+              break;
+            case 'api-mapping':
+              navigate('/apiMapping');
+              console.log(key);
+              dispacth(pageAction(key))
 
-          if (key === 'customer-setup') {
-            console.log(key);
+              dispacth(customerSetupcomponent(false));
+              break;
+            case 'api-overview':
+              navigate('/overview');
+              dispacth(pageAction(key))
 
-            dispacth(activePageAction.ChangeActivePage('customer-setup'));
-            navigate('/customerSetup');
-          } else if (key === 'api-mapping') {
-            console.log(key);
-
-            dispacth(activePageAction.ChangeActivePage('api-mapping'));
-
-            navigate('/apiMapping');
-            dispacth(customerSetupcomponent(false));
-          } else if (key === 'api-overview') {
-            console.log(key);
-
-            navigate('/overview');
-            dispacth(activePageAction.ChangeActivePage({ activePage: 'api-overview' }));
-
+              console.log(key);
+              break;
 
           }
+
+
+
+          // if (key === 'customer-setup') {
+          //   console.log(key);
+          //   navigate('/customerSetup');
+          // } else if (key === 'api-mapping') {
+          //   console.log(key);
+          //   navigate('/apiMapping');
+          //   dispacth(customerSetupcomponent(false));
+          // } else if (key === 'api-overview') {
+          //   navigate('/overview');
+
+
+          // }
           if (key === "close") {
             hideMenuHandler();
           }
