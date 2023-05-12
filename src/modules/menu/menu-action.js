@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = { menuVisible: false };
+const initialState = { menuVisible: true };
 
 const menuSlice = createSlice({
     name: 'menu',

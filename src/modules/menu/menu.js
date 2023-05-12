@@ -25,7 +25,14 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
-    expandIcon: <PlusOutlined style={{ color: "#05987B" }} className="plus" />,
+    expandIcon: (props) => {
+      if (props?.isOpen) {
+        return <MinusOutlined style={{ color: "#05987B" }} className="minus" />
+      } else {
+        return <PlusOutlined style={{ color: "#05987B" }} className="plus" />
+      }
+
+    }
   };
 }
 
@@ -51,21 +58,17 @@ const items = [
     getItem("Internal Carrier", "internal-carrier"),
     getItem("Manage Users", "manage-users"),
   ]),
-  getItem("EDI", "edi", "", [
+  getItem("EDI", "edi", "", []),
+  getItem("MAPPING", "mapping1", "", []),
+  // getItem("EDI SOURCE", "edi-source", "", [
 
-  ]),
-  getItem("MAPPING", "mapping1", "", [
-
-  ]),
-  getItem("EDI SOURCE", "edi-source", "", [
-
-  ]),
+  // ]),
 ];
 function MenuComponent(props) {
   const dispacth = useDispatch();
 
   const hideMenuHandler = () => {
-    dispacth(MenuActions.hideMenu());
+    dispacth(MenuActions.showMenu());
   }
 
   const [collapsed, setCollapsed] = useState(false);
