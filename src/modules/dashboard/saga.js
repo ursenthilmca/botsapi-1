@@ -4,7 +4,6 @@ import { GET_DASHBOARD_INFO } from "./constants";
 
 
 function* getDashboardInfoAction(data){
-   console.log("==== aaa");
    try {
         //yield delay(2000);
         yield put(actions.getDashboardInfoSuccess({data:"success"}))

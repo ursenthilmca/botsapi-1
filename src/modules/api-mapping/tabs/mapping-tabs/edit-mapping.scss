@@ -10,51 +10,51 @@
     border-color: #D0D5DD;
 }
 
-.edit-mapping {
-    border-radius: 8px;
-    .ant-menu-inline.ant-menu-root {
-    .ant-menu-submenu-title {
-    flex-direction: row-reverse;
-    gap: 0.5rem;
-    justify-content: space-between;
-    margin-bottom: 5px;
+// .edit-mapping {
+//     border-radius: 8px;
+//     .ant-menu-inline.ant-menu-root {
+//     .ant-menu-submenu-title {
+//     flex-direction: row-reverse;
+//     gap: 0.5rem;
+//     justify-content: space-between;
+//     margin-bottom: 5px;
 
-    .ant-menu-title-content{
-        background-color: #E6F6F3;
-        display: inline;
-        width: fit-content !important;
-        padding: 0px 55px 0 15px;
-        margin: 5px;
-        border-radius: 50px;
+//     .ant-menu-title-content{
+//         background-color: #E6F6F3;
+//         display: inline;
+//         width: fit-content !important;
+//         padding: 0px 55px 0 15px;
+//         margin: 5px;
+//         border-radius: 50px;
 
-    }
+//     }
     
 
-    }
-    .ant-menu-submenu{
-        .ant-menu-sub{
-            .ant-menu-item{
-                width: 240px;
-                border-radius: 8px;
-                padding-left:  5px !important;
-                margin-left: 92px;
-                background-color: #F2F4F7;
-                margin-bottom: 1rem;
-            }
-        }
-    }
- }
-}
+//     }
+//     .ant-menu-submenu{
+//         .ant-menu-sub{
+//             .ant-menu-item{
+//                 width: 240px;
+//                 border-radius: 8px;
+//                 padding-left:  5px !important;
+//                 margin-left: 92px;
+//                 background-color: #F2F4F7;
+//                 margin-bottom: 1rem;
+//             }
+//         }
+//     }
+//  }
+// }
 
-.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,
-.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
-    background-color:transparent !important;
-}
-#components-affix-demo-target .scrollable-container {
-    height: 100px;
-    overflow-y: scroll;
-  }
-  #components-affix-demo-target .background {
-    padding-top: 60px;
-    height: 300px;
-  }
+// .ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover,
+// .ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
+//     background-color:transparent !important;
+// }
+// #components-affix-demo-target .scrollable-container {
+//     height: 100px;
+//     overflow-y: scroll;
+//   }
+//   #components-affix-demo-target .background {
+//     padding-top: 60px;
+//     height: 300px;
+//   }

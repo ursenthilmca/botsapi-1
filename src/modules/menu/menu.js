@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Menu } from "antd";
 import { useState } from "react";
 import "./menu.scss";
 import CloseIcon from "../../component/close-icon/close-icon";
 import { MenuActions } from "../menu/menu-action";
 import { useDispatch, useSelector } from "react-redux";
-import { PlusOutlined, MinusOutlined } from "@ant-design/icons"
-import { useNavigate } from 'react-router-dom';
-import { customerSetupcomponent } from '../action/CustomerDetail';
+import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import { useLocation, useNavigate } from "react-router-dom";
+import { customerSetupcomponent } from "../action/CustomerDetail";
 import { activePageAction } from "./active-page-action";
 
 const pageAction = (keys) => {
   console.log(keys);
   return {
     type: keys,
-    active: true
-  }
-}
+    active: true,
+  };
+};
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -27,113 +27,112 @@ function getItem(label, key, icon, children, type) {
     type,
     expandIcon: (props) => {
       if (props?.isOpen) {
-        return <MinusOutlined style={{ color: "#05987B" }} className="minus" />
+        return <MinusOutlined style={{ color: "#05987B" }} className="minus" />;
       } else {
-        return <PlusOutlined style={{ color: "#05987B" }} className="plus" />
+        return <PlusOutlined style={{ color: "#05987B" }} className="plus" />;
       }
-
-    }
+    },
   };
 }
 
 const items = [
   getItem(
     <div className="close-icon">
-      <CloseIcon style={{ cursor: "pointer", width: '32px', display: "inline" }} />
+      <CloseIcon
+        style={{ cursor: "pointer", width: "32px", display: "inline" }}
+      />
     </div>,
     "close"
   ),
 
-  getItem("API", "api", "", [
-    getItem("Overview", "api-overview"),
-    getItem("API Mapping", "api-mapping"),
+  getItem("API", "apiMenu", "", [
+    getItem("Overview", "overview"),
+    getItem("API Mapping", "apiMapping"),
     getItem("API Source", "api-source"),
     getItem("Carrier Master", "carrier-master"),
     getItem("Carrier Type Mapping", "carrier-type-mapping"),
     getItem("Carrier Accessorial Mapping", "carrier-accessorial-mapping"),
     getItem("Carrier Error Log", "carrier-error-log"),
     getItem("Carrier Search Summary", "carrier-search-summary"),
-    getItem("Customer Setup", "customer-setup"),
+    getItem("Customer Setup", "customerSetup"),
     getItem("API Usage", "api-usage"),
     getItem("Internal Carrier", "internal-carrier"),
     getItem("Manage Users", "manage-users"),
   ]),
   getItem("EDI", "edi", "", []),
-  getItem("MAPPING", "mapping1", "", []),
-  // getItem("EDI SOURCE", "edi-source", "", [
+  getItem("MAPPING", "mappingMenu", "", []),
+  getItem("EDI SOURCE", "ediSourceMenu", "", [
 
-  // ]),
+  ]),
 ];
 function MenuComponent(props) {
   const dispacth = useDispatch();
 
   const hideMenuHandler = () => {
     dispacth(MenuActions.showMenu());
-  }
+  };
 
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const pageActive = useSelector(state => state.visiblePage.activePage);
-  console.log(pageActive);
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
-  return (
+  let location = useLocation();
+  const [current, setCurrent] = useState(
+    location.pathname === "/" || location.pathname === ""
+      ? "customerSetup"
+      : location.pathname.replace(/^./, "")
+  );
+  
+  useEffect(() => {
+    if (location) {
+      if (current !== location.pathname.replace(/^./, "")) {
+        setCurrent(location.pathname.replace(/^./, ""));
+      }
+    }
+  }, [location, current]);
 
+  return (
     <div className="menu-wrapper ">
       <Menu
         className="menu-items"
-        defaultOpenKeys={['api']}
+        defaultOpenKeys={["api"]}
         mode="inline"
         theme="light"
         inlineCollapsed={false}
         items={items}
-
+        selectable
+        selectedKeys={[current]}
         onClick={({ key, keyPath, domEvent }) => {
+          if (key === "close") {
+            hideMenuHandler();
+            return false;
+          }
           switch (key) {
-            case 'customer-setup':
-              navigate('/customerSetup');
+            case "customerSetup":
+              navigate("/customerSetup");
               console.log(key);
-              dispacth(pageAction(key))
+              dispacth(pageAction(key));
               break;
-            case 'api-mapping':
-              navigate('/apiMapping');
+            case "apiMapping":
+              navigate("/apiMapping");
               console.log(key);
-              dispacth(pageAction(key))
+              dispacth(pageAction(key));
 
               dispacth(customerSetupcomponent(false));
               break;
-            case 'api-overview':
-              navigate('/overview');
-              dispacth(pageAction(key))
+            case "overview":
+              navigate("/overview");
+              dispacth(pageAction(key));
 
               console.log(key);
               break;
 
+            default:
+              navigate("/page-not-found");
+              break;
           }
 
-
-
-          // if (key === 'customer-setup') {
-          //   console.log(key);
-          //   navigate('/customerSetup');
-          // } else if (key === 'api-mapping') {
-          //   console.log(key);
-          //   navigate('/apiMapping');
-          //   dispacth(customerSetupcomponent(false));
-          // } else if (key === 'api-overview') {
-          //   navigate('/overview');
-
-
-          // }
-          if (key === "close") {
-            hideMenuHandler();
-          }
         }}
       />
     </div>
-
   );
 }
 

@@ -2,97 +2,93 @@
   margin-top: -16px;
   margin-left: -16px;
   position: relative;
-  
-  .close-icon{
-    position: absolute;
-    top:10px;
-    left: 30px;
-  }
-  // width: 256px;
+
   .menu-items {
-    height: 96vh;
+    height: 97vh;
     border-radius: 12px;
     padding-left: 15px;
     padding-top: 15px;
     color: #475467 !important;
 
-    &.menu-items  > li:first-child{
+    &.menu-items > li:first-child {
       width: 21%;
-      &.ant-menu-item-selected{
+      padding-left: 0px !important;
+      padding-top: 5px;
+      &.ant-menu-item-selected {
         background: none;
-        .ant-menu-title-content{
+        .ant-menu-title-content {
           background: none;
         }
       }
     }
-    
+
     .ant-menu-title-content {
       color: #475467 !important;
-
     }
-    li {
-      padding-left: 0px !important;
-    }
-    .ant-menu-title-content{
-      display: inline-block;
-      padding-left: 12px;
-      width: 50px !important;
-      margin-top: 10px;
-    }
-    +li:first-child{
-        padding-top: 5px;
-        cursor: auto;
-        display: inline;
-        width: 50px;
-       
-        
-    }
-    +li:first-child:hover{
-      
+    // li {
+    //   padding-left: 10px !important;
+    // }
+    // .ant-menu-title-content {
+    //   display: inline-block;
+    //   padding-left: 0px;
+    //   width: 50px !important;
+    //   // margin-top: 10px;
+    // }
+    // + li:first-child {
+    //   padding-top: 5px;
+    //   cursor: auto;
+    //   display: inline;
+    //   width: 50px;
+    // }
+    // + li:first-child:hover {
+    //   background-color: transparent !important;
+    // }
+    // + li:first-child.ant-menu-item-selected,
+    // + li:first-child:hover {
+    //   background: none !important;
+    // }
+    .ant-menu-item:not(.ant-menu-item-selected):hover {
       background-color: transparent !important;
     }
-    +li:first-child.ant-menu-item-selected,
-    +li:first-child:hover {
-      background: none !important;
-    }
-    .ant-menu-item:not(.ant-menu-item-selected):hover{
+    .ant-menu-light:not(.ant-menu-horizontal)
+      .ant-menu-item:not(.ant-menu-item-selected):active {
       background-color: transparent !important;
-
-    }
-    .ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active{
-      background-color: transparent !important;
-
     }
 
-    
-    .ant-menu-submenu{
-      
-       
-        .ant-menu-submenu-title{
-            padding-left: 12px !important;
+    .ant-menu-submenu {
+      .ant-menu-submenu-title {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        .ant-menu-title-content {
+          font-size: 0.75em;
         }
-        .ant-menu-sub {
-          // height: calc(100vh - 300px);
-          overflow-y: auto;
-            background: none;
-            padding-left: 12px !important;
-            
+      }
+      .ant-menu-sub {
+        // height: calc(100vh - 300px);
+        overflow-y: auto;
+        background: none;
+        padding-left: 12px !important;
+        .ant-menu-title-content {
+          font-size: 1em;
         }
+        li{
+          padding-left: 12px !important;
+        }
+      }
     }
     .ant-menu-item-selected {
-      background: #05987B;
-          color: #ffffff !important;
-          align-items: center;
-      .ant-menu-title-content{
-          background: #05987B;
-          color: #ffffff !important;
+      background: #05987b;
+      color: #ffffff !important;
+      align-items: center;
+      .ant-menu-title-content {
+        background: #05987b;
+        color: #ffffff !important;
       }
     }
   }
 }
-.ant-menu{
-    overflow: auto;
-
+.ant-menu {
+  overflow: auto;
 }
 
 // .ant-menu-inline.ant-menu-root .ant-menu-item .close-icon
@@ -101,3 +97,102 @@
 // }
 
 
+// .menu-wrapper {
+//   margin-top: -16px;
+//   margin-left: -16px;
+//   position: relative;
+
+//   // .close-icon{
+//   //   position: absolute;
+//   //   top:12px;
+//   //   left: 10px;
+//   // }
+//   // width: 256px;
+//   .menu-items {
+//     height: 97vh;
+//     border-radius: 12px;
+//     padding-left: 15px;
+//     padding-top: 15px;
+//     color: #475467 !important;
+
+//     &.menu-items > li:first-child {
+//       width: 21%;
+//       padding-left: 0px !important;
+//       &.ant-menu-item-selected {
+//         background: none;
+//         .ant-menu-title-content {
+//           background: none;
+//         }
+//       }
+//     }
+
+//     .ant-menu-title-content {
+//       color: #475467 !important;
+//     }
+//     li {
+//       padding-left: 10px !important;
+//     }
+//     .ant-menu-title-content {
+//       display: inline-block;
+//       padding-left: 0px;
+//       width: 50px !important;
+//       // margin-top: 10px;
+//     }
+//     + li:first-child {
+//       padding-top: 5px;
+//       cursor: auto;
+//       display: inline;
+//       width: 50px;
+//     }
+//     + li:first-child:hover {
+//       background-color: transparent !important;
+//     }
+//     + li:first-child.ant-menu-item-selected,
+//     + li:first-child:hover {
+//       background: none !important;
+//     }
+//     .ant-menu-item:not(.ant-menu-item-selected):hover {
+//       background-color: transparent !important;
+//     }
+//     .ant-menu-light:not(.ant-menu-horizontal)
+//       .ant-menu-item:not(.ant-menu-item-selected):active {
+//       background-color: transparent !important;
+//     }
+
+//     .ant-menu-submenu {
+//       .ant-menu-submenu-title {
+//         padding-left: 0px !important;
+//         .ant-menu-title-content {
+//           font-size: 0.75em;
+//         }
+//       }
+//       .ant-menu-sub {
+//         // height: calc(100vh - 300px);
+//         overflow-y: auto;
+//         background: none;
+//         padding-left: 12px !important;
+
+//         .ant-menu-title-content {
+//           font-size: 1em;
+//         }
+//       }
+//     }
+//     .ant-menu-item-selected {
+//       background: #05987b;
+//       color: #ffffff !important;
+//       align-items: center;
+//       .ant-menu-title-content {
+//         background: #05987b;
+//         color: #ffffff !important;
+//       }
+//     }
+//   }
+// }
+// .ant-menu {
+//   overflow: auto;
+// }
+
+// // .ant-menu-inline.ant-menu-root .ant-menu-item .close-icon
+// // {
+// //   width: 60px;
+// // }
