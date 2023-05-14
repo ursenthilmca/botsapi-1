@@ -7,6 +7,7 @@
     .ant-card-body {
       padding:0.85rem 0 0.15rem 0 !important;      
       .un-selected-card {
+        padding: 10px;
         .inside-wrapper {
           background: #f2f4f7;
           border-radius: 8px;
@@ -21,8 +22,8 @@
         border-width: 6px;
         padding: 10px;
         .inside-wrapper {
-          background: #f2f4f7;
-          // padding: 10px;
+          background: #ffffff;
+          padding: 10px;
           border-radius: 8px;
         }
       }
@@ -33,6 +34,11 @@
         font-size: 1rem;
         color: #1A1A1A;
       }
+    }
+
+    .customer-box-scroll{
+      max-height: calc(70vh - 0px);
+      padding-bottom: 16px;
     }
   }
   .bg-light {
@@ -155,13 +161,6 @@
 
 .ant-popover {
   width: 600px;
-  &-placement-right{
-    left:310px !important;
-  }
-  &-arrow{
-    top:50% !important;
-
-  }
 
 }
 
