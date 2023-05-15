@@ -1,18 +1,25 @@
 import { Avatar, Col, Dropdown, Row, Space } from "antd";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { ReactComponent as HamburgerMenuIcon } from "./../../assets/svg/hamburger-menu.svg";
 import { ReactComponent as LogoIcon } from "./../../assets/svg/logo.svg";
 import { UserOutlined, DownOutlined } from "@ant-design/icons";
 import { MenuActions } from "../menu/menu-action";
 import { useSelector, useDispatch } from "react-redux";
+import DynamicFontSize from "../../component/dynamic-font-size";
 // import { Transition } from "react-transition-group";
+import IconButton from "../../component/Button/IconButton";
 
 
 import "./header.scss";
+const lowest = 9;
+const middle = 10;
+const highest = 11;
 
 function Header(props) {
   const dispacth = useDispatch();
   const show = useSelector(state => state.menubar.menuVisible);
+  const [percent, setPercent] = useState(9);
+
 
   const showMenuHandler = () => {
     dispacth(MenuActions.showMenu());
@@ -27,8 +34,36 @@ function Header(props) {
       label: <span>Profile</span>,
     },
   ];
+
+
+
+  // const [percent, setPercent] = useState(middle);
+
+  // useEffect(() => {
+  //   const p = localStorage.getItem("fontZoomLevel");
+  //   if (p) {
+  //     handleClick(p);
+  //   }
+  // }, []);
+
+  // const handleClick = (p) => {
+  //   localStorage.setItem("fontZoomLevel", p);
+  //   setPercent(p);
+  //   document.documentElement.style.setProperty("--fontSizePercent", p);
+  // };
+
+
+  const handleIncreaseFontSize = (size) => {
+    setPercent(size)
+    // setPercent(percent + 0.85);
+  };
+
+  useEffect(() => {
+    document.documentElement.style.fontSize = `${percent}px`;
+  }, [percent]);
   return (
     <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className="header-container">
+
       <Col span={8}>
         <div className="hamburge-menu">
           <HamburgerMenuIcon onClick={showMenuHandler} style={{ cursor: "pointer" }} />
@@ -51,13 +86,50 @@ function Header(props) {
         )} */}
         {/* </CSSTransition> */}
       </Col>
-      <Col span={8}>
+      <Col span={6}>
+        {/* <button onClick={handleIncreaseFontSize}>Increase Font Size</button> */}
         <div className="logo-info">
           <LogoIcon />
           <div className="logo-text">bots api</div>
         </div>
       </Col>
-      <Col span={8}>
+      <Col span={4}>
+        <div className="dynamic-font-size-container">
+          <Row className="text-container" gutter={12}  >
+            <Col>
+              <IconButton
+                onClick={() => handleIncreaseFontSize(lowest)}
+                className={`${percent === lowest && "active"}`}
+              >
+                A
+              </IconButton>
+            </Col>
+            <Col>
+              <IconButton
+                onClick={() => handleIncreaseFontSize(middle)}
+                className={`${percent === middle && "active"}`}
+              >
+                A
+              </IconButton>
+            </Col>
+            <Col>
+              <IconButton
+                onClick={() => handleIncreaseFontSize(highest)}
+                className={`${percent === highest && "active"}`}
+              >
+                A
+              </IconButton>
+            </Col>
+          </Row>
+          <div className="line-container">
+            <span className={`${percent === lowest && "active"}`}></span>
+            <span className={`${percent === middle && "active"}`}></span>
+            <span className={`${percent === highest && "active"}`}></span>
+          </div>
+        </div>
+
+      </Col>
+      <Col span={6}>
         <div className="profile-wrapper">
           <Avatar size="large" icon={<UserOutlined />} />
           <Dropdown

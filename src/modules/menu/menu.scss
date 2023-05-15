@@ -1,14 +1,15 @@
 .menu-wrapper {
-  margin-top: -16px;
-  margin-left: -16px;
+  margin-top: -33px;
+  margin-left: -26px;
   position: relative;
 
   .menu-items {
-    height: 97vh;
-    border-radius: 12px;
+    height: 100vh;
     padding-left: 15px;
     padding-top: 15px;
-    color: #475467 !important;
+    color: #fff !important;
+    background-color: #343e4d;
+
 
     &.menu-items > li:first-child {
       width: 21%;
@@ -23,7 +24,7 @@
     }
 
     .ant-menu-title-content {
-      color: #475467 !important;
+      color: #fff !important;
     }
     // li {
     //   padding-left: 10px !important;
@@ -60,7 +61,7 @@
         padding-left: 12px !important;
         padding-right: 12px !important;
         .ant-menu-title-content {
-          font-size: 0.75em;
+          font-size: 1em;
         }
       }
       .ant-menu-sub {

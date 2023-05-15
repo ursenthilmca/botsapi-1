@@ -60,13 +60,13 @@ function CustomerSetup(props) {
 
   useEffect(() => {
     let customerListData = [...state.customersList];
-    customerListData.forEach((item)=>item.isShowPopup = false);
-    setState((state)=>({
+    customerListData.forEach((item) => item.isShowPopup = false);
+    setState((state) => ({
       ...state,
-      customersList:customerListData
+      customersList: customerListData
     }))
   }, [menuVisible])
-  
+
 
 
   const [connect, setConnect] = useState(false);
@@ -178,54 +178,63 @@ function CustomerSetup(props) {
 
 "
       >
-        <Col sm={24} lg={show === true ? 7 : 6} className="custmer-card ">
+        <Col sm={24} lg={show === true ? 7 : 7} className="custmer-card " style={{ marginLeft: !show ? '-2px' : '' }}>
           <Card
             bordered={false}
             // style={{
             //   width: "100%",
             //   height: "100vh",
             // }}
-            className="p-0 cards-container"
+            className="p-0 cards-container "
+            style={{ backgroundColor: "#f2f4f7 !important, border:none" }}
           >
-            <Row
-              gutter={{ xl: 12, lg: 5 }}
-              align={"middle"}
-              className="justify-content-between px-10"
-            >
-              <Col xl={10}>
-                <span className="title">Customers</span>
-              </Col>
-              <Col xl={14} className="text-right">
-                <Button
-                  icon={<PlusOutlined />}
-                  size={"large"}
-                  className="primary-btn"
-                  onClick={() => setAddCustomer(true)}
-                >
-                  Add Customer
-                </Button>
-              </Col>
-            </Row>
-            <Row className="mt-15 px-10 pb-10">
-              <Col sm={24}>
-                <Input
-                  placeholder="Search Profile"
-                  prefix={<SearchOutlined />}
-                />
-              </Col>
-            </Row>
+            <div style={{
+              backgroundColor: "#FFFFFF", borderRadius: "8px 8px 0 0"
+            }}
+              className="p-5">
+              <Row
+                gutter={{ xl: 12, lg: 5 }}
+                align={"middle"}
+                className="justify-content-between px-10 pt-5"
 
-            <Row>
-              <Col sm={24}>
+              >
+                <Col xl={10}>
+                  <span className="title">Customers</span>
+                </Col>
+                <Col xl={14} className="text-right">
+                  <Button
+                    icon={<PlusOutlined />}
+                    size={"large"}
+                    className="primary-btn"
+                    onClick={() => setAddCustomer(true)}
+                  >
+                    Add Customer
+                  </Button>
+                </Col>
+              </Row>
+              <Row className="mt-15 px-10 pb-10">
+                <Col sm={24}>
+                  <Input
+                    placeholder="Search Profile"
+                    prefix={<SearchOutlined />}
+                  />
+                </Col>
+              </Row>
+            </div>
+
+            {/* </Card>
+          <Card style={{ backgroundColor: "transparent !important" }} className="customer-items"> */}
+            <Row style={{ backgroundColor: "transparent !important" }}>
+              <Col sm={24} >
                 <PerfectScrollbar
                   style={{
                     overflowY: "scroll !important",
                     overflowX: "hidden !important",
                   }}
-                  className="px-10 customer-box-scroll"
+                  className="px-10  customer-box-scroll"
                 >
                   {state.customersList.map((obj, index) => (
-                    <Row className={`mt-10 ${index == 1 ? 'selected-card':'un-selected-card'}`} key={obj.id}>
+                    <Row className={`mt-10 ${index == 1 ? 'selected-card' : 'un-selected-card'}`} key={obj.id} >
                       <Col sm={24}>
                         <Row>
                           <Col sm={12} className="text-normal font-normal">
@@ -240,8 +249,8 @@ function CustomerSetup(props) {
                         </Row>
 
                         <Row className=" inside-wrapper mt-10" gutter={12}>
-                          <Col sm={11}>
-                            <FiledCard title={"Created Date"}>
+                          <Col sm={12}>
+                            <FiledCard title={"Created Date"} >
                               <PrimaryLabel
                                 normal={true}
                                 className="text-normal font-normal"
@@ -249,23 +258,7 @@ function CustomerSetup(props) {
                                 01/01/2023
                               </PrimaryLabel>
                             </FiledCard>
-                          </Col>
-                          <Col sm={2}>
-                            <VerticalLine />
-                          </Col>
-                          <Col sm={11}>
-                            <FiledCard title={"Total Transation"}>
-                              <PrimaryLabel
-                                normal={true}
-                                className="text-normal font-normal"
-                              >
-                                23,082
-                              </PrimaryLabel>
-                            </FiledCard>
-                          </Col>
-                        </Row>
-                        <Row className=" inside-wrapper mt-10" gutter={12}>
-                          <Col sm={11}>
+                            <br />
                             <FiledCard title={"Created By "}>
                               <PrimaryLabel
                                 normal={true}
@@ -275,10 +268,18 @@ function CustomerSetup(props) {
                               </PrimaryLabel>
                             </FiledCard>
                           </Col>
-                          <Col sm={2}>
-                            <VerticalLine />
-                          </Col>
-                          <Col sm={11}>
+
+                          <Col sm={12}>
+                            <FiledCard title={"Total Transation"}>
+                              <PrimaryLabel
+                                normal={true}
+                                className="text-normal font-normal"
+                              >
+                                23,082
+                              </PrimaryLabel>
+                            </FiledCard>
+                            <br />
+
                             <FiledCard title={"Total Connection "}>
                               <PrimaryLabel
                                 normal={true}
@@ -287,6 +288,15 @@ function CustomerSetup(props) {
                                 30
                               </PrimaryLabel>
                             </FiledCard>
+                          </Col>
+                          {/* </Row>
+                        <Row className=" inside-wrapper mt-10" gutter={12}> */}
+                          <Col sm={11}>
+
+                          </Col>
+
+                          <Col sm={11}>
+
                           </Col>
                         </Row>
                         <Row className="mt-15">
@@ -338,13 +348,13 @@ function CustomerSetup(props) {
                       </Col>
                     </Row>
                   ))}
-                  
+
                 </PerfectScrollbar>
               </Col>
             </Row>
           </Card>
         </Col>
-        <Col sm={24} lg={show === true ? 8 : 7} className="carrier-card">
+        <Col sm={24} lg={show === true ? 7 : 8} className="carrier-card">
           <Card
             bordered={false}
             style={{
@@ -483,7 +493,7 @@ function CustomerSetup(props) {
             </div>
           </Card>
         </Col>
-        <Col sm={19} lg={show === true ? 9 : 11}>
+        <Col sm={19} lg={show === true ? 10 : 9}>
           <Card
             bordered={false}
             style={{
@@ -594,15 +604,15 @@ function CustomerSetup(props) {
                 <Tabs
                   defaultActiveKey="1"
                   items={tabsItem}
-                  onChange={() => {}}
+                  onChange={() => { }}
                   className="tabs-info "
                 />
               </Col>
             </Row>
           </Card>
         </Col>
-      </Row>
-    </div>
+      </Row >
+    </div >
   );
 }
 export default CustomerSetup;

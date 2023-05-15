@@ -44,3 +44,56 @@
     }
   }
 }
+
+.dynamic-font-size-container {
+  .text-container {
+    button {
+      color: #d0d5dd;
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        color: #fff;
+      }
+      font-weight: 600;
+      border: none;
+
+    }
+    div:nth-child(1) button {
+
+      font-size: 0.813rem !important;
+    }
+    div:nth-child(2) button {
+
+      font-size: 1rem !important;
+    }
+    div:nth-child(3) button {
+      font-size: 1.188 !important;
+    }
+  }
+  .line-container {
+    width: 120px;
+
+    margin-top: 0px;
+    margin-left: 16px;
+    height: 1px;
+    background-color: #d0d5dd;
+    display: flex;
+    justify-content: space-between;
+    span {
+      display: inline-block;
+      height: 5px;
+      width: 5px;
+      background-color: #d0d5dd;
+      border-radius: 5px;
+      position: relative;
+      &:nth-child(2) {
+        margin-left: -3px;
+      }
+      top: -2px;
+      &.active {
+        background-color: #fff !important;
+      }
+    }
+  }
+}

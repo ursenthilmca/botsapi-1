@@ -14,7 +14,7 @@ const AppLayout = () => {
   const customerSetup = useSelector((state) => state.customerSetup);
   const { Content, Sider } = Layout;
 
- 
+
   return (
     <Layout>
       <Sider
@@ -31,7 +31,7 @@ const AppLayout = () => {
         </div>
       </Sider>
       <Layout>
-        <div className="main-container">
+        <div className="main-container" style={{ marginLeft: !show ? '-9px' : '' }}>
           <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }}>
             <Col sm={24}>
               <Header />
@@ -51,7 +51,7 @@ const AppLayout = () => {
         <div className="container-background"></div>
       </Layout>
     </Layout>
-    
+
   );
 };
 
