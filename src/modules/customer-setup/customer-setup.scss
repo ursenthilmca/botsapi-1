@@ -3,12 +3,7 @@
     display: none !important;
 
   }
-  .custmer-card {
-    margin-top: -6px;
-    .cards-container{
-    background: #f2f4f7 ;
-  }
-  }
+  
 
   .cards-container {
     // background: transparent ;
@@ -52,6 +47,16 @@
     .customer-box-scroll{
       max-height: calc(60vh - 0px);
       padding-bottom: 16px;
+    }
+  }
+
+  .custmer-card {
+    .cards-container{
+    background: #f2f4f7 ;
+      .ant-card-body{
+        padding-top:0 !important ;
+
+      }
     }
   }
   .bg-light {

@@ -36,14 +36,14 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem(
-    <div className="close-icon">
-      <CloseIcon
-        style={{ cursor: "pointer", width: "32px", display: "inline" }}
-      />
-    </div>,
-    "close"
-  ),
+  // getItem(
+  //   <div className="close-icon">
+  //     <CloseIcon
+  //       style={{ cursor: "pointer", width: "32px", display: "inline" }}
+  //     />
+  //   </div>,
+  //   "close"
+  // ),
 
   getItem("API", "apiMenu", "", [
     getItem("Overview", "overview"),
@@ -80,7 +80,7 @@ function MenuComponent(props) {
       ? "customerSetup"
       : location.pathname.replace(/^./, "")
   );
-  
+
   useEffect(() => {
     if (location) {
       if (current !== location.pathname.replace(/^./, "")) {

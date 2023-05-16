@@ -32,9 +32,12 @@ let AddCustomer = (props) => {
             maskClosable={false}
             open={open}
             key={placement}
-            footer={<Button icon={<RightArrowIcon />} size={"large"} className="m-5  primary-btn d-flex align-items-center flex-direction-row-reverse flex-gap-1 float-right" >
-                Add Carrier
-            </Button>}
+            footer={<div><Button size={"large"} disabled={false} className=" pl-20 p-20 m-5  primary-btn d-flex align-items-center flex-direction-row-reverse flex-gap-1 float-right" >
+        save
+            </Button>
+            <Button size={"large"} disabled={false} className=" pl-20 p-20 m-5  primary-btn d-flex align-items-center flex-direction-row-reverse flex-gap-1 float-right" >
+            back
+        </Button></div>}
 
         >
             <div className='customer' >
@@ -44,33 +47,25 @@ let AddCustomer = (props) => {
                     <Col sm={24} >
                         <FormInput
                             editMode={true}
-                            label={"Customer Name"}
-                            placeholder={"Enter Customer Name"}
+                            label={"Customer code"}
+                            placeholder={"Enter Customer code"}
                             name="customerName"
                         />
                     </Col>
                     <Col sm={24} >
                         <FormInput
                             editMode={true}
-                            label={"Creator Name"}
-                            placeholder={"Enter Creator Name"}
+                            label={"customer description"}
+                            placeholder={"Enter customer description"}
                             name="creatorName"
                         />
                     </Col>
                     <Col sm={24} >
                         <FormInput
                             editMode={true}
-                            label={"PO No."}
-                            placeholder={"Enter PO No."}
+                            label={"customer reference code"}
+                            placeholder={"Enter customer reference code "}
                             name="poNo"
-                        />
-                    </Col>
-                    <Col sm={24} >
-                        <FormInput
-                            editMode={true}
-                            label={"Pickup Zipcode"}
-                            placeholder={"Enter Pickup Zipcode"}
-                            name="zipcode"
                         />
                     </Col>
                 </Row>

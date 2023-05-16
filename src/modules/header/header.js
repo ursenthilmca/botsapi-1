@@ -93,9 +93,13 @@ function Header(props) {
           <div className="logo-text">bots api</div>
         </div>
       </Col>
-      <Col span={4}>
+      {/* <Col span={4}>
+
+
+      </Col> */}
+      <Col span={10} className="d-flex justify-content-end flex-gap-1" >
         <div className="dynamic-font-size-container">
-          <Row className="text-container" gutter={12}  >
+          <Row className="text-container" gutter={0}  >
             <Col>
               <IconButton
                 onClick={() => handleIncreaseFontSize(lowest)}
@@ -127,9 +131,6 @@ function Header(props) {
             <span className={`${percent === highest && "active"}`}></span>
           </div>
         </div>
-
-      </Col>
-      <Col span={6}>
         <div className="profile-wrapper">
           <Avatar size="large" icon={<UserOutlined />} />
           <Dropdown

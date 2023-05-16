@@ -8,28 +8,30 @@ import { ReactComponent as ShieldIcon } from "../../../../assets/svg/shieldStar.
 import { ReactComponent as PackageIcon } from "../../../../assets/svg/package.svg";
 import { ReactComponent as ImageIcon } from "../../../../assets/svg/image.svg";
 import { useSelector } from "react-redux";
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
-
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
 
 const { TextArea } = Input;
 
-
-
 function ApiSetupTabs() {
-
   const onChangeChecked = (checked) => {
     console.log(`switch to ${checked}`);
   };
   const onChange = (e) => {
-    console.log('Change:', e.target.value);
+    console.log("Change:", e.target.value);
   };
 
   return (
     <Fragment>
-
       <div className="api-set-tab" style={{ overflowX: "hidden" }}>
-        <PerfectScrollbar style={{ maxHeight: '38rem', overflowY: 'scroll !important', overflowX: 'hidden !important' }} className="px-15">
+        <PerfectScrollbar
+          style={{
+            // maxHeight: "38rem",
+            overflowY: "scroll !important",
+            overflowX: "hidden !important",
+          }}
+          className="px-15 customer-box-scroll"
+        >
           <Row>
             <Col sm={24}>
               <PrimaryLabel>Account Information</PrimaryLabel>
@@ -63,12 +65,10 @@ function ApiSetupTabs() {
                 name="accountNumber"
               />
             </Col>
-
           </Row>
           <Row gutter={12}>
             <Col sm={24}>
               <PrimaryLabel>What is the purpose of account?</PrimaryLabel>
-
             </Col>
           </Row>
           <Row className="mt-15 align-items-center " gutter={5}>
@@ -76,7 +76,9 @@ function ApiSetupTabs() {
               <PathIcon />
             </Col>
             <Col sm={18} className="normal-text">
-              <PrimaryLabel className="normal-text">Activate for Tracking</PrimaryLabel>
+              <PrimaryLabel className="normal-text">
+                Activate for Tracking
+              </PrimaryLabel>
             </Col>
             <Col sm={4} className="text-right">
               <Switch defaultChecked onChange={onChangeChecked} />
@@ -90,14 +92,13 @@ function ApiSetupTabs() {
                 name="trackingNumber"
               />
             </Col>
-
           </Row>
           <Row className="mt-15 align-items-center " gutter={5}>
             <Col sm={2}>
               <ShieldIcon />
             </Col>
             <Col sm={18} className="normal-text">
-              <PrimaryLabel >Activate for Rate</PrimaryLabel>
+              <PrimaryLabel>Activate for Rate</PrimaryLabel>
             </Col>
             <Col sm={4} className="text-right">
               <Switch defaultChecked onChange={onChangeChecked} />
@@ -108,7 +109,7 @@ function ApiSetupTabs() {
               <PackageIcon />
             </Col>
             <Col sm={18} className="normal-text">
-              <PrimaryLabel >Activate for Pickup Request</PrimaryLabel>
+              <PrimaryLabel>Activate for Pickup Request</PrimaryLabel>
             </Col>
             <Col sm={4} className="text-right">
               <Switch defaultChecked onChange={onChangeChecked} />
@@ -119,7 +120,7 @@ function ApiSetupTabs() {
               <ImageIcon />
             </Col>
             <Col sm={18} className="normal-text">
-              <PrimaryLabel >Activate for Image</PrimaryLabel>
+              <PrimaryLabel>Activate for Image</PrimaryLabel>
             </Col>
             <Col sm={4} className="text-right">
               <Switch defaultChecked onChange={onChangeChecked} />
@@ -128,16 +129,14 @@ function ApiSetupTabs() {
           <Row>
             <Col sm={24} className="mt-10">
               <PrimaryLabel>Note</PrimaryLabel>
-
             </Col>
             <Col sm={24}>
               <TextArea onChange={onChange} style={{ width: "100%" }} />
-
             </Col>
           </Row>
         </PerfectScrollbar>
       </div>
-    </Fragment >
+    </Fragment>
   );
 }
 export default ApiSetupTabs;

@@ -8,6 +8,7 @@ const SimpleTable = ({
   pagination = false,
   border = false,
   before = false,
+  ...props
 }) => {
   return (
     <Table
@@ -17,6 +18,7 @@ const SimpleTable = ({
       className={"simple-table"}
       bordered={border}
       before={before}
+      {...props}
     />
   );
 };
