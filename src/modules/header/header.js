@@ -11,14 +11,14 @@ import IconButton from "../../component/Button/IconButton";
 
 
 import "./header.scss";
-const lowest = 9;
-const middle = 10;
-const highest = 11;
+const lowest = 10;
+const middle = 11;
+const highest = 12;
 
 function Header(props) {
   const dispacth = useDispatch();
   const show = useSelector(state => state.menubar.menuVisible);
-  const [percent, setPercent] = useState(9);
+  const [percent, setPercent] = useState(10);
 
 
   const showMenuHandler = () => {

@@ -178,7 +178,7 @@ function CustomerSetup(props) {
 
 "
       >
-        <Col sm={24} lg={show === true ? 7 : 7} className="custmer-card " style={{ marginLeft: !show ? '-2px' : '' }}>
+        <Col sm={24} lg={show === true ? 6 : 7} className="custmer-card " style={{ marginLeft: !show ? '-2px' : '' }}>
           <Card
             bordered={false}
             // style={{
@@ -231,16 +231,16 @@ function CustomerSetup(props) {
                     overflowY: "scroll !important",
                     overflowX: "hidden !important",
                   }}
-                  className="px-10  customer-box-scroll"
+                  className="p-1  customer-box-scroll"
                 >
                   {state.customersList.map((obj, index) => (
-                    <Row className={`mt-10 ${index == 1 ? 'selected-card' : 'un-selected-card'}`} key={obj.id} >
+                    <Row className={`mb-10 ${index == 1 ? 'selected-card' : 'un-selected-card'}`} key={obj.id} >
                       <Col sm={24}>
                         <Row>
                           <Col sm={12} className="text-normal font-normal">
                             3M Company
                           </Col>
-                          <Col sm={12} className="d-flex justify-content-end">
+                          <Col sm={12} className="">
                             <FiledCard
                               title={"Code:1102"}
                               className="text-normal font-light"
@@ -248,7 +248,7 @@ function CustomerSetup(props) {
                           </Col>
                         </Row>
 
-                        <Row className=" inside-wrapper mt-10" gutter={12}>
+                        <Row className=" inside-wrapper mt-5 " justify={"space-between"}>
                           <Col sm={12}>
                             <FiledCard title={"Created Date"} >
                               <PrimaryLabel
@@ -258,7 +258,6 @@ function CustomerSetup(props) {
                                 01/01/2023
                               </PrimaryLabel>
                             </FiledCard>
-                            <br />
                             <FiledCard title={"Created By "}>
                               <PrimaryLabel
                                 normal={true}
@@ -278,7 +277,6 @@ function CustomerSetup(props) {
                                 23,082
                               </PrimaryLabel>
                             </FiledCard>
-                            <br />
 
                             <FiledCard title={"Total Connection "}>
                               <PrimaryLabel
@@ -299,7 +297,7 @@ function CustomerSetup(props) {
 
                           </Col>
                         </Row>
-                        <Row className="mt-15">
+                        <Row className="mt-8">
                           <Col
                             sm={24}
                             className="d-flex justify-content-center pr-15 align-items-center"
@@ -329,7 +327,7 @@ function CustomerSetup(props) {
                               onOpenChange={handleOpenChange}
                             >
                               <RightArrowIcon
-                                style={{ cursor: "pointer" }}
+                                style={{ cursor: "pointer", background: "#fff", width: "75%", height: "26px", borderRadius: "5px" }}
                                 onClick={() => {
                                   state.customersList.forEach((item) => {
                                     if (item.id === obj.id) {
@@ -340,7 +338,7 @@ function CustomerSetup(props) {
                                   });
                                   setOpen(!open);
                                 }}
-                                className="arrow-right"
+                                className="arrow-right py-5 "
                               />
                             </Popover>
                           </Col>
@@ -395,7 +393,7 @@ function CustomerSetup(props) {
                 }}
                 className="px-15"
               >
-                <Row className="mt-15 selected-card">
+                <Row className="mt-5 selected-card">
                   <Col sm={24}>
                     <Row gutter={12} align={"middle"}>
                       <Col xl={4}>
@@ -413,7 +411,7 @@ function CustomerSetup(props) {
                         <NoSignalIcon />
                       </Col>
                     </Row>
-                    <Row className="mt-15 inside-wrapper" align={"middle"}>
+                    <Row className="mt-5 inside-wrapper" align={"middle"}>
                       <Col
                         sm={24}
                         className="d-flex align-items-center flex-gap-half mb-10"
@@ -448,7 +446,7 @@ function CustomerSetup(props) {
                   </Col>
                 </Row>
 
-                <Row className="mt-15 un-selected-card">
+                <Row className="mt-10 un-selected-card">
                   <Col sm={24}>
                     <Row gutter={12} align={"middle"}>
                       <Col sm={4}>
@@ -468,7 +466,7 @@ function CustomerSetup(props) {
                     </Row>
                   </Col>
                 </Row>
-                <Divider />
+                <Divider className="my-10" />
                 <Row className=" un-selected-card">
                   <Col sm={24}>
                     <Row gutter={12} align={"middle"}>
@@ -493,7 +491,7 @@ function CustomerSetup(props) {
             </div>
           </Card>
         </Col>
-        <Col sm={19} lg={show === true ? 10 : 9}>
+        <Col sm={19} lg={show === true ? 11 : 9}>
           <Card
             bordered={false}
             style={{
