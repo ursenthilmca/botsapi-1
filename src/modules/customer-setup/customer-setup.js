@@ -181,12 +181,9 @@ function CustomerSetup(props) {
         <Col sm={24} lg={show === true ? 6 : 7} className="custmer-card " style={{ marginLeft: !show ? '-2px' : '' }}>
           <Card
             bordered={false}
-            // style={{
-            //   width: "100%",
-            //   height: "100vh",
-            // }}
+
             className="p-0 cards-container "
-            style={{ backgroundColor: "#f2f4f7 !important, border:none" }}
+            style={{ backgroundColor: "#f2f4f7 !important", border: "none", height: "100vh", width: "100%" }}
           >
             <div style={{
               backgroundColor: "#FFFFFF", borderRadius: "8px 8px 0 0"
@@ -228,6 +225,8 @@ function CustomerSetup(props) {
               <Col sm={24} >
                 <PerfectScrollbar
                   style={{
+                    height: "auto",
+
                     overflowY: "scroll !important",
                     overflowX: "hidden !important",
                   }}
@@ -236,7 +235,7 @@ function CustomerSetup(props) {
                   {state.customersList.map((obj, index) => (
                     <Row className={`mb-10 ${index == 1 ? 'selected-card' : 'un-selected-card'}`} key={obj.id} >
                       <Col sm={24}>
-                        <Row>
+                        <Row gutter={20}>
                           <Col sm={12} className="text-normal font-normal">
                             3M Company
                           </Col>
@@ -248,7 +247,7 @@ function CustomerSetup(props) {
                           </Col>
                         </Row>
 
-                        <Row className=" inside-wrapper mt-5 " justify={"space-between"}>
+                        <Row className=" inside-wrapper mt-5 " justify={"space-between"} gutter={20}>
                           <Col sm={12}>
                             <FiledCard title={"Created Date"} >
                               <PrimaryLabel
