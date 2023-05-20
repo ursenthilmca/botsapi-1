@@ -175,7 +175,6 @@ function CustomerSetup(props) {
       <Row
         gutter={{ lg: 12, xs: 4 }}
         className="customer-setup justify-content-center
-
 "
       >
         <Col sm={24} lg={show === true ? 6 : 7} className="custmer-card " style={{ marginLeft: !show ? '-2px' : '' }}>
